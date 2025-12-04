@@ -12,6 +12,7 @@ exercises: 0 # exercise time in minutes
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+
 After completing this episode, participants should be able to...
 - Identify the structure and key components of an HTML document.
 - Explain how to use the browser developer tools to view the underlying html content of a web page
