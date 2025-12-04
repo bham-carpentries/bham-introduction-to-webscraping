@@ -50,9 +50,9 @@ contact: ' bearinfo@contacts.bham.ac.uk'
 #
 # Example -------------
 #
-# episodes:
-# - introduction.md
-# - first-steps.md
+episodes:
+- introduction.md
+- Webscraping-intro.md
 #
 # learners:
 # - setup.md
