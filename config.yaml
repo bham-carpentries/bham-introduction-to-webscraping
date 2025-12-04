@@ -52,7 +52,6 @@ contact: ' bearinfo@contacts.bham.ac.uk'
 #
 # episodes:
 # - introduction.md
-# - first-steps.md
 #
 # learners:
 # - setup.md
@@ -67,6 +66,7 @@ contact: ' bearinfo@contacts.bham.ac.uk'
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- Webscraping-intro.md
 
 # Information for Learners
 learners: 
