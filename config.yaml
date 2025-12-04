@@ -50,9 +50,8 @@ contact: ' bearinfo@contacts.bham.ac.uk'
 #
 # Example -------------
 #
-episodes:
-- introduction.md
-- Webscraping-intro.md
+# episodes:
+# - introduction.md
 #
 # learners:
 # - setup.md
@@ -67,6 +66,7 @@ episodes:
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- Webscraping.md
 
 # Information for Learners
 learners: 
