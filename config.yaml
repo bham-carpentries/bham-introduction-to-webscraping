@@ -67,6 +67,7 @@ contact: ' bearinfo@contacts.bham.ac.uk'
 episodes: 
 - introduction.md
 - Webscraping-intro.md
+- Webpage-anatomy.md
 - Manual-scraping.md
 - Legal-ethics.md
 
