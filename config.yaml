@@ -67,6 +67,7 @@ contact: ' bearinfo@contacts.bham.ac.uk'
 episodes: 
 - introduction.md
 - Webscraping-intro.md
+- Manual-scraping.md
 
 # Information for Learners
 learners: 
