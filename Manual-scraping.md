@@ -1,5 +1,5 @@
 ---
-title: "Manually scrape data using browser extensions?"
+title: "Manually scrape data using browser extensions"
 teaching: 0 # teaching time in minutes
 exercises: 0 # exercise time in minutes
 ---
