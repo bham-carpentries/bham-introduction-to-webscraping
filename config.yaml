@@ -21,7 +21,7 @@ carpentry_description: 'Lesson Description'
 title: 'Introduction to Web Scraping' 
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~2025-12-04
+created: 2025-12-04
 
 # Comma-separated list of keywords for the lesson
 keywords: 'lesson, pre-alpha, English, web scraping, html' 
