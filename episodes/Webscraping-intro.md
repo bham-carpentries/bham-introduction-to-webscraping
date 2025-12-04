@@ -13,6 +13,8 @@ exercises: 0 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
+After completing this episode, participants should be able to...
+
 - Be able to navigate around a website, understanding the concept of structured data
 - Discuss how data can be extracted from web pages
 ::::::::::::::::::::::::::::::::::::::::::::::::
