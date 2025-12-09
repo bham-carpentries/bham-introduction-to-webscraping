@@ -600,7 +600,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-Webpage-anatomy"><p>Content from <a href="Webpage-anatomy.html">Anatomy of a web page</a></p>
 <hr>
-<p>Last updated on 2025-12-04 |
+<p>Last updated on 2025-12-09 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Webpage-anatomy.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -638,115 +638,129 @@ code for specific items on a web page</p>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files and <a href="https://rmarkdown.rstudio.com/" class="external-link">R
-Markdown</a> for dynamic files that can render code into output. Please
-refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
+<p>Here, we’ll revisit some of those core ideas to build a more hands-on
+understanding of how content and data are structured on the web. We’ll
+start by exploring what HTML (Hypertext Markup Language) is and how it
+uses tags to organize and format content. Then, we’ll introduce the
+BeautifulSoup library to parse HTML and make it easier to search for and
+extract specific elements from a webpage.</p>
+<p>We’ll begin with simple examples and gradually move on to scraping
+more complex, real-world websites.</p>
+</section><section><h2 class="section-heading" id="html-quick-overview">HTML quick overview<a class="anchor" aria-label="anchor" href="#html-quick-overview"></a>
+</h2>
+<hr class="half-width">
+<p>All websites have a Hypertext Markup Language (HTML) document behind
+them. Below is an example of HTML for a very simple webpage that
+contains just three sentences. As you look through it, try to imagine
+how the website would appear in a browser.</p>
 <div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">HTML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
+<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Sample web page<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>h1 Header #1<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a paragraph tag<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>h2 Sub-header<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>A new paragraph, now in the <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>sub-header<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>h1 Header #2<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>This other paragraph has two hyperlinks,</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>one to <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://carpentries.org/"</span><span class="dt">&gt;</span>The Carpentries homepage<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>and another to the</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://carpentries.org/workshops/past-workshops/"</span><span class="dt">&gt;</span>past workshops<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> page.</span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
 </div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
+<p>If you save that text in a file with a .html extension —using a
+simple text editor like Notepad on Windows or TextEdit on macOS— and
+open it in your web browser, the browser will interpret the markup
+language and display a nicely formatted web page.</p>
+<figure><img src="fig/simple_website.PNG" alt="Screenshot of a simple website with the previews HTML" class="figure mx-auto d-block"></figure><p>When you open an HTML file in your browser, what it’s really doing is
+reading a structured document made up of <strong>elements</strong>, each
+marked by <strong>tags</strong> inside angle brackets (&lt; and &gt;).
+For instance, the HTML root element, which delimits the beginning and
+end of an HTML document, is identified by the <code>&lt;html&gt;</code>
+tag.</p>
+<p>Most elements have both an opening tag and a closing tag, which
+define the start and end of that element. For example, in the simple
+website we looked at earlier, the head element begins with
+<code>&lt;head&gt;</code> and ends with <code>&lt;/head&gt;</code>.</p>
+<p>Because elements can be nested inside one another, an HTML document
+forms a tree structure, where each element is a node that can contain
+child nodes, as illustrated in the image below.</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/DOM-model.svg" alt="Screenshot of a simple website with the previews HTML" class="figure mx-auto d-block"><div class="figcaption">The Document Object Model (DOM) that represents
+an HTML document with a tree structure. Source: Wikipedia. Author:
+Birger Eriksson</div>
+</figure><p>Finally, we can define or modify the behavior, appearance, or
+functionality of an element using <strong>attributes</strong>.
+Attributes appear inside the opening tag and consist of a name and a
+value, formatted like <code>name="value"</code>.</p>
+<p>For example, in the simple website, we added a hyperlink using the
+<code>&lt;a&gt;...&lt;/a&gt;</code> tags. To specify the destination
+URL, we used the <code>href</code> attribute inside the opening
+<code>&lt;a&gt;</code> tag like this:
+<code>&lt;a href="https://carpentries.org/workshops/past-workshops/"&gt;past workshops&lt;/a&gt;</code>.</p>
+<p>Here is a non-exhaustive list of common HTML elements and their
+purposes:</p>
+<ul>
+<li>
+<code>&lt;hmtl&gt;...&lt;/html&gt;</code>: The root element that
+contains the entire document.</li>
+<li>
+<code>&lt;head&gt;...&lt;/head&gt;</code>: Contains metadata such as
+the page title that the browser displays.</li>
+<li>
+<code>&lt;body&gt;...&lt;/body&gt;</code>: Contains the content that
+will be shown on the webpage.</li>
+<li>
+<code>&lt;h1&gt;...&lt;/h1&gt;, &lt;h2&gt;...&lt;/h2&gt;, &lt;h3&gt;...&lt;/h3&gt;</code>:
+Define headers of levels 1, 2, 3, and so on.</li>
+<li>
+<code>&lt;p&gt;...&lt;/p&gt;</code>: Represents a paragraph.</li>
+<li>
+<code>&lt;a href=""&gt;...&lt;/a&gt;</code>: Creates a hyperlink;
+the destination URL is set with the href attribute.</li>
+<li>
+<code>&lt;img src="" alt=""&gt;</code>: Embeds an image, with the
+image source specified by <code>src</code> and alternative text provided
+by <code>alt</code>. It doesn’t have an opening tag.</li>
+<li>
+<code>&lt;table&gt;...&lt;/table&gt;, &lt;th&gt;...&lt;/th&gt;, &lt;tr&gt;...&lt;/tr&gt;, &lt;td&gt;...&lt;/td&gt;</code>:
+Define a table structure, with headers (<code>&lt;th&gt;</code>), rows
+(<code>&lt;tr&gt;</code>), and cells (<code>&lt;td&gt;</code>).</li>
+<li>
+<code>&lt;div&gt;...&lt;/div&gt;</code>: Groups sections of HTML
+content together.</li>
+<li>
+<code>&lt;script&gt;...&lt;/script&gt;</code>: Embeds or links to
+JavaScript code.</li>
+</ul>
+<p>In the list above, we mentioned some attributes specific to hyperlink
+(<code>&lt;a&gt;</code>) and image (<code>&lt;img&gt;</code>) elements,
+but there are also several global attributes that most HTML elements can
+have. These are especially useful for identifying elements when web
+scraping:</p>
+<ul>
+<li>
+<code>id=""</code>: Assigns a unique identifier to an element; this
+ID must be unique within the entire HTML document.</li>
+<li>
+<code>title=""</code>: Provides extra information about the element,
+shown as a tooltip when the user hovers over it.</li>
+<li>
+<code>class=""</code>: Applies a common styling or grouping to
+multiple elements at once.</li>
+</ul>
+<p>To summarize: <strong>elements</strong> are identified by
+<strong>tags</strong>, and <strong>attributes</strong> let us assign
+properties or identifiers to those elements. Understanding this
+structure will make it much easier to extract specific data from a
+website.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -853,7 +867,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -882,7 +896,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1023,7 +1037,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1052,7 +1066,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
