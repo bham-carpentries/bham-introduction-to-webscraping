@@ -107,18 +107,10 @@ Using this structure, we may be able to instruct a computer to look for all
 parliamentarians from Alberta and list their names and caucus information.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
-> ## Structured vs unstructured data
->
-> When presented with information, human beings are good at quickly categorizing it and extracting the data
-> that they are interested in. For example, when we look at a magazine rack, provided the titles are written
-> in a script that we are able to read, we can rapidly figure out the titles of the magazines, the stories they
-> contain, the language they are written in, etc. and we can probably also easily organize them by topic, 
-> recognize those that are aimed at children, or even whether they lean toward a particular end of the
-> political spectrum. Computers have a much harder time making sense of such _unstructured_ data unless
-> we specifically tell them what elements data is made of, for example by adding labels such as
-> _this is the title of this magazine_ or _this is a magazine about food_. Data in which individual elements
-> are separated and labelled is said to be _structured_.
->
+## Structured vs unstructured data
+
+When presented with information, human beings are good at quickly categorizing it and extracting the data that they are interested in. For example, when we look at a magazine rack, provided the titles are written in a script that we are able to read, we can rapidly figure out the titles of the magazines, the stories they contain, the language they are written in, etc. and we can probably also easily organize them by topic, recognize those that are aimed at children, or even whether they lean toward a particular end of the political spectrum. Computers have a much harder time making sense of such _unstructured_ data unless we specifically tell them what elements data is made of, for example by adding labels such as _this is the title of this magazine_ or _this is a magazine about food_. Data in which individual elements are separated and labelled is said to be _structured_.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
 Let's look now at the current list of members for the [UK House of Commons](https://members.parliament.uk/members/commons).
@@ -190,7 +182,7 @@ the information they contain. But before we launch into web scraping proper, we 
 a bit more closely at how information is organized within an HTML document and how to build queries to access
 a specific subset of that information.
 
-# References
+## References
 
 * [Web Scraping (Wikipedia)](https://en.wikipedia.org/wiki/Web_scraping)
 * [The Data Journalism Handbook: Getting Data from the Web](http://datajournalismhandbook.org/1.0/en/getting_data_3.html)
