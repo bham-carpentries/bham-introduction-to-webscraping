@@ -429,21 +429,16 @@ required for the data you want.</li>
 information<a class="anchor" aria-label="anchor" href="#example-scraping-parliamentary-websites-for-contact-information"></a>
 </h2>
 <hr class="half-width">
-<p>In this workshop, we will learn how to extract contact information
-from UCSB departments’ faculty pages. This example came from a recent
-real-life scenario when our team needed to make lists of social sciences
-faculty for outreach reasons. There is no overarching list of faculty,
-contact information, and study area available for the university as a
-whole. This was made even more difficult by the fact that each UCSB
-department has webpages with wildly different formating. We will see
-examples using both the scraping chrome extension. There are different
-scenarios when one might be a better choice than the other.</p>
-<p>But before that we need to first understand, let’s start by looking
-at the list of members of the Canadian parliament, which is available on
-the <a href="https://www.ourcommons.ca/members/en/search?view=list" class="external-link">Parliament
+<p>In this workshop, we will learn how to extract information from
+various web pages. Different webpages can have widely differing formats
+which will affect the decision as to which method of scraping data might
+be appropriate.</p>
+<p>Before we can make such decisions we need to have some understanding
+of the makeup of a webpage. Let’s start by looking at the list of
+members of the Canadian parliament, which is available on the <a href="https://www.ourcommons.ca/members/en/search?view=list" class="external-link">Parliament
 of Canada website</a></p>
 <p>This is how this page appears in February 2024:</p>
-<p><img src="%7B%7B%20page.root%20%7D%7D/fig/canparl-top.png" alt="Screenshot of the Parliament of Canada website (Top)" class="figure"><img src="%7B%7B%20page.root%20%7D%7D/fig/canparl-bottom.png" alt="Screenshot of the Parliament of Canada websitei (Bottom)" class="figure"></p>
+<p><img src="/fig/canparl-top.png" alt="Screenshot of the Parliament of Canada website (Top)" class="figure"><img src="/fig/canparl-bottom.png" alt="Screenshot of the Parliament of Canada websitei (Bottom)" class="figure"></p>
 <p>There are several features (circled in the image above) that make the
 data on this page easier to work with. The search, reorder, refine
 features and display modes hint that the data is actually stored in a
@@ -752,7 +747,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -781,7 +776,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -925,7 +920,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -954,7 +949,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
