@@ -65,7 +65,6 @@ contact: ' bearinfo@contacts.bham.ac.uk'
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
 - Webscraping-intro.md
 - Webpage-anatomy.md
 - Manual-scraping.md
