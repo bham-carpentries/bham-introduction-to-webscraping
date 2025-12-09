@@ -51,7 +51,7 @@ As useful as scraping is, there might be better options for the task. Choose the
 
 - Check whether or not you can easily copy and paste data from a site into Excel or Google Sheets. This might be quicker than scraping.
 - Check if the site or service already provides an API to extract structured data. If it does, that will be a much more efficient and effective pathway. Good examples are the 
-[Facebook API](https://developers.facebook.com/tools/explorer/), the [Twitter APIs](https://dev.twitter.com/rest/public) or the [YouTube comments API](https://developers.google.com/youtube/v3/docs/commentThreads/list).
+[Facebook API](https://developers.facebook.com/tools/explorer/), the [X APIs](https://docs.x.com/x-api/introduction) or the [YouTube comments API](https://developers.google.com/youtube/v3/docs/commentThreads/list).
 - For much larger needs, [Freedom of information Act (FOIA)](https://www.foia.gov/how-to.html) requests can be useful. Be specific about the formats required for the data you want.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
@@ -62,12 +62,12 @@ Note that the 'Before you get started' items will be covered in more detail late
 
 ## Example: Scraping parliamentary websites for contact information
 In this workshop, we will learn how to extract  information
-from various web pages. Different webpages can have widely differing formats which will affect the decision as to which method of scraping data might be appropriate. 
+from various web pages. Different webpages can have widely differing formats which will affect our decisions as to which method of scraping data might be appropriate. 
 
 Before we can make such decisions we need to have some understanding of the makeup of a webpage. Let's start by looking at the list of members of the Canadian parliament, which is available
 on the [Parliament of Canada website](https://www.ourcommons.ca/members/en/search?view=list)
 
-This is how this page appears in February 2024:
+This is how this page appears in December 2025:
 
 ![Screenshot of the Parliament of Canada website (Top)](fig/canparl-top.png)
 ![Screenshot of the Parliament of Canada websitei (Bottom)](fig/canparl-bottom.png)
@@ -86,9 +86,9 @@ Computers, on the other hand, cannot do this unless we provide them with more
 information. If we examine the source HTML code of this page, we can see that
 the information displayed has a consistent structure:
 
-~~~
+```html
 (...)
-<tr role="row" id="mp-list-id-25446" class="odd">
+<tr role="row" id="mp-list-id-25446">
     <td data-sort="Allison Dean" class="sorting_1">
         <a href="/members/en/dean-allison(25446)">
             Allison, Dean
@@ -96,19 +96,17 @@ the information displayed has a consistent structure:
     </td>
     <td data-sort="Conservative">Conservative</td>
     <td data-sort="Niagara West">
-        <a href="/members/en/constituencies/niagara-west(782)">
-            Niagara West
-        </a>
+        <a href="/members/en/constituencies/niagara-west(1124)">Niagara West</a>
     </td>
     <td data-sort="Ontario">Ontario</td>
 </tr>
 (...)
-~~~
-{: .output}
+```
 
 Using this structure, we may be able to instruct a computer to look for all
 parliamentarians from Alberta and list their names and caucus information.
 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
 > ## Structured vs unstructured data
 >
 > When presented with information, human beings are good at quickly categorizing it and extracting the data
@@ -121,24 +119,26 @@ parliamentarians from Alberta and list their names and caucus information.
 > _this is the title of this magazine_ or _this is a magazine about food_. Data in which individual elements
 > are separated and labelled is said to be _structured_.
 >
-{: .callout}
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
 Let's look now at the current list of members for the [UK House of Commons](https://members.parliament.uk/members/commons).
 
-![Screenshot of the UK House of Commons website]({{ page.root }}/fig/ukparl.png)
+![Screenshot of the UK House of Commons website](fig/ukparl.png)
 
 This page also displays a list of names, political and geographical affiliation. There is a search box and
 a filter option, but no obvious way to download this information and reuse it.
 
 Here is the code for this page:
 
-~~~
+```html
 (...)
 <a class="card card-member" href="/member/172/contact">
     <div class="card-inner">
         <div class="content">
             <div class="image-outer">
-                <div class="image" aria-label="Image of Ms Diane Abbott" style="background-image: url(https://members-api.parliament.uk/api/Members/172/Thumbnail); border-color: #C0C0C0;"></div>
+                <div class="image"
+                     aria-label="Image of Ms Diane Abbott"
+                     style="background-image: url(https://members-api.parliament.uk/api/Members/172/Thumbnail); border-color: #909090;"></div>
             </div>
             <div class="primary-info">
                 Ms Diane Abbott
@@ -159,9 +159,9 @@ Here is the code for this page:
             </div>
         </div>
     </div>
-</a>(...)
-~~~
-{: .output}
+</a>
+(...)
+```
 
 We see that this data has been structured for displaying purposes (it is arranged in rows inside
 a table) but the different elements of information are not clearly labelled.
@@ -187,72 +187,13 @@ time to extract unstructured information and put it in a structured form for reu
 
 In this lesson, we will continue exploring the examples above and try different techniques to extract
 the information they contain. But before we launch into web scraping proper, we need to look
-a bit closer at how information is organized within an HTML document and how to build queries to access
+a bit more closely at how information is organized within an HTML document and how to build queries to access
 a specific subset of that information.
 
 # References
 
 * [Web Scraping (Wikipedia)](https://en.wikipedia.org/wiki/Web_scraping)
 * [The Data Journalism Handbook: Getting Data from the Web](http://datajournalismhandbook.org/1.0/en/getting_data_3.html)
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
-:::::::::::::::::::::::: solution 
-
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
-
-:::::::::::::::::::::::::::::::::
-
-
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
-
-You can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
