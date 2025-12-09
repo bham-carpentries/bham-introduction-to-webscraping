@@ -69,8 +69,8 @@ on the [Parliament of Canada website](https://www.ourcommons.ca/members/en/searc
 
 This is how this page appears in February 2024:
 
-![Screenshot of the Parliament of Canada website (Top)](/fig/canparl-top.png)
-![Screenshot of the Parliament of Canada websitei (Bottom)](/fig/canparl-bottom.png)
+![Screenshot of the Parliament of Canada website (Top)](fig/canparl-top.png)
+![Screenshot of the Parliament of Canada websitei (Bottom)](fig/canparl-bottom.png)
 
 There are several features (circled in the image above) that make the data on this page easier to work with.
 The search, reorder, refine features and display modes hint that the data is actually stored in a (structured)
