@@ -383,8 +383,7 @@ into Excel or Google Sheets. This might be quicker than scraping.</li>
 <li>Check if the site or service already provides an API to extract
 structured data. If it does, that will be a much more efficient and
 effective pathway. Good examples are the <a href="https://developers.facebook.com/tools/explorer/" class="external-link">Facebook API</a>,
-the <a href="https://dev.twitter.com/rest/public" class="external-link">Twitter APIs</a> or
-the <a href="https://developers.google.com/youtube/v3/docs/commentThreads/list" class="external-link">YouTube
+the <a href="https://docs.x.com/x-api/introduction" class="external-link">X APIs</a> or the <a href="https://developers.google.com/youtube/v3/docs/commentThreads/list" class="external-link">YouTube
 comments API</a>.</li>
 <li>For much larger needs, <a href="https://www.foia.gov/how-to.html" class="external-link">Freedom of information Act
 (FOIA)</a> requests can be useful. Be specific about the formats
@@ -393,13 +392,13 @@ required for the data you want.</li>
 information<a class="anchor" aria-label="anchor" href="#example-scraping-parliamentary-websites-for-contact-information"></a></h2>
 <hr class="half-width"><p>In this workshop, we will learn how to extract information from
 various web pages. Different webpages can have widely differing formats
-which will affect the decision as to which method of scraping data might
-be appropriate.</p>
+which will affect our decisions as to which method of scraping data
+might be appropriate.</p>
 <p>Before we can make such decisions we need to have some understanding
 of the makeup of a webpage. Let’s start by looking at the list of
 members of the Canadian parliament, which is available on the <a href="https://www.ourcommons.ca/members/en/search?view=list" class="external-link">Parliament
 of Canada website</a></p>
-<p>This is how this page appears in February 2024:</p>
+<p>This is how this page appears in December 2025:</p>
 <p><img src="fig/canparl-top.png" alt="Screenshot of the Parliament of Canada website (Top)" class="figure"><img src="fig/canparl-bottom.png" alt="Screenshot of the Parliament of Canada websitei (Bottom)" class="figure"></p>
 <p>There are several features (circled in the image above) that make the
 data on this page easier to work with. The search, reorder, refine
@@ -418,26 +417,34 @@ using context and prior knowledge to quickly categorise information.</p>
 with more information. If we examine the source HTML code of this page,
 we can see that the information displayed has a consistent
 structure:</p>
-<pre><code>(...)
-&lt;tr role="row" id="mp-list-id-25446" class="odd"&gt;
-    &lt;td data-sort="Allison Dean" class="sorting_1"&gt;
-        &lt;a href="/members/en/dean-allison(25446)"&gt;
-            Allison, Dean
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td data-sort="Conservative"&gt;Conservative&lt;/td&gt;
-    &lt;td data-sort="Niagara West"&gt;
-        &lt;a href="/members/en/constituencies/niagara-west(782)"&gt;
-            Niagara West
-        &lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td data-sort="Ontario"&gt;Ontario&lt;/td&gt;
-&lt;/tr&gt;
-(...)</code></pre>
-<p>{: .output}</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">HTML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>(...)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="ot"> role</span><span class="op">=</span><span class="st">"row"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"mp-list-id-25446"</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> data-sort</span><span class="op">=</span><span class="st">"Allison Dean"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"sorting_1"</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"/members/en/dean-allison(25446)"</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>            Allison, Dean</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> data-sort</span><span class="op">=</span><span class="st">"Conservative"</span><span class="dt">&gt;</span>Conservative<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> data-sort</span><span class="op">=</span><span class="st">"Niagara West"</span><span class="dt">&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"/members/en/constituencies/niagara-west(1124)"</span><span class="dt">&gt;</span>Niagara West<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> data-sort</span><span class="op">=</span><span class="st">"Ontario"</span><span class="dt">&gt;</span>Ontario<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>(...)</span></code></pre>
+</div>
 <p>Using this structure, we may be able to instruct a computer to look
 for all parliamentarians from Alberta and list their names and caucus
 information.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
 <blockquote>
 <h2 id="structured-vs-unstructured-data">Structured vs unstructured
 data</h2>
@@ -455,44 +462,52 @@ adding labels such as <em>this is the title of this magazine</em> or
 <em>this is a magazine about food</em>. Data in which individual
 elements are separated and labelled is said to be
 <em>structured</em>.</p>
-<p>{: .callout}</p>
 </blockquote>
+</div>
+</div>
+</div>
 <p>Let’s look now at the current list of members for the <a href="https://members.parliament.uk/members/commons" class="external-link">UK House of
 Commons</a>.</p>
-<figure><img src="%7B%7B%20page.root%20%7D%7D/fig/ukparl.png" alt="Screenshot of the UK House of Commons website" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the UK House of Commons
+<figure><img src="fig/ukparl.png" alt="Screenshot of the UK House of Commons website" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the UK House of Commons
 website</div>
 </figure><p>This page also displays a list of names, political and geographical
 affiliation. There is a search box and a filter option, but no obvious
 way to download this information and reuse it.</p>
 <p>Here is the code for this page:</p>
-<pre><code>(...)
-&lt;a class="card card-member" href="/member/172/contact"&gt;
-    &lt;div class="card-inner"&gt;
-        &lt;div class="content"&gt;
-            &lt;div class="image-outer"&gt;
-                &lt;div class="image" aria-label="Image of Ms Diane Abbott" style="background-image: url(https://members-api.parliament.uk/api/Members/172/Thumbnail); border-color: #C0C0C0;"&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class="primary-info"&gt;
-                Ms Diane Abbott
-            &lt;/div&gt;
-            &lt;div class="secondary-info"&gt;
-                Independent
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="info"&gt;
-            &lt;div class="info-inner"&gt;
-                &lt;div class="indicators-left"&gt;
-                    &lt;div class="indicator indicator-label"&gt;
-                        Hackney North and Stoke Newington
-                    &lt;/div&gt;
-                &lt;/div&gt;
-
-                &lt;div class="clearfix"&gt;&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/a&gt;(...)</code></pre>
-<p>{: .output}</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">HTML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>(...)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> class</span><span class="op">=</span><span class="st">"card card-member"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"/member/172/contact"</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"card-inner"</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"content"</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"image-outer"</span><span class="dt">&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"image"</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="ot">                     aria-label</span><span class="op">=</span><span class="st">"Image of Ms Diane Abbott"</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="ot">                     style</span><span class="op">=</span><span class="st">"background-image: url(https://members-api.parliament.uk/api/Members/172/Thumbnail); border-color: #909090;"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"primary-info"</span><span class="dt">&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>                Ms Diane Abbott</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"secondary-info"</span><span class="dt">&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>                Independent</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"info"</span><span class="dt">&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"info-inner"</span><span class="dt">&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"indicators-left"</span><span class="dt">&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>                    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"indicator indicator-label"</span><span class="dt">&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>                        Hackney North and Stoke Newington</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>                    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>                <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"clearfix"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>(...)</span></code></pre>
+</div>
 <p>We see that this data has been structured for displaying purposes (it
 is arranged in rows inside a table) but the different elements of
 information are not clearly labelled.</p>
@@ -514,90 +529,16 @@ software technique of extracting information from websites.” (Source: <a href=
 unstructured information and put it in a structured form for reuse.</p>
 <p>In this lesson, we will continue exploring the examples above and try
 different techniques to extract the information they contain. But before
-we launch into web scraping proper, we need to look a bit closer at how
-information is organized within an HTML document and how to build
+we launch into web scraping proper, we need to look a bit more closely
+at how information is organized within an HTML document and how to build
 queries to access a specific subset of that information.</p>
 </section><div class="section level1">
 <h1 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h1>
 <ul><li><a href="https://en.wikipedia.org/wiki/Web_scraping" class="external-link">Web Scraping
 (Wikipedia)</a></li>
-<li>
-<a href="http://datajournalismhandbook.org/1.0/en/getting_data_3.html" class="external-link">The
-Data Journalism Handbook: Getting Data from the Web</a>
-::::::::::::::::::::::::::::::::::::: challenge</li>
-</ul><div class="section level2">
-<h2 id="challenge-1-can-you-do-it">Challenge 1: Can you do it?<a class="anchor" aria-label="anchor" href="#challenge-1-can-you-do-it"></a></h2>
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section level2">
-<h2 id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks">Challenge 2: how do you nest solutions within challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge-2-how-do-you-nest-solutions-within-challenge-blocks"></a></h2>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-<p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
-</div>
-<div class="section level2">
-<h2 id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a></h2>
-<p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section level2">
-<h2 id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a></h2>
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
-<div id="keypoints1" class="callout keypoints">
+<li><a href="http://datajournalismhandbook.org/1.0/en/getting_data_3.html" class="external-link">The
+Data Journalism Handbook: Getting Data from the Web</a></li>
+</ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -617,7 +558,6 @@ from web sites.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </div>
 
 
