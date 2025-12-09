@@ -61,16 +61,16 @@ Note that the 'Before you get started' items will be covered in more detail late
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Example: Scraping parliamentary websites for contact information
-In this workshop, we will learn how to extract contact information
-from UCSB departments' faculty pages. This example came from a recent real-life scenario when our team needed to make lists of social sciences faculty for outreach reasons. There is no overarching list of faculty, contact information, and study area available for the university as a whole. This was made even more difficult by the fact that each UCSB department has webpages with wildly different formating. We will see examples using both the scraping chrome extension. There are different scenarios when one might be a better choice than the other.
+In this workshop, we will learn how to extract  information
+from various web pages. Different webpages can have widely differing formats which will affect the decision as to which method of scraping data might be appropriate. 
 
-But before that we need to first understand, let's start by looking at the list of members of the Canadian parliament, which is available
+Before we can make such decisions we need to have some understanding of the makeup of a webpage. Let's start by looking at the list of members of the Canadian parliament, which is available
 on the [Parliament of Canada website](https://www.ourcommons.ca/members/en/search?view=list)
 
 This is how this page appears in February 2024:
 
-![Screenshot of the Parliament of Canada website (Top)]({{ page.root }}/fig/canparl-top.png)
-![Screenshot of the Parliament of Canada websitei (Bottom)]({{ page.root }}/fig/canparl-bottom.png)
+![Screenshot of the Parliament of Canada website (Top)](/fig/canparl-top.png)
+![Screenshot of the Parliament of Canada websitei (Bottom)](/fig/canparl-bottom.png)
 
 There are several features (circled in the image above) that make the data on this page easier to work with.
 The search, reorder, refine features and display modes hint that the data is actually stored in a (structured)
