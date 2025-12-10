@@ -14,7 +14,8 @@ exercises: 0 # exercise time in minutes
 ::::::::::::::::::::::::::::::::::::: objectives
 
 After completing this episode, participants should be able to...
-- Identify the structure and key components of an HTML document.
+
+- Identify the structure and key components of an HTML document
 - Explain how to use the browser developer tools to view the underlying html content of a web page
 - Use the browser developer tool to find the html code for specific items on a web page
 
@@ -22,9 +23,11 @@ After completing this episode, participants should be able to...
 
 ## Introduction
 
-TODO - write proper opening paragraph
+Before we delve into web scraping properly, we will first spend some time introducing
+some of the techniques that are required to indicate exactly what should be
+extracted from the web pages we aim to scrape.
 
-Here, we’ll revisit some of those core ideas to build a more hands-on understanding of how content and data are structured on the web. 
+Here, we’ll develop an understanding of how content and data are structured on the web. 
 We’ll start by exploring what HTML (Hypertext Markup Language) is and how it uses tags to organize and format content.
 Then, we’ll look at how to view the HTML source code for a web page and look at how browser developer tools can be used to search for specific elements on a webpage.
 
@@ -169,20 +172,40 @@ element. We can search for specific items in the source page code using the buil
   you must first enable this option in the Preferences, see above.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Here is how the console looks like in the Firefox browser:
+Here is how the console looks like in the Chrome browser:
 
-![Developer console in Chrome](fig/chrome-console.png)
+![Developer console in Chrome](fig/chrome-console.png){alt="Screenshot of Chrome developer console"}
 
 By default the console will probably open in the *Console* tab. For now, don't worry too much about error messages if you see any in the console when you open it. We will be using the *Elements* tab to locate specific items in the web page.
 
 ## Locate code for specific elements
-To find the code for a specific item on a web page, hover over it and right click, selecting *Inspect* from the dialog displayed. This is how it looks in the Chrome browser:
+To find the code for a specific item on a web page, hover over it and right click, selecting *Inspect* from the dialog displayed (shown below).
 
-![Dialog to select element inspection in Chrome](fig/inspect-dialog.png){alt = "Dialog with Inspect option"}
+![Dialog to select element inspection in Chrome](fig/inspect-dialog.png){alt="Dialog with Inspect option"}
 
 This will automatically move to the *Elements* tab in the developer console (opening the developer console if not already open) and display the section of code for the selected element. The specific line of code for the element will be highlighted. In the example below a name was selected on the Canadian MPs webpage resulting in the code below:
 
-![Code for selected element, displayed in the developer console](fig/inspect-code.png){alt = "Code shown in the developer console for a selected element"}
+![Code for selected element, displayed in the developer console](fig/inspect-code.png){alt="Code shown in the developer console for a selected element"}
+
+Conversly, by hovering over a line of code in the *Elements* tab, the corresponding element will be highlighted on the web page, showing the tag and size of the element. This is shown below:
+
+![Element hightlighted by hovering over code](fig/hover-element.png){alt="Screenshot of element highlighted on web page"}
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Identify element tag for 
+Go back to the [UK House of Commons](https://members.parliament.uk/members/commons) webpage.
+Use the developer console to identify what you might need to search for in order to extract a list of MPs names.
+
+Can you see an issue with the data collected if you just searched on this particular page?
+
+::::::::::::::::::: solution
+
+The class "primary-info" contains the text for the names.
+Note that this information is spread over several pages. It may be necessary to make use of the links for further pages in order to extract all of the required information.
+::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
