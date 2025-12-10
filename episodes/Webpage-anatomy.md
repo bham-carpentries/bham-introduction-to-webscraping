@@ -17,15 +17,16 @@ After completing this episode, participants should be able to...
 - Identify the structure and key components of an HTML document.
 - Explain how to use the browser developer tools to view the underlying html content of a web page
 - Use the browser developer tool to find the html code for specific items on a web page
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
+TODO - write proper opening paragraph
+
 Here, we’ll revisit some of those core ideas to build a more hands-on understanding of how content and data are structured on the web. 
 We’ll start by exploring what HTML (Hypertext Markup Language) is and how it uses tags to organize and format content.
-Then, we’ll introduce the BeautifulSoup library to parse HTML and make it easier to search for and extract specific elements from a webpage.
-
-We'll begin with simple examples and gradually move on to scraping more complex, real-world websites.
+Then, we’ll look at how to view the HTML source code for a web page and look at how browser developer tools can be used to search for specific elements on a webpage.
 
 ## HTML quick overview
 
@@ -95,8 +96,93 @@ These are especially useful for identifying elements when web scraping:
 - `title=""`: Provides extra information about the element, shown as a tooltip when the user hovers over it.
 - `class=""`: Applies a common styling or grouping to multiple elements at once.
 
+::::::::::::::::::::::::::::::::::::: spoiler
+
+### Something about CSS
+
+- add some brief text about CSS to explain the use of classes
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 To summarize: **elements** are identified by **tags**, and **attributes** let us assign properties or identifiers to those elements.
 Understanding this structure will make it much easier to extract specific data from a website.
+
+## Inspecting the web page source code
+
+We will use the HTML code that describes this very page you are reading as an example. By default, a web browser
+interprets the HTML code to determine what markup to apply to the various elements of a document, and the code is
+invisible. To make the underlying code visible, all browsers have a function to display the raw HTML content of
+a web page.
+
+::::::::::::::::::::::::::::::::::::: challenge
+## Display the source of this page
+
+Using your favourite browser, display the HTML source code of this page.
+
+Tip: in most browsers, all you have to do is do a right-click anywhere on the page and select the "View Page Source"
+option ("Show Page Source" in Safari).
+
+Another tab should open with the raw HTML that makes this page. See if you can locate its various elements, and
+this challenge box in particular.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: callout
+## Using the Safari browser TODO - check this is correct
+
+If you are using Safari, you must first turn on the "Develop" menu in order to view the page source, and use the
+functions that we will use later in this section. To do so, navigate to Safari > Preferences and in the Advanced tab
+select the "Show Develop in menu bar" option. Note: In recent versions of Safari you must first turn on the "Develop" 
+menu (in Preferences) and then navigate to `Develop > Show Javascript Console` and then click on the "Console" tab.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+The HTML structure of the page you are currently reading looks something like this (most text and elements have
+been removed for clarity):
+TODO: update to new page
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    (...)
+    <title>{{page.title}}</title>
+  </head>
+  <body>
+	 (...)
+  </body>
+</html>
+```
+
+We can see from the source code that the title of this page is in a `title` element that is itself inside the
+`head` element, which is itself inside an `html` element that contains the entire content of the page.
+
+Say we wanted to tell a web scraper to look for the title of this page, we would use this information to indicate the
+_path_ the scraper would need to follow as it navigates through the HTML content of the page to reach the `title`
+element. We can search for specific items in the source page code using the built in developer console.
+
+::::::::::::::::::::::::::::::::::::: callout
+## Display the console in your browser TODO - check Safari
+
+- In Firefox, use the *More Tools > Web Developer Tools* menu item.
+- In Chrome, use the *More tools > Developer tools* menu item.
+- In Safari, use the *Develop > Show Error Console* menu item. If your Safari browser doesn't have a Develop menu,
+  you must first enable this option in the Preferences, see above.
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+Here is how the console looks like in the Firefox browser:
+
+![Developer console in Chrome](fig/chrome-console.png)
+
+By default the console will probably open in the *Console* tab. For now, don't worry too much about error messages if you see any in the console when you open it. We will be using the *Elements* tab to locate specific items in the web page.
+
+## Locate code for specific elements
+To find the code for a specific item on a web page, hover over it and right click, selecting *Inspect* from the dialog displayed. This is how it looks in the Chrome browser:
+
+![Dialog to select element inspection in Chrome](fig/inspect-dialog.png){alt = "Dialog with Inspect option"}
+
+This will automatically move to the *Elements* tab in the developer console (opening the developer console if not already open) and display the section of code for the selected element. The specific line of code for the element will be highlighted. In the example below a name was selected on the Canadian MPs webpage resulting in the code below:
+
+![Code for selected element, displayed in the developer console](fig/inspect-code.png){alt = "Code shown in the developer console for a selected element"}
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
