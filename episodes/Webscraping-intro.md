@@ -115,7 +115,7 @@ When presented with information, human beings are good at quickly categorizing i
 
 Let's look now at the current list of members for the [UK House of Commons](https://members.parliament.uk/members/commons).
 
-![Screenshot of the UK House of Commons website](fig/ukparl.png)
+![Screenshot of the UK House of Commons website](fig/ukparl.png){alt="Screenshot of UK MP list webpage}
 
 This page also displays a list of names, political and geographical affiliation. There is a search box and
 a filter option, but no obvious way to download this information and reuse it.
