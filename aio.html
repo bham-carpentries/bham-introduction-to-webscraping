@@ -345,7 +345,7 @@
         
 <section id="aio-Webscraping-intro"><p>Content from <a href="Webscraping-intro.html">What is Web Scraping?</a></p>
 <hr>
-<p>Last updated on 2025-12-09 |
+<p>Last updated on 2025-12-16 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Webscraping-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -503,9 +503,9 @@ elements are separated and labelled is said to be
 </div>
 <p>Let’s look now at the current list of members for the <a href="https://members.parliament.uk/members/commons" class="external-link">UK House of
 Commons</a>.</p>
-<figure><img src="fig/ukparl.png" alt="Screenshot of the UK House of Commons website" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the UK House of Commons
-website</div>
-</figure><p>This page also displays a list of names, political and geographical
+<p><img src="fig/ukparl.png" alt="Screenshot of the UK House of Commons website" class="figure">{alt=“Screenshot
+of UK MP list webpage}</p>
+<p>This page also displays a list of names, political and geographical
 affiliation. There is a search box and a filter option, but no obvious
 way to download this information and reuse it.</p>
 <p>Here is the code for this page:</p>
@@ -600,7 +600,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-Webpage-anatomy"><p>Content from <a href="Webpage-anatomy.html">Anatomy of a web page</a></p>
 <hr>
-<p>Last updated on 2025-12-10 |
+<p>Last updated on 2025-12-16 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Webpage-anatomy.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -789,13 +789,13 @@ code to determine what markup to apply to the various elements of a
 document, and the code is invisible. To make the underlying code
 visible, all browsers have a function to display the raw HTML content of
 a web page.</p>
-<div id="display-the-source-of-this-page" class="callout discussion">
+<div id="exercise-display-the-source-of-this-page" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="display-the-source-of-this-page" class="callout-inner">
-<h3 class="callout-title">Display the source of this page</h3>
+<div id="exercise-display-the-source-of-this-page" class="callout-inner">
+<h3 class="callout-title">Exercise: Display the source of this page</h3>
 <div class="callout-content">
 <p>Using your favourite browser, display the HTML source code of this
 page.</p>
@@ -902,13 +902,14 @@ developer console</div>
 tab, the corresponding element will be highlighted on the web page,
 showing the tag and size of the element. This is shown below:</p>
 <figure><img src="fig/hover-element.png" alt="Screenshot of element highlighted on web page" class="figure mx-auto d-block"><div class="figcaption">Element hightlighted by hovering over code</div>
-</figure><div id="identify-element-tag-for" class="callout challenge">
+</figure><div id="identify-element-tag-for-extracting-mp-names" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="identify-element-tag-for" class="callout-inner">
-<h3 class="callout-title">Identify element tag for</h3>
+<div id="identify-element-tag-for-extracting-mp-names" class="callout-inner">
+<h3 class="callout-title">Identify element tag for extracting MP
+names</h3>
 <div class="callout-content">
 <p>Go back to the <a href="https://members.parliament.uk/members/commons" class="external-link">UK House of
 Commons</a> webpage. Use the developer console to identify what you
@@ -933,6 +934,16 @@ required information.</p>
 </div>
 </div>
 </div>
+</section><section><h2 class="section-heading" id="dynamic-websites">Dynamic websites<a class="anchor" aria-label="anchor" href="#dynamic-websites"></a>
+</h2>
+<hr class="half-width">
+<p>We are not going to cover these in detail in this lesson but you
+should be aware of dynamic websites. TODO: - Brief description of
+difference between static and dynamic - Show <a href="https://www.scrapethissite.com/pages/ajax-javascript/" class="external-link">Oscar
+Winning Films</a> page - Navigate to 2015 pages &amp; show that can
+inspect a film title and it will show the tag but if view source code
+then the film title can’t be found. - Take something v simple from
+Dynamic websites part of Python web scraping course.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -959,7 +970,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-Manual-scraping"><p>Content from <a href="Manual-scraping.html">Manually scrape data using browser extensions</a></p>
 <hr>
-<p>Last updated on 2025-12-04 |
+<p>Last updated on 2025-12-16 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Manual-scraping.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -994,118 +1005,66 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<div class="section level1">
+<h1 id="using-the-web-scraper-chrome-extension">Using the Web Scraper Chrome extension<a class="anchor" aria-label="anchor" href="#using-the-web-scraper-chrome-extension"></a>
+</h1>
+<p>Now we are finally ready to do some web scraping using Web Scraper
+Chrome extension. If you haven’t it installed on your machine, please
+refer to the <a href="/learners/setup.html">Setup instructions</a>.</p>
+<p>For this lesson, we will again be using the UK Members of Parliament
+webpages. We are interested in scraping a list of MPs and their
+constituencies with the help of Web Scraper.</p>
+<p>First, let’s focus our attention on the first webpage with the <a href="https://members.parliament.uk/members/commons" class="external-link">list of
+MPs</a>.<br>
+We are interested in downloading the list of MP’s names and their
+constituency.</p>
+<p>There are two ways of using Web Scraper, either using the Wizard GUI
+or using selectors in the developer tools. The wizard gives an easy to
+use interface but may be less flexible and doesn’t provide the ability
+to customise that is possible using the developer tools.</p>
+<div class="section level2">
+<h2 id="using-the-web-scraper-wizard">Using the Web Scraper wizard<a class="anchor" aria-label="anchor" href="#using-the-web-scraper-wizard"></a>
 </h2>
-<hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files and <a href="https://rmarkdown.rstudio.com/" class="external-link">R
-Markdown</a> for dynamic files that can render code into output. Please
-refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<p>With the extension installed the Wizard window can be opened by
+selecting the <em>Web Scraper</em> icon on the browser toolbar:</p>
+<figure><img src="fig/web-scraper-gui.png" alt="Screenshot of Web Scraper wizard dialog" class="figure mx-auto d-block"><div class="figcaption">Web Scraper Wizard</div>
+</figure><p>The wizard allows you to select any links to navigate to other pages.
+In our example we don’t need to do this so we will select <em>Skip</em>
+In the <em>Page Navigation Type</em> tab, select whether to make
+selections from the listing page or whether to open links - We will use
+the <em>Listing page</em> option - image? - Select Continue - this will
+auto-generate selectors and give a preview of the data</p>
+<p>The image below shows an example of the data which is automatically
+extracted from this web page without any selection: <img src="fig/scraper-mp-data.png" alt="Screenshot of automatically scraped MP data" class="figure"></p>
+<p>Note that this has only gathered the names of MPs for one page,
+collecting about 20 entries out of a total of 650. The next section
+<em>Pagination &amp; Scroll</em> allows multiple pages to be selected
+for scraping: - Choose <em>Select Next Page button</em> - Select the
+appropriate means of selecting more pages. This could be either a set of
+numbered pages or a ‘next page’ button. Several buttons can be selected
+if needed. - On completion click the green <em>Done selecting</em>
+button.</p>
+<figure><img src="fig/scraper-pagination.png" alt="Screenshot of pagination selection" class="figure mx-auto d-block"><div class="figcaption">Pagination &amp; Scroll selection</div>
+</figure><p>On selection of the <em>Finish</em> button the dialog will show that
+scraper configuration is ready and the <em>Scrape the page</em> button
+can be selected.</p>
+<p>Now data has been scraped for all 650 MPs from all pages:</p>
+<figure><img src="fig/scraper-all-mp-data.png" alt="Screenshot showing data from multiple pages" class="figure mx-auto d-block"><div class="figcaption">Data scraped from multiple pages</div>
+</figure><p>The data scraped can now be downloaded as either a .xlsx or .csv
+file.</p>
 </div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
+<div class="section level2">
+<h2 id="using-web-scraper-with-browser-developer-console">Using Web Scraper with browser developer console<a class="anchor" aria-label="anchor" href="#using-web-scraper-with-browser-developer-console"></a>
 </h2>
-<hr class="half-width">
-<p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
+<ul>
+<li>Open developer tools and open the Web Scraper tab</li>
+<li>Select Create new sitemap
+<ul>
+<li>Add title and landing page</li>
+<li>Click Create Sitemap</li>
+</ul>
+</li>
+</ul>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1126,7 +1085,8 @@ downloaded directly.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-Legal-ethics"><p>Content from <a href="Legal-ethics.html">Ethics and Legality of Web Scraping</a></p>
+</div>
+</div></section><section id="aio-Legal-ethics"><p>Content from <a href="Legal-ethics.html">Ethics and Legality of Web Scraping</a></p>
 <hr>
 <p>Last updated on 2025-12-04 |
 
@@ -1347,8 +1307,8 @@ any links that you are not going to use.
   "url": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/aio.html",
   "identifier": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/aio.html",
   "dateCreated": "2025-12-04",
-  "dateModified": "2025-12-10",
-  "datePublished": "2025-12-10"
+  "dateModified": "2025-12-16",
+  "datePublished": "2025-12-16"
 }
 
   </script><script>
