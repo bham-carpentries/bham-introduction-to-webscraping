@@ -118,7 +118,7 @@ invisible. To make the underlying code visible, all browsers have a function to 
 a web page.
 
 ::::::::::::::::::::::::::::::::::::: challenge
-## Display the source of this page
+## Exercise: Display the source of this page
 
 Using your favourite browser, display the HTML source code of this page.
 
@@ -193,7 +193,7 @@ Conversly, by hovering over a line of code in the *Elements* tab, the correspond
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Identify element tag for 
+## Identify element tag for extracting MP names
 Go back to the [UK House of Commons](https://members.parliament.uk/members/commons) webpage.
 Use the developer console to identify what you might need to search for in order to extract a list of MPs names.
 
@@ -206,6 +206,14 @@ Note that this information is spread over several pages. It may be necessary to 
 ::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::
+
+## Dynamic websites
+We are not going to cover these in detail in this lesson but you should be aware of dynamic websites.
+TODO:
+- Brief description of difference between static and dynamic
+- Show [Oscar Winning Films](https://www.scrapethissite.com/pages/ajax-javascript/) page
+- Navigate to 2015 pages & show that can inspect a film title and it will show the tag but if view source code then the film title can't be found.
+- Take something v simple from Dynamic websites part of Python web scraping course.
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 

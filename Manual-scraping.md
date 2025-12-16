@@ -20,90 +20,54 @@ After completing this episode, participants should be able to...
 - Assess the appropriate method for gathering the required data
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+# Using the Web Scraper Chrome extension
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+Now we are finally ready to do some web scraping using Web Scraper Chrome extension. If you haven’t it installed on your machine, please refer to the [Setup instructions](/learners/setup.md).
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
+For this lesson, we will again be using the UK Members of Parliament webpages. We are interested in scraping a list of MPs and their constituencies with the help of Web Scraper.
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+First, let's focus our attention on the first webpage with the [list of MPs](https://members.parliament.uk/members/commons).  
+We are interested in downloading the list of MP's names and their constituency.
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+There are two ways of using Web Scraper, either using the Wizard GUI or using selectors in the developer tools. The wizard gives an easy to use interface but may be less flexible and doesn't provide the ability to customise that is possible using the developer tools.
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+## Using the Web Scraper wizard
+With the extension installed the Wizard window can be opened by selecting the *Web Scraper* icon on the browser toolbar:
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+![Web Scraper Wizard](fig/web-scraper-gui.png){alt="Screenshot of Web Scraper wizard dialog"}
 
-::::::::::::::::::::::::::::::::::::: challenge 
+The wizard allows you to select any links to navigate to other pages. In our example we don't need to do this so we will select *Skip*
+In the *Page Navigation Type* tab, select whether to make selections from the listing page or whether to open links
+- We will use the *Listing page* option 
+- image?
+- Select Continue - this will auto-generate selectors and give a preview of the data
 
-## Challenge 1: Can you do it?
+The image below shows an example of the data which is automatically extracted from this web page without any selection:
+![Automatically scraped MP data](fig/scraper-mp-data.png){alt="Screenshot of automatically scraped MP data"}
 
-What is the output of this command?
+Note that this has only gathered the names of MPs for one page, collecting about 20 entries out of a total of 650. The next section *Pagination & Scroll* allows multiple pages to be selected for scraping:
+- Choose *Select Next Page button* 
+- Select the appropriate means of selecting more pages. This could be either a set of numbered pages or a 'next page' button. Several buttons can be selected if needed.
+- On completion click the green *Done selecting* button.
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+![Pagination & Scroll selection](fig/scraper-pagination.png){alt="Screenshot of pagination selection"}
 
-:::::::::::::::::::::::: solution 
+On selection of the *Finish* button the dialog will show that scraper configuration is ready and the *Scrape the page* button can be selected.
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+Now data has been scraped for all 650 MPs from all pages:
 
-:::::::::::::::::::::::::::::::::
+![Data scraped from multiple pages](fig/scraper-all-mp-data.png){alt="Screenshot showing data from multiple pages"}
+
+The data scraped can now be downloaded as either a .xlsx or .csv file.
 
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+## Using Web Scraper with browser developer console
 
-:::::::::::::::::::::::: solution 
+- Open developer tools and open the Web Scraper tab
+- Select Create new sitemap
+   - Add title and landing page
+   - Click Create Sitemap
 
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
-
-You can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
