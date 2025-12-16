@@ -1018,7 +1018,8 @@ constituencies with the help of Web Scraper.</p>
 MPs</a>.<br>
 We are interested in downloading the list of MP’s names and their
 constituency.</p>
-<p>There are two ways of using Web Scraper, either using the Wizard GUI
+<figure><img src="fig/ukparl2.png" alt="Screenshot of UK MP list webpage" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the UK MP website</div>
+</figure><p>There are two ways of using Web Scraper, either using the Wizard GUI
 or using selectors in the developer tools. The wizard gives an easy to
 use interface but may be less flexible and doesn’t provide the ability
 to customise that is possible using the developer tools.</p>
@@ -1031,19 +1032,28 @@ selecting the <em>Web Scraper</em> icon on the browser toolbar:</p>
 </figure><p>The wizard allows you to select any links to navigate to other pages.
 In our example we don’t need to do this so we will select <em>Skip</em>
 In the <em>Page Navigation Type</em> tab, select whether to make
-selections from the listing page or whether to open links - We will use
-the <em>Listing page</em> option - image? - Select Continue - this will
-auto-generate selectors and give a preview of the data</p>
+selections from the listing page or whether to open links</p>
+<ul>
+<li>We will use the <em>Listing page</em> option</li>
+<li>image?</li>
+<li>Select Continue - this will auto-generate selectors and give a
+preview of the data</li>
+</ul>
 <p>The image below shows an example of the data which is automatically
-extracted from this web page without any selection: <img src="fig/scraper-mp-data.png" alt="Screenshot of automatically scraped MP data" class="figure"></p>
-<p>Note that this has only gathered the names of MPs for one page,
+extracted from this web page without any selection:</p>
+<figure><img src="fig/scraper-mp-data.png" alt="Screenshot of automatically scraped MP data" class="figure mx-auto d-block"><div class="figcaption">Automatically scraped MP data</div>
+</figure><p>Note that this has only gathered the names of MPs for one page,
 collecting about 20 entries out of a total of 650. The next section
 <em>Pagination &amp; Scroll</em> allows multiple pages to be selected
-for scraping: - Choose <em>Select Next Page button</em> - Select the
-appropriate means of selecting more pages. This could be either a set of
-numbered pages or a ‘next page’ button. Several buttons can be selected
-if needed. - On completion click the green <em>Done selecting</em>
-button.</p>
+for scraping:</p>
+<ul>
+<li>Choose <em>Select Next Page button</em>
+</li>
+<li>Select the appropriate means of selecting more pages. This could be
+either a set of numbered pages or a ‘next page’ button. Several buttons
+can be selected if needed.</li>
+<li>On completion click the green <em>Done selecting</em> button.</li>
+</ul>
 <figure><img src="fig/scraper-pagination.png" alt="Screenshot of pagination selection" class="figure mx-auto d-block"><div class="figcaption">Pagination &amp; Scroll selection</div>
 </figure><p>On selection of the <em>Finish</em> button the dialog will show that
 scraper configuration is ready and the <em>Scrape the page</em> button
