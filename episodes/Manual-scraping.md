@@ -29,7 +29,7 @@ For this lesson, we will again be using the UK Members of Parliament webpages. W
 First, let's focus our attention on the first webpage with the [list of MPs](https://members.parliament.uk/members/commons).  
 We are interested in downloading the list of MP's names and their constituency.
 
-![Screenshot of the UK House of Commons website](fig/ukparl2.png){alt="Screenshot of UK MP list webpage}
+![Screenshot of the UK MP website](fig/ukparl2.png){alt="Screenshot of UK MP list webpage}
 
 There are two ways of using Web Scraper, either using the Wizard GUI or using selectors in the developer tools. The wizard gives an easy to use interface but may be less flexible and doesn't provide the ability to customise that is possible using the developer tools.
 
