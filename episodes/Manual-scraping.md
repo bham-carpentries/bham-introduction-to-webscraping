@@ -28,32 +28,39 @@ For this lesson, we will again be using the UK Members of Parliament webpages. W
 
 First, let's focus our attention on the first webpage with the [list of MPs](https://members.parliament.uk/members/commons).  
 We are interested in downloading the list of MP's names and their constituency.
+
 ![Screenshot of the UK House of Commons website](fig/ukparl.png){alt="Screenshot of UK MP list webpage}
 
-Two methods to use Web Scraper, either using the Wizard GUI or using selectors in the developer tools
+There are two ways of using Web Scraper, either using the Wizard GUI or using selectors in the developer tools. The wizard gives an easy to use interface but may be less flexible and doesn't provide the ability to customise that is possible using the developer tools.
 
 ## Using the Web Scraper wizard
-- Select Web Scraper icon - opens Wizard window:
+With the extension installed the Wizard window can be opened by selecting the *Web Scraper* icon on the browser toolbar:
+
 ![Web Scraper Wizard](fig/web-scraper-gui.png){alt="Screenshot of Web Scraper wizard dialog"}
 
 The wizard allows you to select any links to navigate to other pages. In our example we don't need to do this so we will select *Skip*
-- In the Page Navigation Type tab, select whether to make selections from the listing page or whether to open links
-   - We will use the *Listing page* option 
-   - image?
-   - Select Continue - this will auto-generate selectors and give a preview of the data
+In the *Page Navigation Type* tab, select whether to make selections from the listing page or whether to open links
+- We will use the *Listing page* option 
+- image?
+- Select Continue - this will auto-generate selectors and give a preview of the data
+
 The image below shows an example of the data which is automatically extracted from this web page without any selection:
 ![Automatically scraped MP data](fig/scraper-mp-data.png){alt="Screenshot of automatically scraped MP data"}
 
-Note that this has only gathered the names of MPs for one page, collecting about 20 entries out of a total of 650. The next section *Pagination & Scroll*
-- Choose *Select Next Page button* and then select the means of selecting more pages. This could be either a set of numbered pages or a 'next page' button. Several buttons can be selected if needed and the green *Done selecting* button should be clicked on completion
+Note that this has only gathered the names of MPs for one page, collecting about 20 entries out of a total of 650. The next section *Pagination & Scroll* allows multiple pages to be selected for scraping:
+- Choose *Select Next Page button* 
+- Select the appropriate means of selecting more pages. This could be either a set of numbered pages or a 'next page' button. Several buttons can be selected if needed.
+- On completion click the green *Done selecting* button.
+
 ![Pagination & Scroll selection](fig/scraper-pagination.png){alt="Screenshot of pagination selection"}
 
 On selection of the *Finish* button the dialog will show that scraper configuration is ready and the *Scrape the page* button can be selected.
+
 Now data has been scraped for all 650 MPs from all pages:
+
 ![Data scraped from multiple pages](fig/scraper-all-mp-data.png){alt="Screenshot showing data from multiple pages"}
+
 The data scraped can now be downloaded as either a .xlsx or .csv file.
-
-
 
 
 ## Using Web Scraper with browser developer console
