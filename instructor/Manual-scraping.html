@@ -302,7 +302,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Manually scrape data using browser extensions</h1>
-        <p>Last updated on 2025-12-16 |
+        <p>Last updated on 2025-12-17 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Manual-scraping.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -353,7 +353,7 @@ constituencies with the help of Web Scraper.</p>
 MPs</a>.<br>
 We are interested in downloading the list of MP’s names and their
 constituency.</p>
-<figure><img src="../fig/ukparl2.png" alt="Screenshot of UK MP list webpage" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the UK MP website</div>
+<figure><img src="../fig/ukparl.png" alt="Screenshot of UK MP list webpage" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the UK MP list website</div>
 </figure><p>There are two ways of using Web Scraper, either using the Wizard GUI
 or using selectors in the developer tools. The wizard gives an easy to
 use interface but may be less flexible and doesn’t provide the ability
@@ -394,13 +394,90 @@ can be selected.</p>
 file.</p>
 </div>
 <div class="section level2">
-<h2 id="using-web-scraper-with-browser-developer-console">Using Web Scraper with browser developer console<a class="anchor" aria-label="anchor" href="#using-web-scraper-with-browser-developer-console"></a></h2>
-<ul><li>Open developer tools and open the Web Scraper tab</li>
-<li>Select Create new sitemap
-<ul><li>Add title and landing page</li>
-<li>Click Create Sitemap</li>
+<h2 id="using-web-scraper-with-the-browser-developer-console">Using Web Scraper with the browser developer console<a class="anchor" aria-label="anchor" href="#using-web-scraper-with-the-browser-developer-console"></a></h2>
+<ul><li>Open the <em>Developer Tools</em> and open the <em>Web Scraper</em>
+tab
+<ul><li>If the developer tools are docked at the side of the screen use the
+three dots a the top right of the dialog and select the option to dock
+at the bottom (see below)</li>
+</ul><figure><img src="../fig/dock-side-selector.png" alt="Dialog showing how to select developer tools docking position" class="figure mx-auto d-block"><div class="figcaption">Dialog to select Developer Tools docking
+position</div>
+</figure></li>
+</ul><p>The Web Scraper extension works on a “Sitemap”. The previous exercise
+will already have created a sitemap and this will be listed in the
+opening window on the tab. Alternatively, a new sitemap can be created:
+- Select Create new sitemap-&gt; Create Sitemap - Add a <em>Sitemap
+name</em> and <em>Start URL</em> for the webpage you wish to scrape -
+Click <em>Create Sitemap</em></p>
+<p>When a sitemap has been created then <em>selectors</em> can be
+created to govern how the webpage will be scraped. For a webpage created
+by the Wizard, the selectors generated automatically can be inspected,
+edited and new selectors created as required.</p>
+<p>It is a good idea to spend some time navigating the website and
+taking a look at the underlying code, using the <em>Inspect</em>
+facility, to decide on the best way to set up the selectors. The code
+will show the type of elements underlying the items on the webpage and
+may help with the</p>
+<p>The MP information data is spread across several pages. The first
+selector that we will create will enable the scraper to automatically
+scrape multiple pages.</p>
+<ul><li>Select the <em>Add new selector</em> button. In the resulting
+dialog:
+<ul><li>Choose an Id for the selector, e.g. Paging</li>
+<li>The type menu offers a drop down menu of available selectors. In
+this case, we will choose the <em>Pagination</em> selector</li>
+<li>Use the <em>Select</em> button to select the relevant elements on
+the webpage. In this case the pagination uses the numbered boxes at the
+top or bottom of the page. More than one selection can be made by using
+Shift+Enter. In the example shown below, just two pages have been
+selected.</li>
+<li>The <em>Element Preview</em> button can be used to check that the
+correct items have been selected.</li>
+<li>The <em>Data Preview</em> button will show the data that will result
+from this scraping operation.</li>
 </ul></li>
-</ul><div id="keypoints1" class="callout keypoints">
+</ul><figure><img src="../fig/pagination-selector.png" alt="Screenshot of creating pagination selector" class="figure mx-auto d-block"><div class="figcaption">Creating a Pagination selector</div>
+</figure><p>The information to be scraped is on the page navigated to by
+selecting one of the MP list boxes. We will set up a selector to select
+each box on the page. Note that, because the pagination selector has
+already been set up, it is only necessary to do this for one page.</p>
+<p>The next information to be selected is on the page arrived at by the
+links selected in the previous step. By clicking on the selector just
+created in the list it can be seen that the link breadcrumbs update and
+the list of selector IDs is now empty:</p>
+<ul><li>Select the Paging row in the dialog</li>
+<li>Create a new selector as before, this time choosing a <em>Link</em>
+selector</li>
+<li>When using the <em>Select</em> button all MP list boxes can be
+selected by clicking on a second box.</li>
+<li>Check the <em>Multiple</em> option</li>
+</ul><figure><img src="../fig/list-box-selector.png" alt="Screensho of creating link selector" class="figure mx-auto d-block"><div class="figcaption">Creating a Link Selector</div>
+</figure><p>Again, the next information to be selected is on the page arrived at
+by the links selected in the previous step. By clicking on the select-mp
+selector in the list it can be seen that the link breadcrumbs have again
+been updated:</p>
+<figure><img src="../fig/link-breadcrumbs.png" alt="Screenshot showing link breadcrumbs" class="figure mx-auto d-block"><div class="figcaption">Breadcrumbs for scraped pages</div>
+</figure><p>We now need to navigate to one of the MP pages by clicking on one of
+the list boxes. The required data can now be gathered by adding more
+selectors.</p>
+<ul><li>Create a <em>Text</em> type selector</li>
+<li>Select the field containing the name</li>
+</ul><figure><img src="../fig/select-name.png" alt="Screenshot of text selector creation" class="figure mx-auto d-block"><div class="figcaption">Creating a Text selector to find the MP
+name</div>
+</figure><p>We can use the same method to create a selector for the email
+address. There should now be two selectors within the select-mp
+page.</p>
+<figure><img src="../fig/name-email-selectors.png" alt="Name and email selectors" class="figure mx-auto d-block"><div class="figcaption">Name and email selectors</div>
+</figure><p>The sitemap is now ready for scraping. Select <em>Sitemap name -&gt;
+Scrape</em>. The Request interval and Page load delay options can be
+left at the default 2000ms. Clicking the <em>Start scraping</em> button
+will start the scraping process. A window will open, showing the pages
+being accessed in the scraping process.</p>
+<p>On completion of scraping it may be necessary to click the
+<em>Refresh</em> button in order to view the data. A table will be
+displayed showing the data extracted. The <em>Sitemap name -&gt; Export
+Data</em> option allows export in either .xlsx or .csv format.</p>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -483,8 +560,8 @@ any links that you are not going to use.
   "url": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/instructor/Manual-scraping.html",
   "identifier": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/instructor/Manual-scraping.html",
   "dateCreated": "2025-12-04",
-  "dateModified": "2025-12-16",
-  "datePublished": "2025-12-16"
+  "dateModified": "2025-12-17",
+  "datePublished": "2025-12-17"
 }
 
   </script><script>
