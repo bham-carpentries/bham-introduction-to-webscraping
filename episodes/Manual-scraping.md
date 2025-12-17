@@ -123,11 +123,66 @@ The sitemap is now ready for scraping. Select *Sitemap name -> Scrape*. The Requ
 
 On completion of scraping it may be necessary to click the *Refresh* button in order to view the data. A table will be displayed showing the data extracted. The *Sitemap name -> Export Data* option allows export in either .xlsx or .csv format.
 
+[MP-data.xlsx](data/MP-data.xlsx) is the file downloaded after the scraping exercise described above.  On examination of this file, it can be seen that all of the MP's names have been extracted but the list of email addresses is incomplete.
+
+:::::::::::::::::::::::::::::::::::::challenge
+
+[MP-data.xlsx](data/MP-data.xlsx) is the file downloaded after the scraping exercise described above.  On examination of this file, it can be seen that all of the MP's names have been extracted but the list of email addresses is incomplete.
+
+Why do you think that there are some email addresses missing? 
+- Take a look at the code for the email address information.
+- Compare the information for MPs where the email address was found and where it was not
+
+:::::::::::::::::: solution
+
+The code for the email address on the [Ms Diane Abbott page](https://members.parliament.uk/member/172/contact) is shown below:
+
+```html
+(...)
+<div class="col-md-7">
+   <div class="contact-line">
+      <span class="label">Phone Number:</span> 
+      <a href="tel:020 7219 4426">020 7219 4426</a>
+   </div>
+   <div class="contact-line">
+      <span class="label">Email Address:</span> 
+      <a href="mailto:diane.abbott.office@parliament.uk"> diane.abbott.office@parliament.uk</a>
+   </div>                   
+</div>
+(...)
+```
+If we look at the selector code: "div.contact-line:nth-of-type(2) a" we can see that looks like it has picked out the second "contact-line" class and then used the text from the "a" tag.  If we look at the similar section of code for an MP with just an email address in the contacts (no phone number) then we can see that a selector which searches for the second element will not yield a result.
+
+Web Scraper includes some extra functionality which allows a more explicit search to be carried out using JQuery selectors.  It is beyond the scope of this lesson to cover this in detail. There is information in the Web Scraper [JQuery Selectors documentation](https://webscraper.io/tutorials/jquery-contains-selector).
+
+We will look at how to use the *contains* option to extract the complete list of email addresses.
+
+:::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::
+
+## Using JQuery to refine selector options
+
+The JQuery *contains* value can be used to target elements which contain a particular string. Inspection of the "contact-line" class shows that the email address item contains the string "Email Address". The selector can be edited manually to 
+
+div.contact-line:contains('Email Address') a
+
+This will now only target the contact-line elements which contain the "Email Address" text.
+
+Inspection of the [new downloaded spreadsheet](data/MP-data-complete-emails.xlsx) shows that all of the emails have now been extracted.
+
+:::::::::::::::::::::::::::::::::::: challenge
+
+Modify your sitemap to also gather the phone number information for each MP
+
+::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Data that is relatively well structured (in a table) is relatively easily to scrape. 
+- More often than not, web scraping tools need to be told what to scrape.
+- JQuery can be used to define more precisely what information is to be scraped.
 - Tools may be available on a web page which enable data to be downloaded directly.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
