@@ -9,6 +9,12 @@ There are a variety of ways to scrape a website to extract information for reuse
 
 This lesson gives an introduction to the structure of websites, introduces some tools to extract data from well-structured websites and discusses the legal and ethical implications of extracting and using that data.
 
+::::::::::::::::::::::::::::::::::::: questions
+
+- What will be covered in this training?
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: objectives
 
 After attending this training, participants will be able to:
