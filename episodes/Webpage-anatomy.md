@@ -125,8 +125,15 @@ Using your favourite browser, display the HTML source code of this page.
 Tip: in most browsers, all you have to do is do a right-click anywhere on the page and select the "View Page Source"
 option ("Show Page Source" in Safari).
 
-Another tab should open with the raw HTML that makes this page. See if you can locate its various elements, and
-this challenge box in particular.
+Another tab should open with the raw HTML that makes this page. See if you can locate its various elements, where the head and body elements start and end. 
+See if you can pickout this challenge box in particular.
+
+:::::::::::::::::::::::::::::::::::: solution
+
+You will see that this webpage is quite complex and it may not be easy to pick out the elements that you are looking for. Many webpages are automatically generated and may not be laid out in the straightforward manner of our initial, very simple, example. 
+Try searching for *head>* or *body>* to locate both the start and end of these sections. Even though these may be difficult to locate, you will see that the overall structure is still used for the webpage.
+
+:::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -142,13 +149,14 @@ menu (in Preferences) and then navigate to `Develop > Show Javascript Console` a
 
 The HTML structure of the page you are currently reading looks something like this (most text and elements have
 been removed for clarity):
-TODO: update to new page
+
 ```html
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
   <head>
     (...)
-    <title>{{page.title}}</title>
+    <title>Introduction to Web Scraping: Anatomy of a web page</title>
+    (...)
   </head>
   <body>
 	 (...)
