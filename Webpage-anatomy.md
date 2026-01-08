@@ -59,7 +59,7 @@ and another to the
 </html>
 ```
 
-If you save that text in a file with a .html extension —using a simple text editor like Notepad on Windows or TextEdit on macOS— and open it in your web browser, the browser will interpret the markup language and display a nicely formatted web page.
+This text has been saved with a .html extension, [SampleWebpageCode.html](data/SampleWebpageCode.html). If you open it in your web browser, the browser will interpret the markup language and display a nicely formatted web page as below.
 
 ![](fig/simple_website.PNG){alt="Screenshot of a simple website with the previews HTML"}
 
