@@ -16,3 +16,5 @@ For this lesson, we will use a Chrome browser extension to get started with web 
 
 ![Pin WebScraper icon to Chrome toolbar](fig/Pin-webscraper.png){alt="Screenshot of dialog to pin extension"}
 
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
