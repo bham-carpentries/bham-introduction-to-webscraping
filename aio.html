@@ -345,7 +345,7 @@
         
 <section id="aio-Webscraping-intro"><p>Content from <a href="Webscraping-intro.html">What is Web Scraping?</a></p>
 <hr>
-<p>Last updated on 2026-01-08 |
+<p>Last updated on 2026-01-14 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Webscraping-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -408,23 +408,7 @@ journal articles or digitised texts. The practice of <a href="https://en.wikiped
 journalism</a>, in particular, relies on the ability of investigative
 journalists to harvest data that is not always presented or published in
 a form that allows analysis.</p>
-</section><section><h2 class="section-heading" id="before-you-get-started">Before you get started<a class="anchor" aria-label="anchor" href="#before-you-get-started"></a>
-</h2>
-<hr class="half-width">
-<p>As useful as scraping is, there might be better options for the task.
-Choose the right (i.e. the easiest) tool for the job.</p>
-<ul>
-<li>Check whether or not you can easily copy and paste data from a site
-into Excel or Google Sheets. This might be quicker than scraping.</li>
-<li>Check if the site or service already provides an API to extract
-structured data. If it does, that will be a much more efficient and
-effective pathway. Good examples are the <a href="https://developers.facebook.com/tools/explorer/" class="external-link">Facebook API</a>,
-the <a href="https://docs.x.com/x-api/introduction" class="external-link">X APIs</a> or the <a href="https://developers.google.com/youtube/v3/docs/commentThreads/list" class="external-link">YouTube
-comments API</a>.</li>
-<li>For much larger needs, <a href="https://www.foia.gov/how-to.html" class="external-link">Freedom of information Act
-(FOIA)</a> requests can be useful. Be specific about the formats
-required for the data you want.</li>
-</ul></section><section><h2 class="section-heading" id="example-scraping-parliamentary-websites-for-contact-information">Example: Scraping parliamentary websites for contact
+</section><section><h2 class="section-heading" id="example-scraping-parliamentary-websites-for-contact-information">Example: Scraping parliamentary websites for contact
 information<a class="anchor" aria-label="anchor" href="#example-scraping-parliamentary-websites-for-contact-information"></a>
 </h2>
 <hr class="half-width">
@@ -562,11 +546,48 @@ software technique of extracting information from websites.” (Source: <a href=
 </blockquote>
 <p>Web scraping typically targets one web site at a time to extract
 unstructured information and put it in a structured form for reuse.</p>
-<p>In this lesson, we will continue exploring the examples above and try
-different techniques to extract the information they contain. But before
-we launch into web scraping proper, we need to look a bit more closely
-at how information is organized within an HTML document and how to build
-queries to access a specific subset of that information.</p>
+</section><section><h2 class="section-heading" id="web-scraping-might-not-be-necessary">Web scraping might not be necessary …<a class="anchor" aria-label="anchor" href="#web-scraping-might-not-be-necessary"></a>
+</h2>
+<hr class="half-width">
+<p>As useful as scraping is, there might be better options for the task.
+Choose the right (i.e. the easiest) tool for the job.</p>
+<ul>
+<li>Check whether or not you can easily copy and paste data from a site
+into Excel or Google Sheets. This might be quicker than scraping.</li>
+<li>Check whether there is data available on the website for download
+(you may need to search around the website to find this but it may save
+time overall).
+<ul>
+<li>For example, the UK Parliament website has a large library of <a href="https://commonslibrary.parliament.uk/data/" class="external-link">data</a> published for
+re-use.</li>
+</ul>
+</li>
+<li>Check if the site or service already provides an API to extract
+structured data. If it does, that will be a much more efficient and
+effective pathway.
+<ul>
+<li>Good examples are the <a href="https://developers.facebook.com/tools/explorer/" class="external-link">Facebook API</a>,
+the <a href="https://docs.x.com/x-api/introduction" class="external-link">X APIs</a> or the <a href="https://developers.google.com/youtube/v3/docs/commentThreads/list" class="external-link">YouTube
+comments API</a>.</li>
+<li>The UK Parliament website that we have been looking at provides a
+set of APIs in its <a href="https://developer.parliament.uk/" class="external-link">Developer
+Hub</a>
+</li>
+</ul>
+</li>
+<li>For much larger needs, <a href="https://www.foia.gov/how-to.html" class="external-link">Freedom of information Act
+(FOIA)</a> requests can be useful. Be specific about the formats
+required for the data you want.</li>
+</ul></section><section><h2 class="section-heading" id="but-if-it-is">… but if it is<a class="anchor" aria-label="anchor" href="#but-if-it-is"></a>
+</h2>
+<hr class="half-width">
+<p>In the next episodes, we will continue exploring the examples above
+and try different techniques to extract the information they
+contain.</p>
+<p>Before we launch into web scraping proper however, we need to look a
+bit more closely at how information is organized within an HTML document
+and how to build queries to access a specific subset of that
+information.</p>
 </section><section><h2 class="section-heading" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
 <hr class="half-width">
@@ -590,6 +611,8 @@ much.</li>
 extraction difficult.</li>
 <li>Web scraping is the process of automating the extraction of data
 from web sites.</li>
+<li>Tools may be available on a web page which enable data to be
+downloaded directly.</li>
 </ul>
 </div>
 </div>
@@ -1026,9 +1049,10 @@ as we’ve learned.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>Can you find the Best Picture winner Spotlight anywhere in the HTML?
-Can you find any of the other movies or the data from the table? If not,
-how could you scrape this page?</p>
+<p>Can you find the Best Picture winner Spotlight anywhere in the
+HTML?</p>
+<p>Can you find any of the other movies or the data from the table?</p>
+<p>If not, how could you scrape this page?</p>
 </div>
 </div>
 </div>
@@ -1079,7 +1103,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-Manual-scraping"><p>Content from <a href="Manual-scraping.html">Manually scrape data using browser extensions</a></p>
 <hr>
-<p>Last updated on 2025-12-17 |
+<p>Last updated on 2026-01-14 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Manual-scraping.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1376,8 +1400,6 @@ easily to scrape.</li>
 scrape.</li>
 <li>JQuery can be used to define more precisely what information is to
 be scraped.</li>
-<li>Tools may be available on a web page which enable data to be
-downloaded directly.</li>
 </ul>
 </div>
 </div>
