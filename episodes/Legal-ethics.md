@@ -24,6 +24,29 @@ After completing this episode, participants should be able to...
 
 ## The rights, wrongs, and legal barriers to scraping 
 
+Now that we have seen several different ways to scrape data from websites and are
+ready to start working on potentially larger projects, we may ask ourselves whether
+there are any legal implications of writing a piece of computer code that downloads
+information from the Internet.
+
+In this section, we will be discussing some of the issues to be aware of when
+scraping websites, and we will establish a [code of conduct (below)](#web-scraping-code-of-conduct)
+to guide our web scraping projects.
+
+:::::::::::::::::::::::::::::::::::: callout
+## This section does not constitute legal advice
+ 
+Please note that the information provided on this page is for information
+purposes only and does not constitute professional legal advice on the
+practice of web scraping.
+
+If you are concerned about the legal implications of using web scraping
+on a project you are working on, it is probably a good idea to seek
+advice from a professional, preferably someone who has knowledge of the
+intellectual property (copyright) legislation in effect in your country.
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 The internet isn’t as open as it once was.
 What used to be a vast, freely accessible source of information has become a valuable reservoir of data —especially for training machine learning and generative AI models.
 In response, many social media platforms and website owners have either started monetizing access to their data or taken steps to protect their resources from being overwhelmed by automated bots.
@@ -41,13 +64,96 @@ Visit [Facebook's Terms of Service](https://www.facebook.com/terms.php) and its 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In addition to reviewing a website’s policies, you should also be aware of the laws that apply in your region —especially those related to copyright and data privacy.
-If you’re planning to collect a large amount of data for research or commercial purposes, it’s a good idea to seek legal advice before proceeding.
-If you’re affiliated with a university, there’s a good chance it has a copyright office or legal team that can help you navigate the legal aspects of your project.
-The university library is often a great starting point for finding support and guidance on copyright and data use.
+## Don't break the web: Denial of Service attacks
 
+The first and most important thing to be careful about when writing a web scraper is that
+it typically involves querying a website repeatedly and accessing a potentially large
+number of pages. For each of these pages, a request will be sent to the web server that
+is hosting the site, and the server will have to process the request and send a response
+back to the computer that is running our code. Each of these requests will consume resources
+on the server, during which it will not be doing something else, like for example responding
+to someone else trying to access the same site. 
+
+If we send too many such requests over a short span of time, we can prevent other "normal" users
+from accessing the site during that time, or even cause the server to run out of resources and crash.
+
+In fact, this is such an efficient way to disrupt a web site that hackers are often doing it on purpose.
+This is called a [Denial of Service (DoS) attack](https://en.wikipedia.org/wiki/Denial-of-service_attack).
+
+Since DoS attacks are unfortunately a common occurence on the Internet, modern web servers include
+measures to ward off such illegitimate use of their resources. They are watchful for large amounts
+of requests appearing to come from a single computer or IP address, and their first line of defense often involves
+refusing any further requests coming from this IP address.
+
+A web scraper, even one with legitimate purposes and no intent to bring a website down, can exhibit
+similar behaviour and, if we are not careful, result in our computer being banned from accessing
+a website.
+
+The good news is that a good web scraper, such as the WebScraper extension used in this lesson, recognizes that this is a risk and includes
+measures to prevent our code from appearing to launch a DoS attack on a website. This is mostly
+done by inserting a random delay between individual requests, which gives the target server enough
+time to handle requests from other users between ours. 
+
+## Don't steal: Copyright and fair use
+
+It is important to recognize that in certain circumstances web scraping _can_ be illegal. If the terms
+and conditions of the web site we are scraping specifically prohibit downloading
+and copying its content, then we could be in trouble for scraping it.
+
+In practice, however, web scraping is a tolerated practice, provided reasonable
+care is taken not to disrupt the "regular" use of a web site, as we have seen above.
+
+In a sense, web scraping is no different than using a web browser to visit a web page,
+in that it amounts to using computer software (a browser vs a scraper) to acccess
+data that is publicly available on the web.
+
+In general, if data is publicly available (the content that is being scraped is not
+behind a password-protected authentication system), then it is OK to scrape it,
+provided we don't break the web site doing so. What is potentially
+problematic is if the scraped data will be shared further. For example, downloading
+content off one website and posting it on another website (as our own), unless
+explicitely permitted, would constitute copyright violation and be illegal.
+
+However, most copyright legislations recognize cases in which reusing some, possibly
+copyrighted, information in an aggregate or derivative format is considered
+"fair use". In general, unless the intent is to pass off data as our own, copy
+it word for word or trying to make money out of it, reusing publicly available
+content scraped off the internet is OK.
+
+### Better be safe than sorry
+Be aware that copyright and data privacy legislation typically differs from country
+to country. Be sure to check the laws that apply in your context. For example, in Australia,
+it can be illegal to scrape and store personal information such as names, phone
+numbers and email addresses, even if they are publicly available.
+
+If you are looking to scrape data for your own personal use, then the above
+guidelines should probably be all that you need to worry about. However,
+if you plan to start harvesting a large amount of data for research
+or commercial purposes, you should probably seek legal advice first.
+
+If you work in a university, chances are it has a copyright office that
+will help you sort out the legal aspects of your project. The
+university library is often the best place to start looking for help on
+copyright.
+
+## Be nice: ask and share
+
+Depending on the scope of your project, it might be worthwhile to consider asking
+the owners or curators of the data you are planning to scrape if they have it
+already available in a structured format that could suit your project. If your
+aim is do use their data for research, or to use it in a way that could potentially
+interest them, not only it could save you the trouble of writing a
+web scraper, but it could also help clarify straight away what you can and cannot do
+with the data.
+
+On the other hand, when you are publishing your own data, as part of a research project,
+documentation or a public website, you might want to think about whether someone might
+be interested in getting your data for their own project. If you can, try to provide
+others with a way to download your raw data in a structured format, and thus save
+them the trouble to try and scrape your own pages!
+
+## Web scraping Code of Conduct
 To conclude, here is a brief code of conduct you should keep in mind when doing web scraping:
-
 
 1. **Ask nicely whether you can access the data in another way**.
 If your project relies on data from a particular organization, consider reaching out to them directly or checking whether they provide an API.
@@ -94,5 +200,8 @@ Following these guidelines helps ensure that your scraping is ethical, legal, an
 - Copyright laws - can legally scrape publically available data but republishing or reusing data may require permission
 
 :::::::::::::::::::::::::::::::::: keypoints
+- Web scraping is, in general, legal and won't get you into trouble.
 - Always review and respect a website’s Terms of Service (TOS) before scraping its content.
+- There are a few things to be careful about, notably don't overwhelm a web server and don't steal content.
+- Be nice. In doubt, ask.
 ::::::::::::::::::::::::::::::::::::::::::::
