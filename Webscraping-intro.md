@@ -45,21 +45,6 @@ text mining projects; these might be collections of journal articles or digitise
 ability of investigative journalists to harvest data that is not always presented or published in a form
 that allows analysis.
 
-## Before you get started
-
-As useful as scraping is, there might be better options for the task. Choose the right (i.e. the easiest) tool for the job.
-
-- Check whether or not you can easily copy and paste data from a site into Excel or Google Sheets. This might be quicker than scraping.
-- Check if the site or service already provides an API to extract structured data. If it does, that will be a much more efficient and effective pathway. Good examples are the 
-[Facebook API](https://developers.facebook.com/tools/explorer/), the [X APIs](https://docs.x.com/x-api/introduction) or the [YouTube comments API](https://developers.google.com/youtube/v3/docs/commentThreads/list).
-- For much larger needs, [Freedom of information Act (FOIA)](https://www.foia.gov/how-to.html) requests can be useful. Be specific about the formats required for the data you want.
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
-
-Note that the 'Before you get started' items will be covered in more detail later
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 ## Example: Scraping parliamentary websites for contact information
 In this workshop, we will learn how to extract  information
 from various web pages. Different webpages can have widely differing formats which will affect our decisions as to which method of scraping data might be appropriate. 
@@ -177,8 +162,25 @@ _web scraping_.
 Web scraping typically targets one web site at a
 time to extract unstructured information and put it in a structured form for reuse.
 
-In this lesson, we will continue exploring the examples above and try different techniques to extract
-the information they contain. But before we launch into web scraping proper, we need to look
+## Web scraping might not be necessary ...
+
+As useful as scraping is, there might be better options for the task. Choose the right (i.e. the easiest) tool for the job.
+
+- Check whether or not you can easily copy and paste data from a site into Excel or Google Sheets. This might be quicker than scraping.
+- Check whether there is data available on the website for download (you may need to search around the website to find this but it may save time overall).
+    - For example, the UK Parliament website has a large library of [data](https://commonslibrary.parliament.uk/data/) published for re-use.
+- Check if the site or service already provides an API to extract structured data. If it does, that will be a much more efficient and effective pathway. 
+    - Good examples are the 
+[Facebook API](https://developers.facebook.com/tools/explorer/), the [X APIs](https://docs.x.com/x-api/introduction) or the [YouTube comments API](https://developers.google.com/youtube/v3/docs/commentThreads/list).
+    - The UK Parliament website that we have been looking at provides a set of APIs in its [Developer Hub](https://developer.parliament.uk/)
+- For much larger needs, [Freedom of information Act (FOIA)](https://www.foia.gov/how-to.html) requests can be useful. Be specific about the formats required for the data you want.
+
+## ... but if it is 
+
+In the next episodes, we will continue exploring the examples above and try different techniques to extract
+the information they contain.
+
+Before we launch into web scraping proper however, we need to look
 a bit more closely at how information is organized within an HTML document and how to build queries to access
 a specific subset of that information.
 
@@ -192,6 +194,7 @@ a specific subset of that information.
 - Humans are good at categorizing information, computers not so much.
 - Often, data on a web site is not properly structured, making its extraction difficult.
 - Web scraping is the process of automating the extraction of data from web sites.
+- Tools may be available on a web page which enable data to be downloaded directly.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
