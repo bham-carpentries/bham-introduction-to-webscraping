@@ -177,7 +177,7 @@ You will see that this webpage is quite complex and it may not be easy to pick o
 
 Try searching for *head>* or *body>* to locate both the start and end of these sections. 
 
-Even though these may be difficult to locate, you will see that the overall structure is still used for the webpage.
+Even though these may be difficult to locate, you will see that the same overall structure is still used for the webpage.
 
 :::::::::::::::::::::::::::::::::::::::::::::
 
@@ -262,19 +262,38 @@ Note that this information is spread over several pages. It may be necessary to 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Dynamic websites
-We are not going to cover these in detail in this lesson but you should be aware of dynamic websites.
-TODO:
-- Brief description of difference between static and dynamic
-- Show [Oscar Winning Films](https://www.scrapethissite.com/pages/ajax-javascript/) page
-- Navigate to 2015 pages & show that can inspect a film title and it will show the tag but if view source code then the film title can't be found.
-- Take something v simple from Dynamic websites part of Python web scraping course.
+We are not going to cover these in detail in this lesson but you should be aware of dynamic websites and how the HTML code observed might differ between these and a static website with no interactive elements.
+
+Visit this practice webpage created by Hartley Brody for learning and practicing web scraping:  [Oscar Winning Films](https://www.scrapethissite.com/pages/ajax-javascript/) (but first, read the [terms of use](https://www.scrapethissite.com/faq/)).
+Select “2015” to display that year’s Oscar-winning films.
+Now try viewing the HTML behind the page, either using the View Page Source tool in your browser or by using Python with the requests and BeautifulSoup packages, as we’ve learned.
+
+::::::::::::::::::::::::::::::::: challenge
+
+Can you find the Best Picture winner Spotlight anywhere in the HTML?
+Can you find any of the other movies or the data from the table?
+If not, how could you scrape this page?
+
+::::::::::::::::::::::::::::::::::::::::::
+
+When you explore a page like this, you’ll notice that the movie data (including the title Spotlight) isn’t present in the initial HTML source. That’s because the website uses **JavaScript** to load the information dynamically.
+JavaScript is a programming language that runs in your browser and allows websites to fetch, process, and display content on the fly — often in response to user actions, like clicking a button.
+
+When you select "2015", your browser runs JavaScript (triggered by one of the `<script>` elements in the HTML) to retrieve the relevant movie information from the web server and dynamically update the table.
+This makes the page feel more interactive, but it also means that the initial HTML you see doesn’t contain the movie data itself.
+
+You can observe this difference when using the "View page source" and "Inspect" tools in your browser:
+"View page source" shows the original HTML sent by the server, before any JavaScript runs.
+"Inspect" shows the rendered HTML, after JavaScript has executed and updated the page content.
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Every website is built on an HTML document that structures its content.
-- An HTML document is composed of elements, usually defined by an opening <tag> and a closing </tag>
+- An HTML document is composed of elements, usually defined by an opening <tag> and a closing </tag>.
 - Elements can have attributes that define their properties, written as <tag attribute_name="value">.
+- CSS may be used to control the appearance of the rendered webpage.
+- Dynamic webpages may have content which isn't loaded until the item is selected.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
