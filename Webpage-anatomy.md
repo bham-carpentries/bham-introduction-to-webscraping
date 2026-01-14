@@ -41,20 +41,20 @@ As you look through it, try to imagine how the website would appear in a browser
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sample web page</title>
+  <title>Sample web page</title>
 </head>
 <body>
-<h1>h1 Header #1</h1>
-<p>This is a paragraph tag</p>
-<h2>h2 Sub-header</h2>
-<p>A new paragraph, now in the <b>sub-header</b></p>
-<h1>h1 Header #2</h1>
-<p>
-This other paragraph has two hyperlinks,
-one to <a href="https://carpentries.org/">The Carpentries homepage</a>,
-and another to the
-<a href="https://carpentries.org/workshops/past-workshops/">past workshops</a> page.
-</p>
+  <h1>h1 Header #1</h1>
+  <p>This is a paragraph tag</p>
+  <h2>h2 Sub-header</h2>
+  <p>A new paragraph, now in the <b>sub-header</b></p>
+    <h1>h1 Header #2</h1>
+    <p>
+    This other paragraph has two hyperlinks,
+    one to <a href="https://carpentries.org/">The Carpentries homepage</a>,
+    and another to the
+    <a href="https://carpentries.org/workshops/past-workshops/">past workshops</a> page.
+  </p>
 </body>
 </html>
 ```
@@ -101,9 +101,52 @@ These are especially useful for identifying elements when web scraping:
 
 ::::::::::::::::::::::::::::::::::::: spoiler
 
-### Something about CSS
+### A note about CSS (Cascading Style Sheets)
 
-- add some brief text about CSS to explain the use of classes
+CSS (Cascading Style Sheets) is code which allows the way that a web page is displayed (colours, fonts etc) to be separated from the content. It allows the same styles to be applied to a set of HTML documents without the need to specify them in each document.
+
+CSS uses rule sets which are applied to the HTML elements using selectors.
+
+You may see selectors applied to HTML elements by tag, class or ID. These may be useful for targeting elements when web scraping.
+The CSS rules may be applied using a <style>...</style> tag in the HTML file or may be in a separate .css file linked from the HTML file. 
+
+An example of two style rules applied to our HTML example are shown below. They can be viewed by opening the [WebpageCSS.html](data/WebpageCSS.html) file. 
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample web page</title>
+  <style>
+        /* CSS Rule */
+        h1 {
+            color: blue;
+            /* Property: value */
+            font-size: 24px;
+        }
+
+        p {
+            color: green;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+  <h1>h1 Header #1</h1>
+  <p>This is a paragraph tag</p>
+  <h2>h2 Sub-header</h2>
+  <p>A new paragraph, now in the <b>sub-header</b></p>
+    <h1>h1 Header #2</h1>
+    <p>
+    This other paragraph has two hyperlinks,
+    one to <a href="https://carpentries.org/">The Carpentries homepage</a>,
+    and another to the
+    <a href="https://carpentries.org/workshops/past-workshops/">past workshops</a> page.
+  </p>
+</body>
+</html>
+```
+For more information this [CSS Introduction](https://www.geeksforgeeks.org/css/css-introduction/) and [CSS Cheat Sheet](https://www.geeksforgeeks.org/css/css-cheat-sheet-a-basic-guide-to-css/) provide a good starting point.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -131,7 +174,10 @@ See if you can pickout this challenge box in particular.
 :::::::::::::::::::::::::::::::::::: solution
 
 You will see that this webpage is quite complex and it may not be easy to pick out the elements that you are looking for. Many webpages are automatically generated and may not be laid out in the straightforward manner of our initial, very simple, example. 
-Try searching for *head>* or *body>* to locate both the start and end of these sections. Even though these may be difficult to locate, you will see that the overall structure is still used for the webpage.
+
+Try searching for *head>* or *body>* to locate both the start and end of these sections. 
+
+Even though these may be difficult to locate, you will see that the overall structure is still used for the webpage.
 
 :::::::::::::::::::::::::::::::::::::::::::::
 
