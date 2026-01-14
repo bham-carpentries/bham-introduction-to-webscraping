@@ -1,6 +1,6 @@
 ---
 title: "Ethics and Legality of Web Scraping"
-teaching: 0 # teaching time in minutes
+teaching: 45 # teaching time in minutes
 exercises: 0 # exercise time in minutes
 ---
 
@@ -22,97 +22,77 @@ After completing this episode, participants should be able to...
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## The rights, wrongs, and legal barriers to scraping 
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+The internet isn’t as open as it once was.
+What used to be a vast, freely accessible source of information has become a valuable reservoir of data —especially for training machine learning and generative AI models.
+In response, many social media platforms and website owners have either started monetizing access to their data or taken steps to protect their resources from being overwhelmed by automated bots.
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
+As a result, it’s increasingly common for websites to include explicit prohibitions against web scraping in their Terms of Service (TOS).
+To avoid legal or ethical issues, it’s essential to check both the TOS and the site's `robots.txt` file before scraping.
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
-
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
-:::::::::::::::::::::::: solution 
-
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
-
-:::::::::::::::::::::::::::::::::
+You can usually find a site's `robots.txt` file by appending `/robots.txt` to the root of the domain—for example: `https://facebook.com/robots.txt` (not `https://facebook.com/user/robots.txt`).
+Both the TOS and `robots.txt` will help you understand what is allowed and what isn’t, so it’s important to review them carefully before proceeding.
 
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+::::::::::::::::::::::::::::::::::::: challenge
 
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
-
-You can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
+Visit [Facebook's Terms of Service](https://www.facebook.com/terms.php) and its [robots.txt file](https://facebook.com/robots.txt). What do they say about web scraping or collecting data using automated means? Compare it to [Reddit's TOS](https://redditinc.com/policies/user-agreement) and [Reddit's robots.txt](https://www.reddit.com/robots.txt).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+In addition to reviewing a website’s policies, you should also be aware of the laws that apply in your region —especially those related to copyright and data privacy.
+If you’re planning to collect a large amount of data for research or commercial purposes, it’s a good idea to seek legal advice before proceeding.
+If you’re affiliated with a university, there’s a good chance it has a copyright office or legal team that can help you navigate the legal aspects of your project.
+The university library is often a great starting point for finding support and guidance on copyright and data use.
 
-## Math
+To conclude, here is a brief code of conduct you should keep in mind when doing web scraping:
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+1. **Ask nicely whether you can access the data in another way**.
+If your project relies on data from a particular organization, consider reaching out to them directly or checking whether they provide an API.
+With a bit of luck they might offer the data you need in a structured format, saving you time and effort.
 
-Cool, right?
+1.  **Don’t download content that’s clearly not public**.
+For example, academic journal publishers often impose strict usage restrictions on their databases. 
+Mass-downloading PDFs can violate these rules and may get you —or your university librarian— into trouble.
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+    If you need local copies for a legitimate reason (e.g., text mining), special agreements may be possible.
+Your university library is a good place to start exploring those options.
 
-- Web scraping is, in general, legal and won’t get you into trouble.
-- There are a few things to be careful about, notably don’t overwhelm a web server and don’t steal content.
-- Be nice. In doubt, ask.
+1. **Check your local legislation**.
+Many countries have laws protecting personal information, such as email addresses or phone numbers.
+Even if this data is visible on a website, scraping it could be illegal depending on your jurisdiction (e.g., in Australia).
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+1. **Don’t share scraped content illegally**.
+Scraping for personal use is often considered fair use, even when it involves copyrighted material. But sharing that data, especially if you don’t have the rights to distribute it, can be illegal.
 
-[r-markdown]: https://rmarkdown.rstudio.com/
+1. **Share what you can**.
+If the scraped data is public domain or you’ve been granted permission to share it, consider publishing it for others to reuse (e.g., on datahub.io).
+Also, if you wrote a scraper to access it, sharing your code (e.g., on GitHub) can help others learn from and build on your work.
+
+1. **Publish your own data in a reusable way**.
+Make it easier for others by offering your data in open, software-agnostic formats like CSV, JSON, or XML. 
+Include metadata that describes the content, origin, and intended use of the data.
+Ensure it’s accessible and searchable by search engines.
+
+1.  **Don’t break the Internet**.
+Some websites can’t handle high volumes of requests.
+If your scraper is recursive (i.e., it follows links), test it first on a small subset.
+
+    Be respectful by setting delays between requests and limiting the rate of access.
+You’ll learn more about how to do this in the next episode.
+
+Following these guidelines helps ensure that your scraping is ethical, legal, and considerate of the broader web ecosystem.
+
+
+## Other notes
+- Boundaries for using/modifying user-agents
+- Obey robots.txt
+- Respect rate limits
+- If unsure contact site administrator to seek permission to scrape
+- Copyright laws - can legally scrape publically available data but republishing or reusing data may require permission
+
+:::::::::::::::::::::::::::::::::: keypoints
+- Always review and respect a website’s Terms of Service (TOS) before scraping its content.
+::::::::::::::::::::::::::::::::::::::::::::
