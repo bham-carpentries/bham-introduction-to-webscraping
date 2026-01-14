@@ -271,7 +271,9 @@ Now try viewing the HTML behind the page, either using the View Page Source tool
 ::::::::::::::::::::::::::::::::: challenge
 
 Can you find the Best Picture winner Spotlight anywhere in the HTML?
+
 Can you find any of the other movies or the data from the table?
+
 If not, how could you scrape this page?
 
 ::::::::::::::::::::::::::::::::::::::::::

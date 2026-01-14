@@ -183,7 +183,6 @@ Modify your sitemap to also gather the phone number information for each MP
 - Data that is relatively well structured (in a table) is relatively easily to scrape. 
 - More often than not, web scraping tools need to be told what to scrape.
 - JQuery can be used to define more precisely what information is to be scraped.
-- Tools may be available on a web page which enable data to be downloaded directly.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
