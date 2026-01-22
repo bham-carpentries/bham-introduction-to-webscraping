@@ -1,7 +1,7 @@
 ---
 title: "Manually scrape data using browser extensions"
-teaching: 0 # teaching time in minutes
-exercises: 0 # exercise time in minutes
+teaching: 30 # teaching time in minutes
+exercises: 15 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -112,6 +112,7 @@ The information to be scraped is on the page navigated to by selecting one of th
 
 - Information is on selected page
    - Click on selector - breadcrumb changes
+   
 :::::::::::::::::::::::::::::::::::::::::::
 
 The next information to be selected is on the page arrived at by the links selected in the previous step. By clicking on the selector just created in the list it can be seen that the link breadcrumbs update:
