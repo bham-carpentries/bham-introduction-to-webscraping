@@ -1,6 +1,6 @@
 ---
 title: "What is Web Scraping?"
-teaching: 0 # teaching time in minutes
+teaching: 20 # teaching time in minutes
 exercises: 0 # exercise time in minutes
 ---
 
@@ -17,6 +17,25 @@ After completing this episode, participants should be able to...
 
 - Be able to navigate around a website, understanding the concept of structured data
 - Discuss how data can be extracted from web pages
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+- Sign in
+- Setup
+- Introduce self
+- Code of conduct
+- Intro questions
+    - 1) Do you have a specific web scraping application in mind?
+    - 2) Is there anything in particular which you would like to learn in this session?
+
+- What is web scraping?
+    - Extracting information from websites
+    - Manual - faster to automate
+    - Collect data in usable format, e.g. .cvsv
+    - Similar to web indexing - more targeted
+
+- > Example - Need to understand structure of a webpage
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## What is web scraping?
@@ -46,6 +65,18 @@ ability of investigative journalists to harvest data that is not always presente
 that allows analysis.
 
 ## Example: Scraping parliamentary websites for contact information
+:::::::::::::::::::::::::::::::::: instructor
+Point out:
+- Looks quite well ordered
+- Refine search
+- Export options
+- Human can easily work out what data represents
+- Computer needs more information
+Slide - html
+- Can see reasonably well structured
+- Looks like table of data on webpage - quite different in the code
+- Could get computer to pick out specific information
+:::::::::::::::::::::::::::::::::::::::::::::
 In this workshop, we will learn how to extract  information
 from various web pages. Different webpages can have widely differing formats which will affect our decisions as to which method of scraping data might be appropriate. 
 
@@ -97,6 +128,20 @@ parliamentarians from Alberta and list their names and caucus information.
 When presented with information, human beings are good at quickly categorizing it and extracting the data that they are interested in. For example, when we look at a magazine rack, provided the titles are written in a script that we are able to read, we can rapidly figure out the titles of the magazines, the stories they contain, the language they are written in, etc. and we can probably also easily organize them by topic, recognize those that are aimed at children, or even whether they lean toward a particular end of the political spectrum. Computers have a much harder time making sense of such _unstructured_ data unless we specifically tell them what elements data is made of, for example by adding labels such as _this is the title of this magazine_ or _this is a magazine about food_. Data in which individual elements are separated and labelled is said to be _structured_.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+
+::::::::::::::::::::::::::::::::::: instructor
+Canadian MPs - well structured
+What if data isn't organised in such an obvious way?
+- Unstructured
+British MPs
+- Similar data - no way to download
+Slide -> UK MPs html
+- Data structured for viewing - table of cards
+- Less easy to see how data would be gathered
+
+Process automated by web scraping
+Slide -> definition
+::::::::::::::::::::::::::::::::::::::::::::::
 
 Let's look now at the current list of members for the [UK House of Commons](https://members.parliament.uk/members/commons).
 
@@ -161,6 +206,11 @@ _web scraping_.
 
 Web scraping typically targets one web site at a
 time to extract unstructured information and put it in a structured form for reuse.
+
+::::::::::::::::::::::::::::::::::::::: instructor
+Show UK MP tools
+- Make sure really necessary to web scrape
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Web scraping might not be necessary ...
 
