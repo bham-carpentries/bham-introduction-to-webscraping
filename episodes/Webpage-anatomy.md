@@ -1,7 +1,7 @@
 ---
 title: "Anatomy of a web page"
-teaching: 0 # teaching time in minutes
-exercises: 0 # exercise time in minutes
+teaching: 30 # teaching time in minutes
+exercises: 15 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
