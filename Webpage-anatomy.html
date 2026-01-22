@@ -313,7 +313,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Anatomy of a web page</h1>
-        <p>Last updated on 2026-01-14 |
+        <p>Last updated on 2026-01-22 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Webpage-anatomy.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -360,10 +360,11 @@ exactly what should be extracted from the web pages we aim to
 scrape.</p>
 <p>Here, we’ll develop an understanding of how content and data are
 structured on the web. We’ll start by exploring what HTML (Hypertext
-Markup Language) is and how it uses tags to organize and format content.
+Markup Language) is and how it uses tags to organise and format content.
 Then, we’ll look at how to view the HTML source code for a web page and
 look at how browser developer tools can be used to search for specific
 elements on a webpage.</p>
+
 </section><section><h2 class="section-heading" id="html-quick-overview">HTML quick overview<a class="anchor" aria-label="anchor" href="#html-quick-overview"></a></h2>
 <hr class="half-width"><p>All websites have a Hypertext Markup Language (HTML) document behind
 them. Below is an example of HTML for a very simple webpage that
@@ -411,7 +412,7 @@ child nodes, as illustrated in the image below.</p>
 <figure><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/DOM-model.svg" alt="Screenshot of a simple website with the previews HTML" class="figure mx-auto d-block"><div class="figcaption">The Document Object Model (DOM) that represents
 an HTML document with a tree structure. Source: Wikipedia. Author:
 Birger Eriksson</div>
-</figure><p>Finally, we can define or modify the behavior, appearance, or
+</figure><p>Finally, we can define or modify the behaviour, appearance, or
 functionality of an element using <strong>attributes</strong>.
 Attributes appear inside the opening tag and consist of a name and a
 value, formatted like <code>name="value"</code>.</p>
@@ -467,7 +468,15 @@ shown as a tooltip when the user hovers over it.</li>
 <li>
 <code>class=""</code>: Applies a common styling or grouping to
 multiple elements at once.</li>
-</ul><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+</ul><p>This [A to Z List]{<a href="https://www.geeksforgeeks.org/html/html-tags-a-to-z-list/" class="external-link uri">https://www.geeksforgeeks.org/html/html-tags-a-to-z-list/</a>}
+gives a comprehensive list of html tags.</p>
+<p>:::::::::::::::::::::::::::::::::: instructor - CSS gives separation
+between display format and content - uses rules applied to html elements
+by selectors - can be useful for targeting elements when scraping</p>
+Slide - CSS added to
+
+<p>:::::::::::::::::::::::::::::::::::::::::::::</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> A note about CSS (Cascading Style Sheets) </h3>
@@ -542,6 +551,7 @@ code to determine what markup to apply to the various elements of a
 document, and the code is invisible. To make the underlying code
 visible, all browsers have a function to display the raw HTML content of
 a web page.</p>
+
 <div id="exercise-display-the-source-of-this-page" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -581,26 +591,6 @@ same overall structure is still used for the webpage.</p>
 </div>
 </div>
 </div>
-<div id="using-the-safari-browser-todo---check-this-is-correct" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="using-the-safari-browser-todo---check-this-is-correct" class="callout-inner">
-<h3 class="callout-title">Using the Safari browser TODO - check this is
-correct</h3>
-<div class="callout-content">
-<p>If you are using Safari, you must first turn on the “Develop” menu in
-order to view the page source, and use the functions that we will use
-later in this section. To do so, navigate to Safari &gt; Preferences and
-in the Advanced tab select the “Show Develop in menu bar” option. Note:
-In recent versions of Safari you must first turn on the “Develop” menu
-(in Preferences) and then navigate to
-<code>Develop &gt; Show Javascript Console</code> and then click on the
-“Console” tab.</p>
-</div>
-</div>
-</div>
 <p>The HTML structure of the page you are currently reading looks
 something like this (most text and elements have been removed for
 clarity):</p>
@@ -629,14 +619,13 @@ scraper would need to follow as it navigates through the HTML content of
 the page to reach the <code>title</code> element. We can search for
 specific items in the source page code using the built in developer
 console.</p>
-<div id="display-the-console-in-your-browser-todo---check-safari" class="callout">
+<div id="display-the-console-in-your-browser" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div id="display-the-console-in-your-browser-todo---check-safari" class="callout-inner">
-<h3 class="callout-title">Display the console in your browser TODO -
-check Safari</h3>
+<div id="display-the-console-in-your-browser" class="callout-inner">
+<h3 class="callout-title">Display the console in your browser</h3>
 <div class="callout-content">
 <ul><li>In Firefox, use the <em>More Tools &gt; Web Developer Tools</em>
 menu item.</li>
@@ -654,125 +643,6 @@ enable this option in the Preferences, see above.</li>
 tab. For now, don’t worry too much about error messages if you see any
 in the console when you open it. We will be using the <em>Elements</em>
 tab to locate specific items in the web page.</p>
-</section><section><h2 class="section-heading" id="locate-code-for-specific-elements">Locate code for specific elements<a class="anchor" aria-label="anchor" href="#locate-code-for-specific-elements"></a></h2>
-<hr class="half-width"><p>To find the code for a specific item on a web page, hover over it and
-right click, selecting <em>Inspect</em> from the dialog displayed (shown
-below).</p>
-<figure><img src="fig/inspect-dialog.png" alt="Dialog with Inspect option" class="figure mx-auto d-block"><div class="figcaption">Dialog to select element inspection in
-Chrome</div>
-</figure><p>This will automatically move to the <em>Elements</em> tab in the
-developer console (opening the developer console if not already open)
-and display the section of code for the selected element. The specific
-line of code for the element will be highlighted. In the example below a
-name was selected on the Canadian MPs webpage resulting in the code
-below:</p>
-<figure><img src="fig/inspect-code.png" alt="Code shown in the developer console for a selected element" class="figure mx-auto d-block"><div class="figcaption">Code for selected element, displayed in the
-developer console</div>
-</figure><p>Conversly, by hovering over a line of code in the <em>Elements</em>
-tab, the corresponding element will be highlighted on the web page,
-showing the tag and size of the element. This is shown below:</p>
-<figure><img src="fig/hover-element.png" alt="Screenshot of element highlighted on web page" class="figure mx-auto d-block"><div class="figcaption">Element hightlighted by hovering over code</div>
-</figure><div id="identify-element-tag-for-extracting-mp-names" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="identify-element-tag-for-extracting-mp-names" class="callout-inner">
-<h3 class="callout-title">Identify element tag for extracting MP
-names</h3>
-<div class="callout-content">
-<p>Go back to the <a href="https://members.parliament.uk/members/commons" class="external-link">UK House of
-Commons</a> webpage. Use the developer console to identify what you
-might need to search for in order to extract a list of MPs names.</p>
-<p>Can you see an issue with the data collected if you just searched on
-this particular page?</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>The class “primary-info” contains the text for the names. Note that
-this information is spread over several pages. It may be necessary to
-make use of the links for further pages in order to extract all of the
-required information.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="dynamic-websites">Dynamic websites<a class="anchor" aria-label="anchor" href="#dynamic-websites"></a></h2>
-<hr class="half-width"><p>We are not going to cover these in detail in this lesson but you
-should be aware of dynamic websites and how the HTML code observed might
-differ between these and a static website with no interactive
-elements.</p>
-<p>Visit this practice webpage created by Hartley Brody for learning and
-practicing web scraping: <a href="https://www.scrapethissite.com/pages/ajax-javascript/" class="external-link">Oscar
-Winning Films</a> (but first, read the <a href="https://www.scrapethissite.com/faq/" class="external-link">terms of use</a>). Select
-“2015” to display that year’s Oscar-winning films. Now try viewing the
-HTML behind the page, either using the View Page Source tool in your
-browser or by using Python with the requests and BeautifulSoup packages,
-as we’ve learned.</p>
-<div id="discussion1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<span class="callout-header">Discussion</span>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
-<div class="callout-content">
-<p>Can you find the Best Picture winner Spotlight anywhere in the
-HTML?</p>
-<p>Can you find any of the other movies or the data from the table?</p>
-<p>If not, how could you scrape this page?</p>
-</div>
-</div>
-</div>
-<p>When you explore a page like this, you’ll notice that the movie data
-(including the title Spotlight) isn’t present in the initial HTML
-source. That’s because the website uses <strong>JavaScript</strong> to
-load the information dynamically. JavaScript is a programming language
-that runs in your browser and allows websites to fetch, process, and
-display content on the fly — often in response to user actions, like
-clicking a button.</p>
-<p>When you select “2015”, your browser runs JavaScript (triggered by
-one of the <code>&lt;script&gt;</code> elements in the HTML) to retrieve
-the relevant movie information from the web server and dynamically
-update the table. This makes the page feel more interactive, but it also
-means that the initial HTML you see doesn’t contain the movie data
-itself.</p>
-<p>You can observe this difference when using the “View page source” and
-“Inspect” tools in your browser: “View page source” shows the original
-HTML sent by the server, before any JavaScript runs. “Inspect” shows the
-rendered HTML, after JavaScript has executed and updated the page
-content.</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<span class="callout-header">Key Points</span>
-<div class="callout-inner">
-<div class="callout-content">
-<ul><li>Every website is built on an HTML document that structures its
-content.</li>
-<li>An HTML document is composed of elements, usually defined by an
-opening <tag> and a closing </tag>.</li>
-<li>Elements can have attributes that define their properties, written
-as <tag attribute_name="value">.</tag></li>
-<li>CSS may be used to control the appearance of the rendered
-webpage.</li>
-<li>Dynamic webpages may have content which isn’t loaded until the item
-is selected.</li>
-</ul></div>
-</div>
-</div>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="Webscraping-intro.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -811,7 +681,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.3" class="external-link">sandpaper (0.18.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.4" class="external-link">sandpaper (0.18.4)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -833,7 +703,7 @@ any links that you are not going to use.
   "url": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/Webpage-anatomy.html",
   "identifier": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/Webpage-anatomy.html",
   "dateCreated": "2025-12-04",
-  "dateModified": "2026-01-14",
+  "dateModified": "2026-01-22",
   "datePublished": "2026-01-22"
 }
 
