@@ -112,11 +112,12 @@ These are especially useful for identifying elements when web scraping:
 This [A to Z List]{https://www.geeksforgeeks.org/html/html-tags-a-to-z-list/} gives a comprehensive list of html tags.
 
 :::::::::::::::::::::::::::::::::: instructor
+
 - CSS gives separation between display format and content
 - uses rules applied to html elements by selectors
 - can be useful for targeting elements when scraping
 
-Slide - CSS added to <head>
+Slide - CSS added to head tag
 
 :::::::::::::::::::::::::::::::::::::::::::::
 
@@ -257,7 +258,7 @@ By default the console will probably open in the *Console* tab. For now, don't w
 
 - Back to Canadian MPs page
 - May need to expand elements
-- Member data stored in table <table> <td> <tr>
+- Member data stored in table table, td and tr tags
 - Hover over element in console to highlight on page
 
 :::::::::::::::::::::::::::::::::::::::::::::
