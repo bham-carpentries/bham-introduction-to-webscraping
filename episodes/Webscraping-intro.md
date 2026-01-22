@@ -69,16 +69,16 @@ that allows analysis.
 
 :::::::::::::::::::::::::::::::::: instructor
 
-Point out:
-- Looks quite well ordered
-- Refine search
-- Export options
-- Human can easily work out what data represents
-- Computer needs more information
-Slide - html
-- Can see reasonably well structured
-- Looks like table of data on webpage - quite different in the code
-- Could get computer to pick out specific information
+- Point out:
+    - Looks quite well ordered
+    - Refine search
+    - Export options
+    - Human can easily work out what data represents
+    - Computer needs more information
+- Slide - html
+    - Can see reasonably well structured
+    - Looks like table of data on webpage - quite different in the code
+    - Could get computer to pick out specific information
 
 :::::::::::::::::::::::::::::::::::::::::::::
 
@@ -136,17 +136,17 @@ When presented with information, human beings are good at quickly categorizing i
 
 ::::::::::::::::::::::::::::::::::: instructor
 
-Canadian MPs - well structured
-What if data isn't organised in such an obvious way?
-- Unstructured
-British MPs
+- Canadian MPs - well structured
+- What if data isn't organised in such an obvious way?
+    - Unstructured
+- British MPs
 - Similar data - no way to download
-Slide -> UK MPs html
-- Data structured for viewing - table of cards
-- Less easy to see how data would be gathered
+- Slide -> UK MPs html
+    - Data structured for viewing - table of cards
+    - Less easy to see how data would be gathered
 
-Process automated by web scraping
-Slide -> definition
+- Process automated by web scraping
+- Slide -> definition
 
 ::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -216,8 +216,8 @@ time to extract unstructured information and put it in a structured form for reu
 
 ::::::::::::::::::::::::::::::::::::::: instructor
 
-Show UK MP tools
-- Make sure really necessary to web scrape
+- Show UK MP tools
+    - Make sure really necessary to web scrape
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
