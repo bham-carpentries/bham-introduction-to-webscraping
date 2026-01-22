@@ -36,6 +36,7 @@ After completing this episode, participants should be able to...
     - Similar to web indexing - more targeted
 
 - > Example - Need to understand structure of a webpage
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## What is web scraping?
@@ -65,7 +66,9 @@ ability of investigative journalists to harvest data that is not always presente
 that allows analysis.
 
 ## Example: Scraping parliamentary websites for contact information
+
 :::::::::::::::::::::::::::::::::: instructor
+
 Point out:
 - Looks quite well ordered
 - Refine search
@@ -76,7 +79,9 @@ Slide - html
 - Can see reasonably well structured
 - Looks like table of data on webpage - quite different in the code
 - Could get computer to pick out specific information
+
 :::::::::::::::::::::::::::::::::::::::::::::
+
 In this workshop, we will learn how to extract  information
 from various web pages. Different webpages can have widely differing formats which will affect our decisions as to which method of scraping data might be appropriate. 
 
@@ -130,6 +135,7 @@ When presented with information, human beings are good at quickly categorizing i
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
 ::::::::::::::::::::::::::::::::::: instructor
+
 Canadian MPs - well structured
 What if data isn't organised in such an obvious way?
 - Unstructured
@@ -141,6 +147,7 @@ Slide -> UK MPs html
 
 Process automated by web scraping
 Slide -> definition
+
 ::::::::::::::::::::::::::::::::::::::::::::::
 
 Let's look now at the current list of members for the [UK House of Commons](https://members.parliament.uk/members/commons).
@@ -208,8 +215,10 @@ Web scraping typically targets one web site at a
 time to extract unstructured information and put it in a structured form for reuse.
 
 ::::::::::::::::::::::::::::::::::::::: instructor
+
 Show UK MP tools
 - Make sure really necessary to web scrape
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Web scraping might not be necessary ...
