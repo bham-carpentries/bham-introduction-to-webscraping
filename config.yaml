@@ -40,7 +40,7 @@ source: 'https://github.com/bham-carpentries/bham-introduction-to-webscraping'
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: ' bearinfo@contacts.bham.ac.uk' 
+contact: ' bearinfo@contacts.bham.ac.uk'
 
 # Navigation ------------------------------------------------
 #
