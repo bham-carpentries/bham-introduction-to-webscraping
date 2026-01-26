@@ -80,7 +80,7 @@ from accessing the site during that time, or even cause the server to run out of
 In fact, this is such an efficient way to disrupt a web site that hackers are often doing it on purpose.
 This is called a [Denial of Service (DoS) attack](https://en.wikipedia.org/wiki/Denial-of-service_attack).
 
-Since DoS attacks are unfortunately a common occurence on the Internet, modern web servers include
+Since DoS attacks are unfortunately a common occurrence on the Internet, modern web servers include
 measures to ward off such illegitimate use of their resources. They are watchful for large amounts
 of requests appearing to come from a single computer or IP address, and their first line of defense often involves
 refusing any further requests coming from this IP address.
@@ -89,7 +89,7 @@ A web scraper, even one with legitimate purposes and no intent to bring a websit
 similar behaviour and, if we are not careful, result in our computer being banned from accessing
 a website.
 
-The good news is that a good web scraper, such as the WebScraper extension used in this lesson, recognizes that this is a risk and includes
+The good news is that a good web scraper, such as the Web Scraper extension used in this lesson, recognizes that this is a risk and includes
 measures to prevent our code from appearing to launch a DoS attack on a website. This is mostly
 done by inserting a random delay between individual requests, which gives the target server enough
 time to handle requests from other users between ours. 
@@ -104,7 +104,7 @@ In practice, however, web scraping is a tolerated practice, provided reasonable
 care is taken not to disrupt the "regular" use of a web site, as we have seen above.
 
 In a sense, web scraping is no different than using a web browser to visit a web page,
-in that it amounts to using computer software (a browser vs a scraper) to acccess
+in that it amounts to using computer software (a browser vs a scraper) to access
 data that is publicly available on the web.
 
 In general, if data is publicly available (the content that is being scraped is not
@@ -112,7 +112,7 @@ behind a password-protected authentication system), then it is OK to scrape it,
 provided we don't break the web site doing so. What is potentially
 problematic is if the scraped data will be shared further. For example, downloading
 content off one website and posting it on another website (as our own), unless
-explicitely permitted, would constitute copyright violation and be illegal.
+explicitly permitted, would constitute copyright violation and be illegal.
 
 However, most copyright legislations recognize cases in which reusing some, possibly
 copyrighted, information in an aggregate or derivative format is considered
@@ -197,7 +197,7 @@ Following these guidelines helps ensure that your scraping is ethical, legal, an
 - Obey robots.txt
 - Respect rate limits
 - If unsure contact site administrator to seek permission to scrape
-- Copyright laws - can legally scrape publically available data but republishing or reusing data may require permission
+- Copyright laws - can legally scrape publicly available data but republishing or reusing data may require permission
 
 :::::::::::::::::::::::::::::::::: keypoints
 - Web scraping is, in general, legal and won't get you into trouble.

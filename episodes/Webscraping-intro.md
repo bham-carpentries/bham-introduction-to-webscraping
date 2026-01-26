@@ -4,7 +4,7 @@ teaching: 20 # teaching time in minutes
 exercises: 0 # exercise time in minutes
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - What is web scraping and why is it useful?
 - What are typical use cases for web scraping?
@@ -45,7 +45,7 @@ Web scraping is a technique for extracting information from websites. This can b
 but it is usually faster, more efficient and less error-prone to automate the task. 
 
 Web scraping allows you to acquire non-tabular or poorly structured data from websites and convert it 
-into a usable, structured format, such as a .csv file or spreadsheet.
+into a usable, structured format, such as a `.csv` file or spreadsheet.
 
 Scraping is about more than just acquiring data: it can also help you archive data and track changes to data online.
 
@@ -75,7 +75,7 @@ that allows analysis.
     - Export options
     - Human can easily work out what data represents
     - Computer needs more information
-- Slide - html
+- Slide - HTML
     - Can see reasonably well structured
     - Looks like table of data on webpage - quite different in the code
     - Could get computer to pick out specific information
@@ -86,16 +86,16 @@ In this workshop, we will learn how to extract  information
 from various web pages. Different webpages can have widely differing formats which will affect our decisions as to which method of scraping data might be appropriate. 
 
 Before we can make such decisions we need to have some understanding of the makeup of a webpage. Let's start by looking at the list of members of the Canadian parliament, which is available
-on the [Parliament of Canada website](https://www.ourcommons.ca/members/en/search?view=list)
+on the [Parliament of Canada website](https://www.ourcommons.ca/members/en/search?view=list).
 
-This is how this page appears in December 2025:
+This is how this page appeared in December 2025:
 
 ![Screenshot of the Parliament of Canada website (Top)](fig/canparl-top.png)
 ![Screenshot of the Parliament of Canada websitei (Bottom)](fig/canparl-bottom.png)
 
 There are several features (circled in the image above) that make the data on this page easier to work with.
 The search, reorder, refine features and display modes hint that the data is actually stored in a (structured)
-database before being displayed on this page. The data can be readily downloaded either as a comma separated values (.csv)
+database before being displayed on this page. The data can be readily downloaded either as a comma separated values (`.csv`)
 file or as XML for re-use in their own database, spreadsheet or computer program.
 
 Even though the information displayed in the view above is not labelled, anyone visiting this site with some
@@ -141,7 +141,7 @@ When presented with information, human beings are good at quickly categorizing i
     - Unstructured
 - British MPs
 - Similar data - no way to download
-- Slide -> UK MPs html
+- Slide -> UK MPs HTML
     - Data structured for viewing - table of cards
     - Less easy to see how data would be gathered
 
@@ -231,7 +231,7 @@ As useful as scraping is, there might be better options for the task. Choose the
 - Check if the site or service already provides an API to extract structured data. If it does, that will be a much more efficient and effective pathway. 
     - Good examples are the 
 [Facebook API](https://developers.facebook.com/tools/explorer/), the [X APIs](https://docs.x.com/x-api/introduction) or the [YouTube comments API](https://developers.google.com/youtube/v3/docs/commentThreads/list).
-    - The UK Parliament website that we have been looking at provides a set of APIs in its [Developer Hub](https://developer.parliament.uk/)
+    - The UK Parliament website that we have been looking at provides a set of APIs in its [Developer Hub](https://developer.parliament.uk/).
 - For much larger needs, [Freedom of information Act (FOIA)](https://www.foia.gov/how-to.html) requests can be useful. Be specific about the formats required for the data you want.
 
 ## ... but if it is 
@@ -239,14 +239,14 @@ As useful as scraping is, there might be better options for the task. Choose the
 In the next episodes, we will continue exploring the examples above and try different techniques to extract
 the information they contain.
 
-Before we launch into web scraping proper however, we need to look
+Before we launch into web scraping proper, however, we need to look
 a bit more closely at how information is organized within an HTML document and how to build queries to access
 a specific subset of that information.
 
 ## References
 
 * [Web Scraping (Wikipedia)](https://en.wikipedia.org/wiki/Web_scraping)
-* [The Data Journalism Handbook: Getting Data from the Web](http://datajournalismhandbook.org/1.0/en/getting_data_3.html)
+* [The Data Journalism Handbook: Getting Data from the Web](https://datajournalismhandbook.org/1.0/en/getting_data_3.html)
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
