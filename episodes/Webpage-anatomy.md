@@ -109,7 +109,7 @@ These are especially useful for identifying elements when web scraping:
 - `title=""`: Provides extra information about the element, shown as a tooltip when the user hovers over it.
 - `class=""`: Applies a common styling or grouping to multiple elements at once.
 
-This [A to Z List]{https://www.geeksforgeeks.org/html/html-tags-a-to-z-list/} gives a comprehensive list of html tags.
+This [A to Z List](https://www.geeksforgeeks.org/html/html-tags-a-to-z-list/) gives a comprehensive list of html tags.
 
 :::::::::::::::::::::::::::::::::: instructor
 
