@@ -30,9 +30,9 @@ After attending this training, participants will be able to:
 - Participants should be able to use a web browser
 :::
 
-:::::::::::::::::::::::::::::::::::::: data
+## Data
+
 The sample html files and spreadsheets generated from the scraping exercises can be downloaded from [Intro-to-web-scraping-data.zip](data/Intro-to-web-scraping-data.zip). 
-:::::::::::::::::::::::::::::::::::::::::::
 
 
 This is a new lesson built with [The Carpentries Workbench][workbench]. 
