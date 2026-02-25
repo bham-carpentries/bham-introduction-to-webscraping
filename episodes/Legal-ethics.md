@@ -21,7 +21,9 @@ After completing this episode, participants should be able to...
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In this section we will look at some of the legal issues associated with web scraping. Please note that this does not constitute legal advice on the practice of web scraping. 
+In this section we will look at some of the legal issues associated with web scraping. 
+
+**Please note that this does not constitute legal advice on the practice of web scraping.**
 
 ## Copyright basics
 
