@@ -1398,7 +1398,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-Legal-ethics"><p>Content from <a href="Legal-ethics.html">Ethics and Legality of Web Scraping</a></p>
 <hr>
-<p>Last updated on 2026-01-14 |
+<p>Last updated on 2026-02-25 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Legal-ethics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1427,79 +1427,208 @@ any links that you are not going to use.
 <p>After completing this episode, participants should be able to…</p>
 <ul>
 <li>Discuss the legal and ethical implications of web scraping</li>
-<li>Establish a code of conduct</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="the-rights-wrongs-and-legal-barriers-to-scraping">The rights, wrongs, and legal barriers to scraping<a class="anchor" aria-label="anchor" href="#the-rights-wrongs-and-legal-barriers-to-scraping"></a>
+<p>In this section we will look at some of the legal issues associated
+with web scraping. Please note that this does not constitute legal
+advice on the practice of web scraping.</p>
+<section><h2 class="section-heading" id="copyright-basics">Copyright basics<a class="anchor" aria-label="anchor" href="#copyright-basics"></a>
 </h2>
 <hr class="half-width">
-<p>Now that we have seen several different ways to scrape data from
-websites and are ready to start working on potentially larger projects,
-we may ask ourselves whether there are any legal implications of writing
-a piece of computer code that downloads information from the
-Internet.</p>
-<p>In this section, we will be discussing some of the issues to be aware
-of when scraping websites, and we will establish a <a href="#web-scraping-code-of-conduct">code of conduct (below)</a> to
-guide our web scraping projects.</p>
-<div id="this-section-does-not-constitute-legal-advice" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
+<p>Copyright is a form of intellectual property that automatically gives
+the creators or their employers certain rights over how their works can
+be used by others. In the broadest sense, it allows creators to monetise
+their creations as well as to be identified as the creator. The
+Copyright, Design and Patents Act 1988 provide the legal protections for
+creators whilst also giving a number of exceptions that allow re-use
+without permission.</p>
+<div class="section level3">
+<h3 id="copyright-coverage">Copyright coverage<a class="anchor" aria-label="anchor" href="#copyright-coverage"></a>
+</h3>
+<p>Copyright covers a range of works, find a list of works covered by
+copyright below:</p>
+<ul>
+<li>Literary works (written works e.g. a book, computer code,
+websites)</li>
+<li>Dramatic works</li>
+<li>Musical works (e.g. a recording of a song)</li>
+<li>Databases</li>
+<li>Artistic works (e.g. a photo, painting, sculpture, diagram)</li>
+<li>Sound recordings</li>
+<li>Films (e.g. a recording of a moving image)</li>
+<li>Broadcasts (e.g. a transmission of a television programme)</li>
+<li>Typographical arrangements in a published edition</li>
+</ul>
+<p>Not everything that a person creates is automatically granted
+protection by copyright. For example, the written sentence ‘Hello, how
+are you?’ is unlikely to be protected by copyright as it does not
+demonstrate creativity or originality and took the individual little
+effort or skill to write it.</p>
 </div>
-<span class="callout-header">Callout</span>
-<div id="this-section-does-not-constitute-legal-advice" class="callout-inner">
-<h3 class="callout-title">This section does not constitute legal
-advice</h3>
-<div class="callout-content">
-<p>Please note that the information provided on this page is for
-information purposes only and does not constitute professional legal
-advice on the practice of web scraping.</p>
-<p>If you are concerned about the legal implications of using web
-scraping on a project you are working on, it is probably a good idea to
-seek advice from a professional, preferably someone who has knowledge of
-the intellectual property (copyright) legislation in effect in your
-country.</p>
+<div class="section level3">
+<h3 id="duration-of-copyright">Duration of copyright<a class="anchor" aria-label="anchor" href="#duration-of-copyright"></a>
+</h3>
+<p>Copyright lasts for a longer period than most people expect:</p>
+<ul>
+<li>For most published items copyright lasts until the end of the 70th
+year in which the last creator of that work died</li>
+<li>The typographical arrangement of a publication (e.g. how a printed
+work has been laid out on the page and arranged) is in copyright for 25
+years of the first edition that uses that typography.</li>
+</ul>
+<p>It is important to note that the copyright duration in unpublished
+works (e.g. much archival material) may last for much longer than the 70
+years after death of the creator.</p>
+<p>The <a href="https://www.gov.uk/government/publications/copyright-notice-duration-of-copyright-term/copyright-notice-duration-of-copyright-term" class="external-link">UK
+Government website</a> has a useful and detailed listing that covers the
+duration of copyright for a range of works.</p>
 </div>
+<div class="section level3">
+<h3 id="copyright-owner">Copyright owner<a class="anchor" aria-label="anchor" href="#copyright-owner"></a>
+</h3>
+<p>Ownership determines control over the work’s use if not covered by a
+legal exception. Owners have the right to sell the work, license it to
+others, and object to its mistreatment. Unless overridden by a contract,
+copyright belongs to the person who created the work. It is crucial to
+contact the correct owner for permission to use a work, as ownership can
+change. For example, an academic transfers copyright to a publisher as
+part of signing a publishing agreement or after a creator’s death it may
+transfer to their next of kin. Physical ownership of an item does not
+mean you also own the copyright in the item; these are two separate
+types of property ownership.</p>
 </div>
+<div class="section level3">
+<h3 id="copyright-exceptions">Copyright exceptions<a class="anchor" aria-label="anchor" href="#copyright-exceptions"></a>
+</h3>
+<p>UK law provides a number of legal exceptions so that if you meet
+certain requirements, you can copy a work that is still in copyright
+without permission of the copyright owner.</p>
 </div>
-<p>The internet isn’t as open as it once was. What used to be a vast,
-freely accessible source of information has become a valuable reservoir
-of data —especially for training machine learning and generative AI
-models. In response, many social media platforms and website owners have
-either started monetizing access to their data or taken steps to protect
-their resources from being overwhelmed by automated bots.</p>
-<p>As a result, it’s increasingly common for websites to include
-explicit prohibitions against web scraping in their Terms of Service
-(TOS). To avoid legal or ethical issues, it’s essential to check both
-the TOS and the site’s <code>robots.txt</code> file before scraping.</p>
-<p>You can usually find a site’s <code>robots.txt</code> file by
-appending <code>/robots.txt</code> to the root of the domain—for
-example: <code>https://facebook.com/robots.txt</code> (not
-<code>https://facebook.com/user/robots.txt</code>). Both the TOS and
-<code>robots.txt</code> will help you understand what is allowed and
-what isn’t, so it’s important to review them carefully before
-proceeding.</p>
-<div id="discussion1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+</section><section><h2 class="section-heading" id="scraping-and-copying">Scraping and copying<a class="anchor" aria-label="anchor" href="#scraping-and-copying"></a>
+</h2>
+<hr class="half-width">
+<p>When scraping a website you are always copying content — even if only
+temporarily in memory. That means copyright law applies. A website’s
+text, images, code, and even its layout can be protected works. Remember
+that if you want to copy any work still in copyright you will need a
+legal basis to allow that. There is no ‘web scraping’ exception, the
+closest we have is an exception for non-commercial research of text and
+data analysis.</p>
+<p>A work that is no longer in copyright is called a Public Domain work;
+this means that its copyright duration has now passed and you are free
+to use the work without requiring permission. Sometimes people will say
+that something is in the public domain believing that this means
+‘publicly available.’ These are two separate things and just because
+something is publicly available for you to see online does not mean that
+it does not have copyright protection. Most online items will still be
+in-copyright.</p>
+<div class="section level3">
+<h3 id="non-commercial-research-text-and-data-analysis">Non-commercial research text and data analysis<a class="anchor" aria-label="anchor" href="#non-commercial-research-text-and-data-analysis"></a>
+</h3>
+<p>This exception allows you to copy items to bring together a corpus of
+materials for computational analysis if it meets the following
+criteria:</p>
+<ul>
+<li>You must have lawful access to the work (e.g. openly available
+online or via a library subscription. Bypassing a paywall is not lawful
+access); and</li>
+<li>It must be done for the sole purpose of non-commercial research;
+and</li>
+<li>Unless impossible the copy must be accompanied by sufficient
+acknowledgement.</li>
+</ul>
+<p>If your use is covered by this exception any contract term that
+purports to restrict you from copying for this purpose is
+unenforceable.</p>
+<p>If you want to transfer the copy of the work to anyone else or use it
+for another purpose, then you would need permission of the copyright
+owner. This means that if you later wish to commercialise you may need
+to seek permissions.</p>
 </div>
-<span class="callout-header">Discussion</span>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
-<div class="callout-content">
-<p>Visit <a href="https://www.facebook.com/terms.php" class="external-link">Facebook’s Terms
-of Service</a> and its <a href="https://facebook.com/robots.txt" class="external-link">robots.txt file</a>. What do they
-say about web scraping or collecting data using automated means? Compare
-it to <a href="https://redditinc.com/policies/user-agreement" class="external-link">Reddit’s
-TOS</a> and <a href="https://www.reddit.com/robots.txt" class="external-link">Reddit’s
-robots.txt</a>.</p>
+<div class="section level3">
+<h3 id="web-scraping-for-commercial-purposes">Web scraping for commercial purposes<a class="anchor" aria-label="anchor" href="#web-scraping-for-commercial-purposes"></a>
+</h3>
+<p>If your use were for a purpose other than non-commercial research
+then you have no legal exception to rely upon, you would need to abide
+by any contact terms. Companies often do not want their website
+information to be scraped. To reduce your legal risk, you would need to
+ensure that you followed the website’s own terms and conditions and
+check those as well as follow any restrictions mentioned in robot.txt
+files. Robot.txt files will tell web scraping tools which parts of the
+website it is not permitted to scape. The key points to consider
+are:</p>
+<ol style="list-style-type: decimal">
+<li>Is there copyright in the material that you are scraping?</li>
+<li>Do you have legal access to the material?</li>
+<li>Would your use breach any contract you have with the provider (this
+could be the websites terms of service)? Remember that violating terms
+of a contract can constitute a breach of contract and risk legal claims
+against you.</li>
+<li>Does your use go against any information in robot.text files?</li>
+<li>Are you trying to create a competing product or one that will
+economically harm the website that you are scraping?</li>
+<li>Are there any data protection issues?</li>
+</ol>
+<p>For commercial use it would be better to enter into an agreement with
+the people whose materials you are hoping to scrape.</p>
 </div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="dont-break-the-web-denial-of-service-attacks">Don’t break the web: Denial of Service attacks<a class="anchor" aria-label="anchor" href="#dont-break-the-web-denial-of-service-attacks"></a>
+</section><section><h2 class="section-heading" id="technical-protection-barriers">Technical protection barriers<a class="anchor" aria-label="anchor" href="#technical-protection-barriers"></a>
+</h2>
+<hr class="half-width">
+<p>The Computer Misuse Act 1990 makes it a criminal offence to access
+data or a computer programme without authorisation. This was aimed at
+preventing hacking attacks, but it does means that you should not
+circumvent any technical protection measures, logins, or CAPTCHA to
+scrape the service.</p>
+</section><section><h2 class="section-heading" id="database-rights">Database Rights<a class="anchor" aria-label="anchor" href="#database-rights"></a>
+</h2>
+<hr class="half-width">
+<p>Database rights protect the substantial investment someone may have
+made to create their database in obtaining and verifying their data from
+independent sources. Protection originally lasts for 15 years but can be
+longer if significant amendments are made to the database. If you were
+to scrape substantial parts of their database (this can be quantity of
+material or the quality of it) then you may be infringing their rights
+especially if your use were to harm them economically e.g. by creating a
+competing product</p>
+</section><section><h2 class="section-heading" id="scraping-of-personal-data-within-websites">Scraping of personal data within websites<a class="anchor" aria-label="anchor" href="#scraping-of-personal-data-within-websites"></a>
+</h2>
+<hr class="half-width">
+<p>If you do not require personal data as part of your research then try
+and ensure that your scraping does not collect the personal data of
+individuals e.g. names, email addresses etc. As well as meeting
+copyright requirements you need to meet data protection requirements
+too. In the UK, the fact that someone’s personal data may be publicly
+available does not mean that you can just re-use that information
+without either relying on an exception or exemption. This includes
+information that you may find on social media websites or registers such
+as Companies House. If providing the people whose data you would be
+using with privacy information would be impossible or involve a
+disproportionate effort, then you must carry out a Data Protection
+Impact Assessment (DPIA). Completing a DPIA helps you think about the
+risks involved in how you are using someone’s data and how you can
+mitigate them. The University has a useful <a href="https://canvas.bham.ac.uk/courses/37721" class="external-link">Data Protection Canvas
+course</a> which also includes information about when and how to
+complete a DPIA. The course will also help you to assess if you have a
+legal basis for processing someone’s personal data.</p>
+</section><section><h2 class="section-heading" id="apis">APIs<a class="anchor" aria-label="anchor" href="#apis"></a>
+</h2>
+<hr class="half-width">
+<p>Where possible it may be better to use an authorised API for the
+webservice. Several online services offer these as do some of the
+subscription databases provided by the Libraries and Learning Resources.
+There is sometimes openly available information about this on some
+providers websites. Others require the Library to provide the user with
+an API key and limit how many users can access this at one time.
+Unfortunately, some providers do require an additional cost for an API
+with their services. The Library can request quotes for this but is
+unable to fund them. If you are interested in using content provided by
+the Library, then contact <a href="copyright@contacts.bham.ac.uk">copyright@contacts.bham.ac.uk</a>.</p>
+</section><section><h2 class="section-heading" id="denial-of-service">Denial of Service<a class="anchor" aria-label="anchor" href="#denial-of-service"></a>
 </h2>
 <hr class="half-width">
 <p>The first and most important thing to be careful about when writing a
@@ -1512,151 +1641,40 @@ requests will consume resources on the server, during which it will not
 be doing something else, like for example responding to someone else
 trying to access the same site.</p>
 <p>If we send too many such requests over a short span of time, we can
-prevent other “normal” users from accessing the site during that time,
-or even cause the server to run out of resources and crash.</p>
+prevent other “normal” users from accessing the site during that time or
+even cause the server to run out of resources and crash.</p>
 <p>In fact, this is such an efficient way to disrupt a web site that
 hackers are often doing it on purpose. This is called a <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack" class="external-link">Denial of
 Service (DoS) attack</a>.</p>
-<p>Since DoS attacks are unfortunately a common occurence on the
+<p>Since DoS attacks are unfortunately a common occurrence on the
 Internet, modern web servers include measures to ward off such
 illegitimate use of their resources. They are watchful for large amounts
 of requests appearing to come from a single computer or IP address, and
-their first line of defense often involves refusing any further requests
+their first line of defence often involves refusing any further requests
 coming from this IP address.</p>
 <p>A web scraper, even one with legitimate purposes and no intent to
 bring a website down, can exhibit similar behaviour and, if we are not
 careful, result in our computer being banned from accessing a
 website.</p>
-<p>The good news is that a good web scraper, such as the WebScraper
-extension used in this lesson, recognizes that this is a risk and
-includes measures to prevent our code from appearing to launch a DoS
-attack on a website. This is mostly done by inserting a random delay
-between individual requests, which gives the target server enough time
-to handle requests from other users between ours.</p>
-</section><section><h2 class="section-heading" id="dont-steal-copyright-and-fair-use">Don’t steal: Copyright and fair use<a class="anchor" aria-label="anchor" href="#dont-steal-copyright-and-fair-use"></a>
-</h2>
-<hr class="half-width">
-<p>It is important to recognize that in certain circumstances web
-scraping <em>can</em> be illegal. If the terms and conditions of the web
-site we are scraping specifically prohibit downloading and copying its
-content, then we could be in trouble for scraping it.</p>
-<p>In practice, however, web scraping is a tolerated practice, provided
-reasonable care is taken not to disrupt the “regular” use of a web site,
-as we have seen above.</p>
-<p>In a sense, web scraping is no different than using a web browser to
-visit a web page, in that it amounts to using computer software (a
-browser vs a scraper) to acccess data that is publicly available on the
-web.</p>
-<p>In general, if data is publicly available (the content that is being
-scraped is not behind a password-protected authentication system), then
-it is OK to scrape it, provided we don’t break the web site doing so.
-What is potentially problematic is if the scraped data will be shared
-further. For example, downloading content off one website and posting it
-on another website (as our own), unless explicitely permitted, would
-constitute copyright violation and be illegal.</p>
-<p>However, most copyright legislations recognize cases in which reusing
-some, possibly copyrighted, information in an aggregate or derivative
-format is considered “fair use”. In general, unless the intent is to
-pass off data as our own, copy it word for word or trying to make money
-out of it, reusing publicly available content scraped off the internet
-is OK.</p>
-<div class="section level3">
-<h3 id="better-be-safe-than-sorry">Better be safe than sorry<a class="anchor" aria-label="anchor" href="#better-be-safe-than-sorry"></a>
-</h3>
-<p>Be aware that copyright and data privacy legislation typically
-differs from country to country. Be sure to check the laws that apply in
-your context. For example, in Australia, it can be illegal to scrape and
-store personal information such as names, phone numbers and email
-addresses, even if they are publicly available.</p>
-<p>If you are looking to scrape data for your own personal use, then the
-above guidelines should probably be all that you need to worry about.
-However, if you plan to start harvesting a large amount of data for
-research or commercial purposes, you should probably seek legal advice
-first.</p>
-<p>If you work in a university, chances are it has a copyright office
-that will help you sort out the legal aspects of your project. The
-university library is often the best place to start looking for help on
-copyright.</p>
-</div>
-</section><section><h2 class="section-heading" id="be-nice-ask-and-share">Be nice: ask and share<a class="anchor" aria-label="anchor" href="#be-nice-ask-and-share"></a>
+<p>Scraping of subscriptions resources provided by the Library can also
+trigger our systems to deny access. It can be worth discussing use ahead
+of time with the relevant parties.</p>
+</section><section><h2 class="section-heading" id="consider-asking">Consider asking<a class="anchor" aria-label="anchor" href="#consider-asking"></a>
 </h2>
 <hr class="half-width">
 <p>Depending on the scope of your project, it might be worthwhile to
 consider asking the owners or curators of the data you are planning to
 scrape if they have it already available in a structured format that
-could suit your project. If your aim is do use their data for research,
+could suit your project. If your aim is to use their data for research,
 or to use it in a way that could potentially interest them, not only it
 could save you the trouble of writing a web scraper, but it could also
 help clarify straight away what you can and cannot do with the data.</p>
-<p>On the other hand, when you are publishing your own data, as part of
-a research project, documentation or a public website, you might want to
-think about whether someone might be interested in getting your data for
-their own project. If you can, try to provide others with a way to
-download your raw data in a structured format, and thus save them the
-trouble to try and scrape your own pages!</p>
-</section><section><h2 class="section-heading" id="web-scraping-code-of-conduct">Web scraping Code of Conduct<a class="anchor" aria-label="anchor" href="#web-scraping-code-of-conduct"></a>
+</section><section><h2 class="section-heading" id="further-help">Further help<a class="anchor" aria-label="anchor" href="#further-help"></a>
 </h2>
 <hr class="half-width">
-<p>To conclude, here is a brief code of conduct you should keep in mind
-when doing web scraping:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Ask nicely whether you can access the data in another
-way</strong>. If your project relies on data from a particular
-organization, consider reaching out to them directly or checking whether
-they provide an API. With a bit of luck they might offer the data you
-need in a structured format, saving you time and effort.</p></li>
-<li>
-<p><strong>Don’t download content that’s clearly not
-public</strong>. For example, academic journal publishers often impose
-strict usage restrictions on their databases. Mass-downloading PDFs can
-violate these rules and may get you —or your university librarian— into
-trouble.</p>
-<p>If you need local copies for a legitimate reason (e.g., text mining),
-special agreements may be possible. Your university library is a good
-place to start exploring those options.</p>
-</li>
-<li><p><strong>Check your local legislation</strong>. Many countries
-have laws protecting personal information, such as email addresses or
-phone numbers. Even if this data is visible on a website, scraping it
-could be illegal depending on your jurisdiction (e.g., in
-Australia).</p></li>
-<li><p><strong>Don’t share scraped content illegally</strong>. Scraping
-for personal use is often considered fair use, even when it involves
-copyrighted material. But sharing that data, especially if you don’t
-have the rights to distribute it, can be illegal.</p></li>
-<li><p><strong>Share what you can</strong>. If the scraped data is
-public domain or you’ve been granted permission to share it, consider
-publishing it for others to reuse (e.g., on datahub.io). Also, if you
-wrote a scraper to access it, sharing your code (e.g., on GitHub) can
-help others learn from and build on your work.</p></li>
-<li><p><strong>Publish your own data in a reusable way</strong>. Make it
-easier for others by offering your data in open, software-agnostic
-formats like CSV, JSON, or XML. Include metadata that describes the
-content, origin, and intended use of the data. Ensure it’s accessible
-and searchable by search engines.</p></li>
-<li>
-<p><strong>Don’t break the Internet</strong>. Some websites can’t
-handle high volumes of requests. If your scraper is recursive (i.e., it
-follows links), test it first on a small subset.</p>
-<p>Be respectful by setting delays between requests and limiting the
-rate of access. You’ll learn more about how to do this in the next
-episode.</p>
-</li>
-</ol>
-<p>Following these guidelines helps ensure that your scraping is
-ethical, legal, and considerate of the broader web ecosystem.</p>
-</section><section><h2 class="section-heading" id="other-notes">Other notes<a class="anchor" aria-label="anchor" href="#other-notes"></a>
-</h2>
-<hr class="half-width">
-<ul>
-<li>Boundaries for using/modifying user-agents</li>
-<li>Obey robots.txt</li>
-<li>Respect rate limits</li>
-<li>If unsure contact site administrator to seek permission to
-scrape</li>
-<li>Copyright laws - can legally scrape publically available data but
-republishing or reusing data may require permission</li>
-</ul>
+<p>More information about copyright and text and data mining can be
+found on the University’s <a href="https://intranet.birmingham.ac.uk/student/libraries/copyright/researchers/index.aspx" class="external-link">Copyright
+for researchers pages</a>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1730,8 +1748,8 @@ any links that you are not going to use.
   "url": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/aio.html",
   "identifier": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/aio.html",
   "dateCreated": "2025-12-04",
-  "dateModified": "2026-02-24",
-  "datePublished": "2026-02-24"
+  "dateModified": "2026-02-25",
+  "datePublished": "2026-02-25"
 }
 
   </script><script>
