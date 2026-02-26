@@ -302,7 +302,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Manually scrape data using browser extensions</h1>
-        <p>Last updated on 2026-01-22 |
+        <p>Last updated on 2026-02-26 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Manual-scraping.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -332,7 +332,7 @@
 <h3 class="card-title">Objectives</h3>
 <p>After completing this episode, participants should be able to…</p>
 <ul><li>Understand the different tools for accessing web page data</li>
-<li>Use the WebScraper tool to extract data from a web page</li>
+<li>Use the Web Scraper tool to extract data from a web page</li>
 <li>Assess the appropriate method for gathering the required data</li>
 </ul></div>
 </div>
@@ -349,8 +349,8 @@ webpages. We are interested in scraping a list of MPs and their
 constituencies with the help of Web Scraper.</p>
 <p>First, let’s focus our attention on the first webpage with the <a href="https://members.parliament.uk/members/commons" class="external-link">list of
 MPs</a>.<br>
-We are interested in downloading the list of MP’s names and their
-constituency.</p>
+We are interested in downloading the list of MPs’ names and their
+constituencies.</p>
 <figure><img src="fig/ukparl.png" alt="Screenshot of UK MP list webpage" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the UK MP list website</div>
 </figure><p>There are two ways of using Web Scraper, either using the Wizard GUI
 or using selectors in the developer tools. The wizard gives an easy to
@@ -362,12 +362,12 @@ to customise that is possible using the developer tools.</p>
 selecting the <em>Web Scraper</em> icon on the browser toolbar:</p>
 <figure><img src="fig/web-scraper-gui.png" alt="Screenshot of Web Scraper wizard dialog" class="figure mx-auto d-block"><div class="figcaption">Web Scraper Wizard</div>
 </figure><p>The wizard allows you to select any links to navigate to other pages.
-In our example we don’t need to do this so we will select <em>Skip</em>
+In our example we don’t need to do this so we will select <em>Skip</em>.
 In the <em>Page Navigation Type</em> tab, select whether to make
-selections from the listing page or whether to open links</p>
-<ul><li>We will use the <em>Listing page</em> option</li>
+selections from the listing page or whether to open links.</p>
+<ul><li>We will use the <em>Listing page</em> option.</li>
 <li>Select Continue - this will auto-generate selectors and give a
-preview of the data</li>
+preview of the data.</li>
 </ul><p>The image below shows an example of the data which is automatically
 extracted from this web page without any selection:</p>
 <figure><img src="fig/scraper-mp-data.png" alt="Screenshot of automatically scraped MP data" class="figure mx-auto d-block"><div class="figcaption">Automatically scraped MP data</div>
@@ -375,8 +375,7 @@ extracted from this web page without any selection:</p>
 collecting about 20 entries out of a total of 650. The next section
 <em>Pagination &amp; Scroll</em> allows multiple pages to be selected
 for scraping:</p>
-<ul><li>Choose <em>Select Next Page button</em>
-</li>
+<ul><li>Choose <em>Select Next Page button</em>.</li>
 <li>Select the appropriate means of selecting more pages. This could be
 either a set of numbered pages or a ‘next page’ button. Several buttons
 can be selected if needed.</li>
@@ -420,7 +419,7 @@ selector that we will create will enable the scraper to automatically
 scrape multiple pages.</p>
 <ul><li>Select the <em>Add new selector</em> button. In the resulting
 dialog:
-<ul><li>Choose an Id for the selector, e.g. Paging</li>
+<ul><li>Choose an ID for the selector, e.g. Paging</li>
 <li>The type menu offers a drop down menu of available selectors. In
 this case, we will choose the <em>Pagination</em> selector</li>
 <li>Use the <em>Select</em> button to select the relevant elements on
@@ -450,9 +449,9 @@ selected by clicking on a second box.</li>
 <li>Check the <em>Multiple</em> option</li>
 </ul><figure><img src="fig/list-box-selector.png" alt="Screensho of creating link selector" class="figure mx-auto d-block"><div class="figcaption">Creating a Link Selector</div>
 </figure><p>Again, the next information to be selected is on the page arrived at
-by the links selected in the previous step. By clicking on the select-mp
-selector in the list it can be seen that the link breadcrumbs have again
-been updated:</p>
+by the links selected in the previous step. By clicking on the
+<code>select-mp</code> selector in the list it can be seen that the link
+breadcrumbs have again been updated:</p>
 <figure><img src="fig/link-breadcrumbs.png" alt="Screenshot showing link breadcrumbs" class="figure mx-auto d-block"><div class="figcaption">Breadcrumbs for scraped pages</div>
 </figure><p>We now need to navigate to one of the MP pages by clicking on one of
 the list boxes. The required data can now be gathered by adding more
@@ -462,8 +461,8 @@ selectors.</p>
 </ul><figure><img src="fig/select-name.png" alt="Screenshot of text selector creation" class="figure mx-auto d-block"><div class="figcaption">Creating a Text selector to find the MP
 name</div>
 </figure><p>We can use the same method to create a selector for the email
-address. There should now be two selectors within the select-mp
-page.</p>
+address. There should now be two selectors within the
+<code>select-mp</code> page.</p>
 <figure><img src="fig/name-email-selectors.png" alt="Name and email selectors" class="figure mx-auto d-block"><div class="figcaption">Name and email selectors</div>
 </figure><p>The sitemap is now ready for scraping. Select <em>Sitemap name -&gt;
 Scrape</em>. The Request interval and Page load delay options can be
@@ -476,7 +475,7 @@ displayed showing the data extracted. The <em>Sitemap name -&gt; Export
 Data</em> option allows export in either .xlsx or .csv format.</p>
 <p><a href="data/MP-data.xlsx">MP-data.xlsx</a> is the file downloaded
 after the scraping exercise described above. On examination of this
-file, it can be seen that all of the MP’s names have been extracted but
+file, it can be seen that all of the MPs’ names have been extracted but
 the list of email addresses is incomplete.</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -488,7 +487,7 @@ the list of email addresses is incomplete.</p>
 <div class="callout-content">
 <p><a href="data/MP-data.xlsx">MP-data.xlsx</a> is the file downloaded
 after the scraping exercise described above. On examination of this
-file, it can be seen that all of the MP’s names have been extracted but
+file, it can be seen that all of the MPs’ names have been extracted but
 the list of email addresses is incomplete.</p>
 <p>Why do you think that there are some email addresses missing? - Take
 a look at the code for the email address information. - Compare the
@@ -651,8 +650,8 @@ any links that you are not going to use.
   "url": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/Manual-scraping.html",
   "identifier": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/Manual-scraping.html",
   "dateCreated": "2025-12-04",
-  "dateModified": "2026-01-22",
-  "datePublished": "2026-02-25"
+  "dateModified": "2026-02-26",
+  "datePublished": "2026-02-26"
 }
 
   </script><script>
