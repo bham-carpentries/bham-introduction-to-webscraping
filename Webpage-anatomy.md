@@ -4,7 +4,7 @@ teaching: 30 # teaching time in minutes
 exercises: 15 # exercise time in minutes
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - What’s behind a website, and how can I extract information from it?
 - How can I find the code for a specific element on a web page?
@@ -16,8 +16,8 @@ exercises: 15 # exercise time in minutes
 After completing this episode, participants should be able to...
 
 - Identify the structure and key components of an HTML document
-- Explain how to use the browser developer tools to view the underlying html content of a web page
-- Use the browser developer tool to find the html code for specific items on a web page
+- Explain how to use the browser developer tools to view the underlying HTML content of a web page
+- Use the browser developer tool to find the HTML code for specific items on a web page
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -33,7 +33,7 @@ Then, we’ll look at how to view the HTML source code for a web page and look a
 
 ::::::::::::::::::::::::::::::::: instructor
 
-- html - uses tags to organise and format content.
+- HTML - uses tags to organise and format content.
 - Slide - ask what people think it will do
 - structured doc, **elements** marked by **tags**
 - attributes - modify behaviour, appearance or functionality
@@ -69,11 +69,11 @@ As you look through it, try to imagine how the website would appear in a browser
 </html>
 ```
 
-This text has been saved with a .html extension, [SampleWebpageCode.html](data/SampleWebpageCode.html). If you open it in your web browser, the browser will interpret the markup language and display a nicely formatted web page as below.
+This text has been saved with a `.html` extension, [SampleWebpageCode.html](data/SampleWebpageCode.html). If you open it in your web browser, the browser will interpret the markup language and display a nicely formatted web page as below.
 
 ![](fig/simple_website.PNG){alt="Screenshot of a simple website with the previews HTML"}
 
-When you open an HTML file in your browser, what it's really doing is reading a structured document made up of **elements**, each marked by **tags** inside angle brackets (< and >).
+When you open an HTML file in your browser, what it's really doing is reading a structured document made up of **elements**, each marked by **tags** inside angle brackets (`<` and `>`).
 For instance, the HTML root element, which delimits the beginning and end of an HTML document, is identified by the `<html>` tag.
 
 Most elements have both an opening tag and a closing tag, which define the start and end of that element.
@@ -91,7 +91,7 @@ To specify the destination URL, we used the `href` attribute inside the opening 
 
 Here is a non-exhaustive list of common HTML elements and their purposes:
 
-- `<hmtl>...</html>`: The root element that contains the entire document.
+- `<html>...</html>`: The root element that contains the entire document.
 - `<head>...</head>`: Contains metadata such as the page title that the browser displays.
 - `<body>...</body>`: Contains the content that will be shown on the webpage.
 - `<h1>...</h1>, <h2>...</h2>, <h3>...</h3>`: Define headers of levels 1, 2, 3, and so on.
@@ -109,12 +109,12 @@ These are especially useful for identifying elements when web scraping:
 - `title=""`: Provides extra information about the element, shown as a tooltip when the user hovers over it.
 - `class=""`: Applies a common styling or grouping to multiple elements at once.
 
-This [A to Z List](https://www.geeksforgeeks.org/html/html-tags-a-to-z-list/) gives a comprehensive list of html tags.
+This [A to Z List](https://www.geeksforgeeks.org/html/html-tags-a-to-z-list/) gives a comprehensive list of HTML tags.
 
 :::::::::::::::::::::::::::::::::: instructor
 
 - CSS gives separation between display format and content
-- uses rules applied to html elements by selectors
+- uses rules applied to HTML elements by selectors
 - can be useful for targeting elements when scraping
 
 Slide - CSS added to head tag
@@ -130,7 +130,7 @@ CSS (Cascading Style Sheets) is code which allows the way that a web page is dis
 CSS uses rule sets which are applied to the HTML elements using selectors.
 
 You may see selectors applied to HTML elements by tag, class or ID. These may be useful for targeting elements when web scraping.
-The CSS rules may be applied using a <style>...</style> tag in the HTML file or may be in a separate .css file linked from the HTML file. 
+The CSS rules may be applied using a <style>...</style> tag in the HTML file or may be in a separate `.css` file linked from the HTML file. 
 
 An example of two style rules applied to our HTML example are shown below. They can be viewed by opening the [WebpageCSS.html](data/WebpageCSS.html) file. 
 
@@ -237,7 +237,7 @@ We can see from the source code that the title of this page is in a `title` elem
 
 Say we wanted to tell a web scraper to look for the title of this page, we would use this information to indicate the
 _path_ the scraper would need to follow as it navigates through the HTML content of the page to reach the `title`
-element. We can search for specific items in the source page code using the built in developer console.
+element. We can search for specific items in the source page code using the built-in developer console.
 
 ::::::::::::::::::::::::::::::::::::: callout
 ## Display the console in your browser
@@ -248,7 +248,7 @@ element. We can search for specific items in the source page code using the buil
   you must first enable this option in the Preferences, see above.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Here is how the console looks like in the Chrome browser:
+Here is how the console looks in the Chrome browser:
 
 ![Developer console in Chrome](fig/chrome-console.png){alt="Screenshot of Chrome developer console"}
 
@@ -272,15 +272,15 @@ This will automatically move to the *Elements* tab in the developer console (ope
 
 ![Code for selected element, displayed in the developer console](fig/inspect-code.png){alt="Code shown in the developer console for a selected element"}
 
-Conversly, by hovering over a line of code in the *Elements* tab, the corresponding element will be highlighted on the web page, showing the tag and size of the element. This is shown below:
+Conversely, by hovering over a line of code in the *Elements* tab, the corresponding element will be highlighted on the web page, showing the tag and size of the element. This is shown below:
 
-![Element hightlighted by hovering over code](fig/hover-element.png){alt="Screenshot of element highlighted on web page"}
+![Element highlighted by hovering over code](fig/hover-element.png){alt="Screenshot of element highlighted on web page"}
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Identify element tag for extracting MP names
 Go back to the [UK House of Commons](https://members.parliament.uk/members/commons) webpage.
-Use the developer console to identify what you might need to search for in order to extract a list of MPs names.
+Use the developer console to identify what you might need to search for in order to extract a list of MPs' names.
 
 Can you see an issue with the data collected if you just searched on this particular page?
 
@@ -309,13 +309,13 @@ Can you find any of the other movies or the data from the table?
 
 If not, how could you scrape this page?
 
-::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::: instructor
 
-- View Page Source shows html from when the page is loaded
+- View Page Source shows HTML from when the page is loaded
 - Selecting 2015 triggers the script
-  - Inspect then displays the rendered html
+  - Inspect then displays the rendered HTML
 
 ::::::::::::::::::::::::::::::::::::::::::::
 
@@ -330,11 +330,11 @@ You can observe this difference when using the "View page source" and "Inspect" 
 "Inspect" shows the rendered HTML, after JavaScript has executed and updated the page content.
 
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+::::::::::::::::::::::::::::::::::::: keypoints
 
 - Every website is built on an HTML document that structures its content.
-- An HTML document is composed of elements, usually defined by an opening <tag> and a closing </tag>.
-- Elements can have attributes that define their properties, written as <tag attribute_name="value">.
+- An HTML document is composed of elements, usually defined by an opening `<tag>` and a closing `</tag>`.
+- Elements can have attributes that define their properties, written as `<tag attribute_name="value">`.
 - CSS may be used to control the appearance of the rendered webpage.
 - Dynamic webpages may have content which isn't loaded until the item is selected.
 
