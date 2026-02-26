@@ -16,7 +16,7 @@ exercises: 15 # exercise time in minutes
 After completing this episode, participants should be able to...
 
 - Understand the different tools for accessing web page data
-- Use the WebScraper tool to extract data from a web page
+- Use the Web Scraper tool to extract data from a web page
 - Assess the appropriate method for gathering the required data
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -27,7 +27,7 @@ Now we are finally ready to do some web scraping using Web Scraper Chrome extens
 For this lesson, we will again be using the UK Members of Parliament webpages. We are interested in scraping a list of MPs and their constituencies with the help of Web Scraper.
 
 First, let's focus our attention on the first webpage with the [list of MPs](https://members.parliament.uk/members/commons).  
-We are interested in downloading the list of MP's names and their constituency.
+We are interested in downloading the list of MPs' names and their constituencies.
 
 ![Screenshot of the UK MP list website](fig/ukparl.png){alt="Screenshot of UK MP list webpage"}
 
@@ -38,11 +38,11 @@ With the extension installed the Wizard window can be opened by selecting the *W
 
 ![Web Scraper Wizard](fig/web-scraper-gui.png){alt="Screenshot of Web Scraper wizard dialog"}
 
-The wizard allows you to select any links to navigate to other pages. In our example we don't need to do this so we will select *Skip*
-In the *Page Navigation Type* tab, select whether to make selections from the listing page or whether to open links
+The wizard allows you to select any links to navigate to other pages. In our example we don't need to do this so we will select *Skip*.
+In the *Page Navigation Type* tab, select whether to make selections from the listing page or whether to open links.
 
-- We will use the *Listing page* option 
-- Select Continue - this will auto-generate selectors and give a preview of the data
+- We will use the *Listing page* option.
+- Select Continue - this will auto-generate selectors and give a preview of the data.
 
 The image below shows an example of the data which is automatically extracted from this web page without any selection:
 
@@ -50,7 +50,7 @@ The image below shows an example of the data which is automatically extracted fr
 
 Note that this has only gathered the names of MPs for one page, collecting about 20 entries out of a total of 650. The next section *Pagination & Scroll* allows multiple pages to be selected for scraping:
 
-- Choose *Select Next Page button* 
+- Choose *Select Next Page button*.
 - Select the appropriate means of selecting more pages. This could be either a set of numbered pages or a 'next page' button. Several buttons can be selected if needed.
 - On completion click the green *Done selecting* button.
 
@@ -98,7 +98,7 @@ It is a good idea to spend some time navigating the website and taking a look at
 The MP information data is spread across several pages. The first selector that we will create will enable the scraper to automatically scrape multiple pages.
 
 - Select the *Add new selector* button. In the resulting dialog:
-   - Choose an Id for the selector, e.g. Paging
+   - Choose an ID for the selector, e.g. Paging
    - The type menu offers a drop down menu of available selectors. In this case, we will choose the *Pagination* selector
    - Use the *Select* button to select the relevant elements on the webpage. In this case the pagination uses the numbered boxes at the top or bottom of the page. More than one selection can be made by using Shift+Enter. In the example shown below, just two pages have been selected.
    - The *Element Preview* button can be used to check that the correct items have been selected.
@@ -124,7 +124,7 @@ The next information to be selected is on the page arrived at by the links selec
 
 ![Creating a Link Selector](fig/list-box-selector.png){alt="Screensho of creating link selector"}
 
-Again, the next information to be selected is on the page arrived at by the links selected in the previous step. By clicking on the select-mp selector in the list it can be seen that the link breadcrumbs have again been updated:
+Again, the next information to be selected is on the page arrived at by the links selected in the previous step. By clicking on the `select-mp` selector in the list it can be seen that the link breadcrumbs have again been updated:
 
 ![Breadcrumbs for scraped pages](fig/link-breadcrumbs.png){alt="Screenshot showing link breadcrumbs"}
 
@@ -135,7 +135,7 @@ We now need to navigate to one of the MP pages by clicking on one of the list bo
 
 ![Creating a Text selector to find the MP name](fig/select-name.png){alt="Screenshot of text selector creation"}
 
-We can use the same method to create a selector for the email address. There should now be two selectors within the select-mp page.
+We can use the same method to create a selector for the email address. There should now be two selectors within the `select-mp` page.
 
 ![Name and email selectors](fig/name-email-selectors.png){alt="Name and email selectors"}
 
@@ -143,11 +143,11 @@ The sitemap is now ready for scraping. Select *Sitemap name -> Scrape*. The Requ
 
 On completion of scraping it may be necessary to click the *Refresh* button in order to view the data. A table will be displayed showing the data extracted. The *Sitemap name -> Export Data* option allows export in either .xlsx or .csv format.
 
-[MP-data.xlsx](data/MP-data.xlsx) is the file downloaded after the scraping exercise described above.  On examination of this file, it can be seen that all of the MP's names have been extracted but the list of email addresses is incomplete.
+[MP-data.xlsx](data/MP-data.xlsx) is the file downloaded after the scraping exercise described above.  On examination of this file, it can be seen that all of the MPs' names have been extracted but the list of email addresses is incomplete.
 
 :::::::::::::::::::::::::::::::::::::challenge
 
-[MP-data.xlsx](data/MP-data.xlsx) is the file downloaded after the scraping exercise described above.  On examination of this file, it can be seen that all of the MP's names have been extracted but the list of email addresses is incomplete.
+[MP-data.xlsx](data/MP-data.xlsx) is the file downloaded after the scraping exercise described above.  On examination of this file, it can be seen that all of the MPs' names have been extracted but the list of email addresses is incomplete.
 
 Why do you think that there are some email addresses missing? 
 - Take a look at the code for the email address information.
