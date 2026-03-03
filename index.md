@@ -39,3 +39,5 @@ This is a new lesson built with [The Carpentries Workbench][workbench].
 
 [workbench]: https://carpentries.github.io/sandpaper-docs
 
+It is adapted from the UC Santa Barbara Library [Introduction to Web Scraping Course ](https://carpentry.library.ucsb.edu/2024-02-27-ucsb-webscraping/) 
+

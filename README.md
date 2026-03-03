@@ -5,3 +5,4 @@ There are a variety of ways to scrape a website to extract information for reuse
 
 This lesson gives an introduction to the structure of websites, introduces some tools to extract data from well-structured websites and discusses the legal and ethical implications of extracting and using that data.
 
+This lesson is adapted from the UC Santa Barbara Library [Introduction to Web Scraping Course ](https://carpentry.library.ucsb.edu/2024-02-27-ucsb-webscraping/) 

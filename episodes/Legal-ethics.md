@@ -133,8 +133,11 @@ More information about copyright and text and data mining can be found on the Un
 
 
 :::::::::::::::::::::::::::::::::: keypoints
-- Web scraping is, in general, legal and won't get you into trouble.
-- Always review and respect a website’s Terms of Service (TOS) before scraping its content.
-- There are a few things to be careful about, notably don't overwhelm a web server and don't steal content.
-- Be nice. In doubt, ask.
+
+- When web scraping you need to consider copyright, database rights, data protection and website terms.
+- A UK exception allows non-commercial text and data mining only with lawful access and proper acknowledgement.
+- Commercial scraping requires following terms of service, robots.txt.
+- For all web scraping you need to avoid any circumvention of technical barriers.
+- Key risks include collecting personal data, overwhelming servers, and inadvertently infringing rights — using APIs or asking data owners is often safer.
+
 ::::::::::::::::::::::::::::::::::::::::::::
