@@ -35,6 +35,7 @@ After attending this training, participants will be able to:
 
 The sample html files and spreadsheets generated from the scraping exercises can be downloaded from [Intro-to-web-scraping-data.zip](data/Intro-to-web-scraping-data.zip). 
 
+## License
 
 This is a new lesson built with [The Carpentries Workbench][workbench]. 
 
