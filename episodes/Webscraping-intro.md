@@ -28,14 +28,17 @@ After completing this episode, participants should be able to...
 - Intro questions
     - 1) Do you have a specific web scraping application in mind?
     - 2) Is there anything in particular which you would like to learn in this session?
+    
+- Slide - Definition of web scraping
 
-- What is web scraping?
+- Slide - What is web scraping?
     - Extracting information from websites
     - Manual - faster to automate
     - Collect data in usable format, e.g. .cvsv
     - Similar to web indexing - more targeted
 
 - > Example - Need to understand structure of a webpage
+    - Look at a couple of examples to give a flavour of what we might need to look at
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -64,6 +67,10 @@ text mining projects; these might be collections of journal articles or digitise
 [data journalism](https://en.wikipedia.org/wiki/Data_journalism), in particular, relies on the
 ability of investigative journalists to harvest data that is not always presented or published in a form
 that allows analysis.
+
+We will look at a couple of example websites to show the code which lies underneath the rendered page,
+what we may want to look for when deciding how to scrape the data and some differences between the two sites.
+
 
 ## Example: Scraping parliamentary websites for contact information
 
@@ -137,16 +144,13 @@ When presented with information, human beings are good at quickly categorizing i
 ::::::::::::::::::::::::::::::::::: instructor
 
 - Canadian MPs - well structured
-- What if data isn't organised in such an obvious way?
-    - Unstructured
+- Slide - What if data isn't organised in such an obvious way?
+    - Unstructured vs structured
 - British MPs
 - Similar data - no way to download
 - Slide -> UK MPs HTML
     - Data structured for viewing - table of cards
     - Less easy to see how data would be gathered
-
-- Process automated by web scraping
-- Slide -> definition
 
 ::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -218,6 +222,7 @@ time to extract unstructured information and put it in a structured form for reu
 
 - Show UK MP tools
     - Make sure really necessary to web scrape
+- Slide - web scraping might not be necessary
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
