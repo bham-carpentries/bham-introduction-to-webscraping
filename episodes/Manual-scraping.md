@@ -20,9 +20,9 @@ After completing this episode, participants should be able to...
 - Assess the appropriate method for gathering the required data
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-# Using the Web Scraper Chrome extension
+# Using the Chrome Web Scraper extension
 
-Now we are finally ready to do some web scraping using Web Scraper Chrome extension. If you haven’t it installed on your machine, please refer to the [Setup instructions](/learners/setup.md).
+Now we are ready to do some web scraping using the Chrome Web Scraper extension. If you haven’t it installed on your machine, please refer to the [Setup instructions](/learners/setup.md).
 
 For this lesson, we will again be using the UK Members of Parliament webpages. We are interested in scraping a list of MPs and their constituencies with the help of Web Scraper.
 
@@ -38,23 +38,33 @@ With the extension installed the Wizard window can be opened by selecting the *W
 
 ![Web Scraper Wizard](fig/web-scraper-gui.png){alt="Screenshot of Web Scraper wizard dialog"}
 
-The wizard allows you to select any links to navigate to other pages. In our example we don't need to do this so we will select *Skip*.
-In the *Page Navigation Type* tab, select whether to make selections from the listing page or whether to open links.
+The first *Data Setup* page shows data which is automatically extracted from the web page without any intervention. The image above shows this data.
 
-- We will use the *Listing page* option.
-- Select Continue - this will auto-generate selectors and give a preview of the data.
+The titles can be edited to give something more meaningful as in the image below.
 
-The image below shows an example of the data which is automatically extracted from this web page without any selection:
+![Automatically scraped MP data with edited record titles](fig/web-scraper-titles.png){alt="Screenshot showing amended record titles"}
 
-![Automatically scraped MP data](fig/scraper-mp-data.png){alt="Screenshot of automatically scraped MP data"}
-
+At this point the data selected can be exported as an Excel spreadsheet or a comma separate variable (csv) file using the appropriate download buttons just below the data. 
 Note that this has only gathered the names of MPs for one page, collecting about 20 entries out of a total of 650. The next section *Pagination & Scroll* allows multiple pages to be selected for scraping:
 
 - Choose *Select Next Page button*.
 - Select the appropriate means of selecting more pages. This could be either a set of numbered pages or a 'next page' button. Several buttons can be selected if needed.
-- On completion click the green *Done selecting* button.
+- On completion click the *Done selecting* button.
+- Leave the *Enable Infite Scroll* button checked.
+- Select *Continue*
 
 ![Pagination & Scroll selection](fig/scraper-pagination.png){alt="Screenshot of pagination selection"}
+
+
+The next wizard page, *Follow Item Links* allows you to select links to navigate to other pages. In our example we don't need to do this so we will select *Skip*.
+
+
+The final tab, *Scrape* shows a message saying that the scraper configuration is ready.
+
+- Select the *Scrape the page* button
+
+You will see a new window open which will show the page selection button updating as the data from each page is scraped. Finally a table will show that 650 records have been scraped with the first 100 displayed.
+
 
 On selection of the *Finish* button the dialog will show that scraper configuration is ready and the *Scrape the page* button can be selected.
 
