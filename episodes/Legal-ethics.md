@@ -23,7 +23,10 @@ After completing this episode, participants should be able to...
 
 In this section we will look at some of the legal issues associated with web scraping. 
 
-**Please note that this does not constitute legal advice on the practice of web scraping.**
+**Please note:**
+
+  - **This does not constitute legal advice on the practice of web scraping.**
+  - **This section is relevant to the UK. The law may be different in other countries - please seek relevant advice.**
 
 ## Copyright basics
 
@@ -89,7 +92,7 @@ If your use were for a purpose other than non-commercial research then you have 
 1.	Is there copyright in the material that you are scraping?
 2.	Do you have legal access to the material?
 3.	Would your use breach any contract you have with the provider (this could be the websites terms of service)? Remember that violating terms of a contract can constitute a breach of contract and risk legal claims against you. 
-4.	Does your use go against any information in robot.text files? 
+4.	Does your use go against any information in robot.txt files? 
 5.	Are you trying to create a competing product or one that will economically harm the website that you are scraping? 
 6.	Are there any data protection issues?
 
