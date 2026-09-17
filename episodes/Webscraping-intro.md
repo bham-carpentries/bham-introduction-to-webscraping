@@ -28,14 +28,19 @@ After completing this episode, participants should be able to...
 - Intro questions
     - 1) Do you have a specific web scraping application in mind?
     - 2) Is there anything in particular which you would like to learn in this session?
+    
+- Slide - Definition of web scraping
 
-- What is web scraping?
+- Slide - What is web scraping?
     - Extracting information from websites
     - Manual - faster to automate
     - Collect data in usable format, e.g. .cvsv
     - Similar to web indexing - more targeted
+    
+- Slides - 
 
 - > Example - Need to understand structure of a webpage
+    - Look at a couple of examples to give a flavour of what we might need to look at
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -65,6 +70,20 @@ text mining projects; these might be collections of journal articles or digitise
 ability of investigative journalists to harvest data that is not always presented or published in a form
 that allows analysis.
 
+We will look at a couple of example websites to show the code which lies underneath the rendered page,
+what we may want to look for when deciding how to scrape the data and some differences between the two sites.
+
+It is useful to have an appreciation of where that code fits into the process of requesting a web page and rendering it in a browser. 
+At its most basic, when a web page is requested (e.g. by clicking a link or entering a web address in the browser) a request is sent to a Domain Name Server (DNS) which returns the IP address of the server to be contacted. 
+A request is sent to the server at that address which fetches the data and returns an HTML file to the user's computer. This is then rendered by the browser.
+
+When web scraping, the information in that HTML file can be searched to extract the information needed. It may be necessary to make multiple requests to various pages in order to find all of the data to be scraped.
+
+This is illustrated in the figure below.
+
+![Requesting and rendering a web page using a browser](fig/web-page-request.png){alt="Figure showing flow of data when making web page request"}
+
+
 ## Example: Scraping parliamentary websites for contact information
 
 :::::::::::::::::::::::::::::::::: instructor
@@ -90,8 +109,8 @@ on the [Parliament of Canada website](https://www.ourcommons.ca/members/en/searc
 
 This is how this page appeared in December 2025:
 
-![Screenshot of the Parliament of Canada website (Top)](fig/canparl-top.png)
-![Screenshot of the Parliament of Canada websitei (Bottom)](fig/canparl-bottom.png)
+![Screenshot of the Parliament of Canada website (Top)](fig/canparl-top.png){alt="Top of Canadian MPs website with search options highlighted"}
+![Screenshot of the Parliament of Canada website (Bottom)](fig/canparl-bottom.png){alt="Bottom of Canadian MPs website with export options highlighted"}
 
 There are several features (circled in the image above) that make the data on this page easier to work with.
 The search, reorder, refine features and display modes hint that the data is actually stored in a (structured)
@@ -137,16 +156,13 @@ When presented with information, human beings are good at quickly categorizing i
 ::::::::::::::::::::::::::::::::::: instructor
 
 - Canadian MPs - well structured
-- What if data isn't organised in such an obvious way?
-    - Unstructured
+- Slide - What if data isn't organised in such an obvious way?
+    - Unstructured vs structured
 - British MPs
 - Similar data - no way to download
 - Slide -> UK MPs HTML
     - Data structured for viewing - table of cards
     - Less easy to see how data would be gathered
-
-- Process automated by web scraping
-- Slide -> definition
 
 ::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -218,6 +234,7 @@ time to extract unstructured information and put it in a structured form for reu
 
 - Show UK MP tools
     - Make sure really necessary to web scrape
+- Slide - web scraping might not be necessary
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
