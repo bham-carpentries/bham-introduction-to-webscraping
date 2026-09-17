@@ -20,9 +20,9 @@ After completing this episode, participants should be able to...
 - Assess the appropriate method for gathering the required data
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-# Using the Web Scraper Chrome extension
+# Using the Chrome Web Scraper extension
 
-Now we are finally ready to do some web scraping using Web Scraper Chrome extension. If you haven’t it installed on your machine, please refer to the [Setup instructions](/learners/setup.md).
+Now we are ready to do some web scraping using the Chrome Web Scraper extension. If you haven’t it installed on your machine, please refer to the [Setup instructions](/learners/setup.md).
 
 For this lesson, we will again be using the UK Members of Parliament webpages. We are interested in scraping a list of MPs and their constituencies with the help of Web Scraper.
 
@@ -38,23 +38,33 @@ With the extension installed the Wizard window can be opened by selecting the *W
 
 ![Web Scraper Wizard](fig/web-scraper-gui.png){alt="Screenshot of Web Scraper wizard dialog"}
 
-The wizard allows you to select any links to navigate to other pages. In our example we don't need to do this so we will select *Skip*.
-In the *Page Navigation Type* tab, select whether to make selections from the listing page or whether to open links.
+The first *Data Setup* page shows data which is automatically extracted from the web page without any intervention. The image above shows this data.
 
-- We will use the *Listing page* option.
-- Select Continue - this will auto-generate selectors and give a preview of the data.
+The titles can be edited to give something more meaningful as in the image below.
 
-The image below shows an example of the data which is automatically extracted from this web page without any selection:
+![Automatically scraped MP data with edited record titles](fig/web-scraper-titles.png){alt="Screenshot showing amended record titles"}
 
-![Automatically scraped MP data](fig/scraper-mp-data.png){alt="Screenshot of automatically scraped MP data"}
-
+At this point the data selected can be exported as an Excel spreadsheet or a comma separate variable (csv) file using the appropriate download buttons just below the data. 
 Note that this has only gathered the names of MPs for one page, collecting about 20 entries out of a total of 650. The next section *Pagination & Scroll* allows multiple pages to be selected for scraping:
 
 - Choose *Select Next Page button*.
 - Select the appropriate means of selecting more pages. This could be either a set of numbered pages or a 'next page' button. Several buttons can be selected if needed.
-- On completion click the green *Done selecting* button.
+- On completion click the *Done selecting* button.
+- Leave the *Enable Infite Scroll* button checked.
+- Select *Continue*
 
 ![Pagination & Scroll selection](fig/scraper-pagination.png){alt="Screenshot of pagination selection"}
+
+
+The next wizard page, *Follow Item Links* allows you to select links to navigate to other pages. In our example we don't need to do this so we will select *Skip*.
+
+
+The final tab, *Scrape* shows a message saying that the scraper configuration is ready.
+
+- Select the *Scrape the page* button
+
+You will see a new window open which will show the page selection button updating as the data from each page is scraped. Finally a table will show that 650 records have been scraped with the first 100 displayed.
+
 
 On selection of the *Finish* button the dialog will show that scraper configuration is ready and the *Scrape the page* button can be selected.
 
@@ -87,6 +97,7 @@ The data scraped can now be downloaded as either a .xlsx or .csv file.
 :::::::::::::::::::::::::::::::::::::::::
 
 The Web Scraper extension works on a "Sitemap". The previous exercise will already have created a sitemap and this will be listed in the opening window on the tab.  Alternatively, a new sitemap can be created:
+
 - Select Create new sitemap-> Create Sitemap
    - Add a *Sitemap name* and *Start URL* for the webpage you wish to scrape
    - Click *Create Sitemap*
@@ -100,9 +111,10 @@ The MP information data is spread across several pages. The first selector that 
 - Select the *Add new selector* button. In the resulting dialog:
    - Choose an ID for the selector, e.g. Paging
    - The type menu offers a drop down menu of available selectors. In this case, we will choose the *Pagination* selector
-   - Use the *Select* button to select the relevant elements on the webpage. In this case the pagination uses the numbered boxes at the top or bottom of the page. More than one selection can be made by using Shift+Enter. In the example shown below, just two pages have been selected.
+   - Use the *Select* button to select the relevant elements on the webpage. In this case the pagination uses the numbered boxes at the top or bottom of the page. Either one page can be selected or, by clicking on a second button, all pages are selected. In the example shown below, one extra page has been selected to scrape.
    - The *Element Preview* button can be used to check that the correct items have been selected.
    - The *Data Preview* button will show the data that will result from this scraping operation.
+   - Click the *Save Selector* button to complete the operation.
 
 ![Creating a Pagination selector](fig/pagination-selector.png){alt="Screenshot of creating pagination selector"}
 
@@ -120,7 +132,8 @@ The next information to be selected is on the page arrived at by the links selec
 - Select the Paging row in the dialog
 - Create a new selector as before, this time choosing a *Link* selector
 - When using the *Select* button all MP list boxes can be selected by clicking on a second box.
-- Check the *Multiple* option
+- Check the *Multiple* option.
+- Click the *Save Selector* button to complete the operation.
 
 ![Creating a Link Selector](fig/list-box-selector.png){alt="Screensho of creating link selector"}
 
@@ -139,9 +152,13 @@ We can use the same method to create a selector for the email address. There sho
 
 ![Name and email selectors](fig/name-email-selectors.png){alt="Name and email selectors"}
 
-The sitemap is now ready for scraping. Select *Sitemap name -> Scrape*. The Request interval and Page load delay options can be left at the default 2000ms. Clicking the *Start scraping* button will start the scraping process.  A window will open, showing the pages being accessed in the scraping process.
+The sitemap is now ready for scraping. 
 
-On completion of scraping it may be necessary to click the *Refresh* button in order to view the data. A table will be displayed showing the data extracted. The *Sitemap name -> Export Data* option allows export in either .xlsx or .csv format.
+- Select *Sitemap Testing -> Scrape*. 
+    - The Request interval and Page load delay options can be left at the default 2000ms. 
+    - Click the *Start scraping* button to start the scraping process.  A window will open, showing each page accessed during the process.
+
+On completion of scraping it may be necessary to click the *Refresh* button in order to view the data. A table will be displayed showing the data extracted. The *Sitemap Testing -> Export Data* option allows export in either .xlsx or .csv format.
 
 [MP-data.xlsx](data/MP-data.xlsx) is the file downloaded after the scraping exercise described above.  On examination of this file, it can be seen that all of the MPs' names have been extracted but the list of email addresses is incomplete.
 
