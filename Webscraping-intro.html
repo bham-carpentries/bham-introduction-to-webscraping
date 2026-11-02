@@ -329,7 +329,7 @@ information</a></li>
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>What is Web Scraping?</h1>
-        <p>Last updated on 2026-02-26 |
+        <p>Last updated on 2026-11-02 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Webscraping-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -393,7 +393,26 @@ journal articles or digitised texts. The practice of <a href="https://en.wikiped
 journalism</a>, in particular, relies on the ability of investigative
 journalists to harvest data that is not always presented or published in
 a form that allows analysis.</p>
-</section><section><h2 class="section-heading" id="example-scraping-parliamentary-websites-for-contact-information">Example: Scraping parliamentary websites for contact
+<p>We will look at a couple of example websites to show the code which
+lies underneath the rendered page, what we may want to look for when
+deciding how to scrape the data and some differences between the two
+sites.</p>
+<p>It is useful to have an appreciation of where that code fits into the
+process of requesting a web page and rendering it in a browser. At its
+most basic, when a web page is requested (e.g. by clicking a link or
+entering a web address in the browser) a request is sent to a Domain
+Name Server (DNS) which returns the IP address of the server to be
+contacted. A request is sent to the server at that address which fetches
+the data and returns an HTML file to the user’s computer. This is then
+rendered by the browser.</p>
+<p>When web scraping, the information in that HTML file can be searched
+to extract the information needed. It may be necessary to make multiple
+requests to various pages in order to find all of the data to be
+scraped.</p>
+<p>This is illustrated in the figure below.</p>
+<figure><img src="fig/web-page-request.png" alt="Figure showing flow of data when making web page request" class="figure mx-auto d-block"><div class="figcaption">Requesting and rendering a web page using a
+browser</div>
+</figure></section><section><h2 class="section-heading" id="example-scraping-parliamentary-websites-for-contact-information">Example: Scraping parliamentary websites for contact
 information<a class="anchor" aria-label="anchor" href="#example-scraping-parliamentary-websites-for-contact-information"></a></h2>
 <hr class="half-width"><p>In this workshop, we will learn how to extract information from
 various web pages. Different webpages can have widely differing formats
@@ -404,7 +423,7 @@ of the makeup of a webpage. Let’s start by looking at the list of
 members of the Canadian parliament, which is available on the <a href="https://www.ourcommons.ca/members/en/search?view=list" class="external-link">Parliament
 of Canada website</a>.</p>
 <p>This is how this page appeared in December 2025:</p>
-<p><img src="fig/canparl-top.png" alt="Screenshot of the Parliament of Canada website (Top)" class="figure"><img src="fig/canparl-bottom.png" alt="Screenshot of the Parliament of Canada websitei (Bottom)" class="figure"></p>
+<p><img src="fig/canparl-top.png" alt="Top of Canadian MPs website with search options highlighted" class="figure"><img src="fig/canparl-bottom.png" alt="Bottom of Canadian MPs website with export options highlighted" class="figure"></p>
 <p>There are several features (circled in the image above) that make the
 data on this page easier to work with. The search, reorder, refine
 features and display modes hint that the data is actually stored in a
@@ -650,8 +669,8 @@ any links that you are not going to use.
   "url": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/Webscraping-intro.html",
   "identifier": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/Webscraping-intro.html",
   "dateCreated": "2025-12-04",
-  "dateModified": "2026-02-26",
-  "datePublished": "2026-10-27"
+  "dateModified": "2026-11-02",
+  "datePublished": "2026-11-02"
 }
 
   </script><script>

@@ -317,7 +317,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Manually scrape data using browser extensions</h1>
-        <p>Last updated on 2026-02-26 |
+        <p>Last updated on 2026-11-02 |
 
         <a href="https://github.com/bham-carpentries/bham-introduction-to-webscraping/edit/main/episodes/Manual-scraping.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -355,10 +355,10 @@
 </div>
 </div>
 <div class="section level1">
-<h1 id="using-the-web-scraper-chrome-extension">Using the Web Scraper Chrome extension<a class="anchor" aria-label="anchor" href="#using-the-web-scraper-chrome-extension"></a></h1>
-<p>Now we are finally ready to do some web scraping using Web Scraper
-Chrome extension. If you haven’t it installed on your machine, please
-refer to the <a href="/learners/setup.html">Setup instructions</a>.</p>
+<h1 id="using-the-chrome-web-scraper-extension">Using the Chrome Web Scraper extension<a class="anchor" aria-label="anchor" href="#using-the-chrome-web-scraper-extension"></a></h1>
+<p>Now we are ready to do some web scraping using the Chrome Web Scraper
+extension. If you haven’t installed it on your machine, please refer to
+the <a href="/learners/setup.html">Setup instructions</a>.</p>
 <p>For this lesson, we will again be using the UK Members of Parliament
 webpages. We are interested in scraping a list of MPs and their
 constituencies with the help of Web Scraper.</p>
@@ -376,27 +376,39 @@ to customise that is possible using the developer tools.</p>
 <p>With the extension installed the Wizard window can be opened by
 selecting the <em>Web Scraper</em> icon on the browser toolbar:</p>
 <figure><img src="fig/web-scraper-gui.png" alt="Screenshot of Web Scraper wizard dialog" class="figure mx-auto d-block"><div class="figcaption">Web Scraper Wizard</div>
-</figure><p>The wizard allows you to select any links to navigate to other pages.
-In our example we don’t need to do this so we will select <em>Skip</em>.
-In the <em>Page Navigation Type</em> tab, select whether to make
-selections from the listing page or whether to open links.</p>
-<ul><li>We will use the <em>Listing page</em> option.</li>
-<li>Select Continue - this will auto-generate selectors and give a
-preview of the data.</li>
-</ul><p>The image below shows an example of the data which is automatically
-extracted from this web page without any selection:</p>
-<figure><img src="fig/scraper-mp-data.png" alt="Screenshot of automatically scraped MP data" class="figure mx-auto d-block"><div class="figcaption">Automatically scraped MP data</div>
-</figure><p>Note that this has only gathered the names of MPs for one page,
-collecting about 20 entries out of a total of 650. The next section
-<em>Pagination &amp; Scroll</em> allows multiple pages to be selected
-for scraping:</p>
+</figure><p>The first <em>Data Setup</em> page shows data which is automatically
+extracted from the web page without any intervention. The image above
+shows this data.</p>
+<p>The titles can be edited to give something more meaningful as in the
+image below.</p>
+<figure><img src="fig/web-scraper-titles.png" alt="Screenshot showing amended record titles" class="figure mx-auto d-block"><div class="figcaption">Automatically scraped MP data with edited record
+titles</div>
+</figure><p>At this point the data selected can be exported as an Excel
+spreadsheet or a comma-separated value (CSV) file using the appropriate
+download buttons just below the data. Note that this has only gathered
+the names of MPs for one page, collecting about 20 entries out of a
+total of 650. The next section <em>Pagination &amp; Scroll</em> allows
+multiple pages to be selected for scraping:</p>
 <ul><li>Choose <em>Select Next Page button</em>.</li>
 <li>Select the appropriate means of selecting more pages. This could be
 either a set of numbered pages or a ‘next page’ button. Several buttons
 can be selected if needed.</li>
-<li>On completion click the green <em>Done selecting</em> button.</li>
+<li>On completion click the <em>Done selecting</em> button.</li>
+<li>Leave the <em>Enable Infite Scroll</em> button checked.</li>
+<li>Select <em>Continue</em>
+</li>
 </ul><figure><img src="fig/scraper-pagination.png" alt="Screenshot of pagination selection" class="figure mx-auto d-block"><div class="figcaption">Pagination &amp; Scroll selection</div>
-</figure><p>On selection of the <em>Finish</em> button the dialog will show that
+</figure><p>The next wizard page, <em>Follow Item Links</em> allows you to select
+links to navigate to other pages. In our example we don’t need to do
+this so we will select <em>Skip</em>.</p>
+<p>The final tab, <em>Scrape</em> shows a message saying that the
+scraper configuration is ready.</p>
+<ul><li>Select the <em>Scrape the page</em> button</li>
+</ul><p>You will see a new window open which will show the page selection
+button updating as the data from each page is scraped. Finally a table
+will show that 650 records have been scraped with the first 100
+displayed.</p>
+<p>On selection of the <em>Finish</em> button the dialog will show that
 scraper configuration is ready and the <em>Scrape the page</em> button
 can be selected.</p>
 <p>Now data has been scraped for all 650 MPs from all pages:</p>
@@ -416,11 +428,15 @@ position</div>
 </figure></li>
 </ul><p>The Web Scraper extension works on a “Sitemap”. The previous exercise
 will already have created a sitemap and this will be listed in the
-opening window on the tab. Alternatively, a new sitemap can be created:
-- Select Create new sitemap-&gt; Create Sitemap - Add a <em>Sitemap
-name</em> and <em>Start URL</em> for the webpage you wish to scrape -
-Click <em>Create Sitemap</em></p>
-<p>When a sitemap has been created then <em>selectors</em> can be
+opening window on the tab. Alternatively, a new sitemap can be
+created:</p>
+<ul><li>Select Create new sitemap-&gt; Create Sitemap
+<ul><li>Add a <em>Sitemap name</em> and <em>Start URL</em> for the webpage
+you wish to scrape</li>
+<li>Click <em>Create Sitemap</em>
+</li>
+</ul></li>
+</ul><p>When a sitemap has been created then <em>selectors</em> can be
 created to govern how the webpage will be scraped. For a webpage created
 by the Wizard, the selectors generated automatically can be inspected,
 edited and new selectors created as required.</p>
@@ -439,13 +455,15 @@ dialog:
 this case, we will choose the <em>Pagination</em> selector</li>
 <li>Use the <em>Select</em> button to select the relevant elements on
 the webpage. In this case the pagination uses the numbered boxes at the
-top or bottom of the page. More than one selection can be made by using
-Shift+Enter. In the example shown below, just two pages have been
-selected.</li>
+top or bottom of the page. Either one page can be selected or, by
+clicking on a second button, all pages are selected. In the example
+shown below, one extra page has been selected to scrape.</li>
 <li>The <em>Element Preview</em> button can be used to check that the
 correct items have been selected.</li>
 <li>The <em>Data Preview</em> button will show the data that will result
 from this scraping operation.</li>
+<li>Click the <em>Save Selector</em> button to complete the
+operation.</li>
 </ul></li>
 </ul><figure><img src="fig/pagination-selector.png" alt="Screenshot of creating pagination selector" class="figure mx-auto d-block"><div class="figcaption">Creating a Pagination selector</div>
 </figure><p>The information to be scraped is on the page navigated to by
@@ -461,7 +479,9 @@ created in the list it can be seen that the link breadcrumbs update:</p>
 selector</li>
 <li>When using the <em>Select</em> button all MP list boxes can be
 selected by clicking on a second box.</li>
-<li>Check the <em>Multiple</em> option</li>
+<li>Check the <em>Multiple</em> option.</li>
+<li>Click the <em>Save Selector</em> button to complete the
+operation.</li>
 </ul><figure><img src="fig/list-box-selector.png" alt="Screensho of creating link selector" class="figure mx-auto d-block"><div class="figcaption">Creating a Link Selector</div>
 </figure><p>Again, the next information to be selected is on the page arrived at
 by the links selected in the previous step. By clicking on the
@@ -479,15 +499,19 @@ name</div>
 address. There should now be two selectors within the
 <code>select-mp</code> page.</p>
 <figure><img src="fig/name-email-selectors.png" alt="Name and email selectors" class="figure mx-auto d-block"><div class="figcaption">Name and email selectors</div>
-</figure><p>The sitemap is now ready for scraping. Select <em>Sitemap name -&gt;
-Scrape</em>. The Request interval and Page load delay options can be
-left at the default 2000ms. Clicking the <em>Start scraping</em> button
-will start the scraping process. A window will open, showing the pages
-being accessed in the scraping process.</p>
-<p>On completion of scraping it may be necessary to click the
+</figure><p>The sitemap is now ready for scraping.</p>
+<ul><li>Select <em>Sitemap Testing -&gt; Scrape</em>.
+<ul><li>The Request interval and Page load delay options can be left at the
+default 2000ms.</li>
+<li>Click the <em>Start scraping</em> button to start the scraping
+process. A window will open, showing each page accessed during the
+process.</li>
+</ul></li>
+</ul><p>On completion of scraping it may be necessary to click the
 <em>Refresh</em> button in order to view the data. A table will be
-displayed showing the data extracted. The <em>Sitemap name -&gt; Export
-Data</em> option allows export in either .xlsx or .csv format.</p>
+displayed showing the data extracted. The <em>Sitemap Testing -&gt;
+Export Data</em> option allows export in either .xlsx or .csv
+format.</p>
 <p><a href="data/MP-data.xlsx">MP-data.xlsx</a> is the file downloaded
 after the scraping exercise described above. On examination of this
 file, it can be seen that all of the MPs’ names have been extracted but
@@ -665,8 +689,8 @@ any links that you are not going to use.
   "url": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/Manual-scraping.html",
   "identifier": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/Manual-scraping.html",
   "dateCreated": "2025-12-04",
-  "dateModified": "2026-02-26",
-  "datePublished": "2026-10-27"
+  "dateModified": "2026-11-02",
+  "datePublished": "2026-11-02"
 }
 
   </script><script>

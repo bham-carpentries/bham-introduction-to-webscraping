@@ -378,11 +378,12 @@ any links that you are not going to use.
 <a href="Webscraping-intro.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#Webscraping-intro-headingInstructor1"></a>
 </h3>
 <ul>
-<li>Sign in</li>
-<li>Setup</li>
-<li>Introduce self</li>
-<li>Code of conduct</li>
-<li>Intro questions
+<li><p>Sign in</p></li>
+<li><p>Setup</p></li>
+<li><p>Introduce self</p></li>
+<li><p>Code of conduct</p></li>
+<li>
+<p>Intro questions</p>
 <ul>
 <li><ol style="list-style-type: decimal">
 <li>Do you have a specific web scraping application in mind?</li>
@@ -393,7 +394,9 @@ this session?</li>
 </ol></li>
 </ul>
 </li>
-<li>What is web scraping?
+<li><p>Slide - Definition of web scraping</p></li>
+<li>
+<p>Slide - What is web scraping?</p>
 <ul>
 <li>Extracting information from websites</li>
 <li>Manual - faster to automate</li>
@@ -401,9 +404,16 @@ this session?</li>
 <li>Similar to web indexing - more targeted</li>
 </ul>
 </li>
-<li><blockquote>
+<li><p>Slides -</p></li>
+<li>
+<blockquote>
 <p>Example - Need to understand structure of a webpage</p>
-</blockquote></li>
+</blockquote>
+<ul>
+<li>Look at a couple of examples to give a flavour of what we might need
+to look at</li>
+</ul>
+</li>
 </ul>
 <hr>
 <br><h3 id="Webscraping-intro-headingInstructor2">
@@ -434,9 +444,9 @@ code</li>
 </h3>
 <ul>
 <li>Canadian MPs - well structured</li>
-<li>What if data isn’t organised in such an obvious way?
+<li>Slide - What if data isn’t organised in such an obvious way?
 <ul>
-<li>Unstructured</li>
+<li>Unstructured vs structured</li>
 </ul>
 </li>
 <li>British MPs</li>
@@ -447,8 +457,6 @@ code</li>
 <li>Less easy to see how data would be gathered</li>
 </ul>
 </li>
-<li>Process automated by web scraping</li>
-<li>Slide -&gt; definition</li>
 </ul>
 <hr>
 <br><h3 id="Webscraping-intro-headingInstructor4">
@@ -460,6 +468,7 @@ code</li>
 <li>Make sure really necessary to web scrape</li>
 </ul>
 </li>
+<li>Slide - web scraping might not be necessary</li>
 </ul>
 <hr>
 <br></section><section id="Webpage-anatomy"><h2 class="section-heading"><a href="Webpage-anatomy.html">Anatomy of a web page</a></h2>
@@ -468,22 +477,38 @@ code</li>
 <a href="Webpage-anatomy.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#Webpage-anatomy-headingInstructor1"></a>
 </h3>
 <ul>
-<li>HTML - uses tags to organise and format content.</li>
-<li>Slide - ask what people think it will do</li>
-<li>structured doc, <strong>elements</strong> marked by
-<strong>tags</strong>
+<li>
+<p>Slide - where HTML fits in</p>
+<ul>
+<li>even if using semi-automated tools still need to work out what to
+extract</li>
+</ul>
 </li>
-<li>attributes - modify behaviour, appearance or functionality</li>
-<li>list of tags in notes</li>
+<li><p>HTML - uses tags to organise and format content.</p></li>
+<li>
+<p>Slide - ask what people think it will do</p>
+<ul>
+<li>Show file in editor</li>
+<li>open file from folder - opens in browser</li>
+<li>show address in browser is local folder location</li>
+</ul>
+</li>
+<li><p>Slides showing tags etc</p></li>
+<li><p>structured doc, <strong>elements</strong> marked by
+<strong>tags</strong></p></li>
+<li><p>attributes - modify behaviour, appearance or
+functionality</p></li>
+<li><p>list of tags in notes</p></li>
 </ul>
 <hr>
 <br><h3 id="Webpage-anatomy-headingInstructor2">
 <a href="Webpage-anatomy.html#headingInstructor2">Instructor Note</a><a class="anchor" aria-label="anchor" href="#Webpage-anatomy-headingInstructor2"></a>
 </h3>
 <ul>
-<li>CSS gives separation between display format and content</li>
-<li>uses rules applied to HTML elements by selectors</li>
-<li>can be useful for targeting elements when scraping</li>
+<li><p>Leave out if short of time</p></li>
+<li><p>CSS gives separation between display format and content</p></li>
+<li><p>uses rules applied to HTML elements by selectors</p></li>
+<li><p>can be useful for targeting elements when scraping</p></li>
 </ul>
 <p>Slide - CSS added to head tag</p>
 <hr>
@@ -502,6 +527,7 @@ code</li>
 <li>Ctrl+f to search</li>
 </ul>
 </li>
+<li>Slide - overall structure of page</li>
 </ul>
 <hr>
 <br><h3 id="Webpage-anatomy-headingInstructor4">
@@ -526,7 +552,7 @@ code</li>
 </li>
 </ul>
 <hr>
-<br></section><section id="Manual-scraping"><h2 class="section-heading"><a href="Manual-scraping.html">Manually scrape data using browser extensionsUsing the Web Scraper Chrome extension<a class="anchor" aria-label="anchor" href="#using-the-web-scraper-chrome-extension"></a></a></h2>
+<br></section><section id="Manual-scraping"><h2 class="section-heading"><a href="Manual-scraping.html">Manually scrape data using browser extensionsUsing the Chrome Web Scraper extension<a class="anchor" aria-label="anchor" href="#using-the-chrome-web-scraper-extension"></a></a></h2>
 <hr class="half-width">
 <h3 id="Manual-scraping-headingInstructor1">
 <a href="Manual-scraping.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#Manual-scraping-headingInstructor1"></a>
@@ -623,8 +649,8 @@ selectors to use</p></li>
   "url": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/instructor/instructor-notes.html",
   "identifier": "https://bham-carpentries.github.io/bham-introduction-to-webscraping/instructor/instructor-notes.html",
   "dateCreated": "2025-12-04",
-  "dateModified": "2026-10-27",
-  "datePublished": "2026-10-27"
+  "dateModified": "2026-11-02",
+  "datePublished": "2026-11-02"
 }
 
   </script><script>
