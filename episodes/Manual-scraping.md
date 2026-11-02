@@ -44,7 +44,7 @@ The titles can be edited to give something more meaningful as in the image below
 
 ![Automatically scraped MP data with edited record titles](fig/web-scraper-titles.png){alt="Screenshot showing amended record titles"}
 
-At this point the data selected can be exported as an Excel spreadsheet or a comma separate variable (csv) file using the appropriate download buttons just below the data. 
+At this point the data selected can be exported as an Excel spreadsheet or a comma-separated value (CSV) file using the appropriate download buttons just below the data. 
 Note that this has only gathered the names of MPs for one page, collecting about 20 entries out of a total of 650. The next section *Pagination & Scroll* allows multiple pages to be selected for scraping:
 
 - Choose *Select Next Page button*.
