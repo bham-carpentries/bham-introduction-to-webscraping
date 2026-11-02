@@ -71,7 +71,7 @@ The [UK Government website](https://www.gov.uk/government/publications/copyright
 
 - For works created on or after January 1, 1978, copyright lasts for the life of the author plus 70 years.
 - For works made for hire, anonymous works, or pseudonymous works, copyright lasts 95 years from first publication or 120 years from creation, whichever is shorter.
-- The cutoff date for works entering the public domain advances each year. For example, in the year 2026 the 70 year rule established that works published before 1931 are in the public domain (specifically, works published in the United States before January 1, 1931 have entered the public domain because their copyright terms have expired).
+- The cutoff date for works entering the public domain advances each year. For example, in the year 2026, works published before 1931 entered the public domain. (Specifically, works published in the United States before January 1, 1931 have entered the public domain because their copyright terms have expired.)
 
 The [US Copyright Office](https://www.copyright.gov/what-is-copyright/) provides detailed information about copyright basics and the duration of copyright.
 
