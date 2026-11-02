@@ -22,7 +22,7 @@ After completing this episode, participants should be able to...
 
 # Using the Chrome Web Scraper extension
 
-Now we are ready to do some web scraping using the Chrome Web Scraper extension. If you haven’t it installed on your machine, please refer to the [Setup instructions](/learners/setup.md).
+Now we are ready to do some web scraping using the Chrome Web Scraper extension. If you haven't installed it on your machine, please refer to the [Setup instructions](/learners/setup.md).
 
 For this lesson, we will again be using the UK Members of Parliament webpages. We are interested in scraping a list of MPs and their constituencies with the help of Web Scraper.
 
